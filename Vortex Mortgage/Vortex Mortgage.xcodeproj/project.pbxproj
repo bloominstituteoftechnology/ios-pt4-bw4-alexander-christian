@@ -62,7 +62,6 @@
 		1FBC772C2499C11100ACCDB9 = {
 			isa = PBXGroup;
 			children = (
-				1734DD832499DB0B00183547 /* Controllers */,
 				1FBC77372499C11100ACCDB9 /* Vortex Mortgage */,
 				1FBC77362499C11100ACCDB9 /* Products */,
 			);
@@ -79,6 +78,7 @@
 		1FBC77372499C11100ACCDB9 /* Vortex Mortgage */ = {
 			isa = PBXGroup;
 			children = (
+				1734DD832499DB0B00183547 /* Controllers */,
 				1FBC77382499C11100ACCDB9 /* AppDelegate.swift */,
 				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
 				1FBC773C2499C11100ACCDB9 /* ViewController.swift */,

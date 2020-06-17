@@ -16,6 +16,11 @@ class OnboardingTwoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    
+    @IBAction func goToThirdVCButtonPressed(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToThirdVC", sender: self)
+    }
+    
 
     /*
     // MARK: - Navigation

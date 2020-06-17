@@ -13,9 +13,12 @@
 		1FBC77402499C11100ACCDB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC773E2499C11100ACCDB9 /* Main.storyboard */; };
 		1FBC77422499C11400ACCDB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77412499C11400ACCDB9 /* Assets.xcassets */; };
 		1FBC77452499C11400ACCDB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77432499C11400ACCDB9 /* LaunchScreen.storyboard */; };
+
 		1FBC77502499C1F500ACCDB9 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC774F2499C1F500ACCDB9 /* Dashboard.storyboard */; };
 		1FBC77522499C20700ACCDB9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77512499C20700ACCDB9 /* Onboarding.storyboard */; };
 		1FBC77542499C3AD00ACCDB9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77532499C3AD00ACCDB9 /* Settings.storyboard */; };
+
+
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +30,11 @@
 		1FBC77412499C11400ACCDB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBC77442499C11400ACCDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1FBC77462499C11400ACCDB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+
 		1FBC774F2499C1F500ACCDB9 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		1FBC77512499C20700ACCDB9 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		1FBC77532499C3AD00ACCDB9 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +70,11 @@
 				1FBC77382499C11100ACCDB9 /* AppDelegate.swift */,
 				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
 				1FBC773C2499C11100ACCDB9 /* ViewController.swift */,
+
 				1FBC774C2499C19800ACCDB9 /* Storyboards */,
+
+				1FBC773E2499C11100ACCDB9 /* Main.storyboard */,
+
 				1FBC77412499C11400ACCDB9 /* Assets.xcassets */,
 				1FBC77432499C11400ACCDB9 /* LaunchScreen.storyboard */,
 				1FBC77462499C11400ACCDB9 /* Info.plist */,
@@ -73,6 +82,7 @@
 			path = "Vortex Mortgage";
 			sourceTree = "<group>";
 		};
+
 		1FBC774C2499C19800ACCDB9 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +94,7 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
+
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,11 +154,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FBC77452499C11400ACCDB9 /* LaunchScreen.storyboard in Resources */,
+
 				1FBC77502499C1F500ACCDB9 /* Dashboard.storyboard in Resources */,
 				1FBC77422499C11400ACCDB9 /* Assets.xcassets in Resources */,
 				1FBC77522499C20700ACCDB9 /* Onboarding.storyboard in Resources */,
 				1FBC77402499C11100ACCDB9 /* Main.storyboard in Resources */,
 				1FBC77542499C3AD00ACCDB9 /* Settings.storyboard in Resources */,
+
+				1FBC77422499C11400ACCDB9 /* Assets.xcassets in Resources */,
+				1FBC77402499C11100ACCDB9 /* Main.storyboard in Resources */,
+
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

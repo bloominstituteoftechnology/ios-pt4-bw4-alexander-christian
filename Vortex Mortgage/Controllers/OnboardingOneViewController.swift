@@ -18,8 +18,7 @@ class OnboardingOneViewController: UIViewController {
     
     
     @IBAction func goToSecondVCButtonPressed(_ sender: Any) {
-        self.performSegue(withIdentifier: "OnBoarding2", sender: self)
-        
+        self.performSegue(withIdentifier: "goToSecondVC", sender: self)
     }
     
     

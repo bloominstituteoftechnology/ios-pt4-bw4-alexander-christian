@@ -20,14 +20,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         //Onboarding Screen Code:
         let launchedBefore = UserDefaults.standard.bool(forKey: "hasLaunched")
-        let launhStoryBoard = (UIStoryboard(name: "Onboarding", bundle: nil))
+        let launchStoryBoard = (UIStoryboard(name: "Onboarding", bundle: nil))
         let mainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         var vc: UIViewController
         
         if launchedBefore {
             vc = mainStoryBoard.instantiateInitialViewController()!
         } else {
-            vc = launhStoryBoard.instantiateViewController(identifier: "hasLaunched")
+            vc = launchStoryBoard.instantiateViewController(identifier: "Onboarding1")
         }
         
         UserDefaults.standard.set(true, forKey: "hasLaunched")

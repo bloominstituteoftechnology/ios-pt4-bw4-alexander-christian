@@ -15,33 +15,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="xn8-2T-JQn">
-                                <rect key="frame" x="-18" y="-43" width="450" height="298"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="xn8-2T-JQn">
+                                <rect key="frame" x="2" y="0.0" width="410" height="255"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="255" id="tZW-Md-q4K"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in to track mortgage calculations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faG-Ns-Bch">
-                                <rect key="frame" x="30" y="563" width="355" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Use our platform for side by side comparisons" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ik-z9-1Wq">
-                                <rect key="frame" x="30" y="585" width="364" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <color key="textColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SfA-pc-i44">
-                                <rect key="frame" x="151" y="724" width="112" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Login with apple"/>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="V41-KH-JKE">
+                                <rect key="frame" x="10" y="561" width="394" height="74"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to track mortgage calculations." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faG-Ns-Bch">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use our platform for side by side comparisons" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ik-z9-1Wq">
+                                        <rect key="frame" x="0.0" y="26" width="394" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Lu3-8Q-vxF">
+                                <rect key="frame" x="49" y="722" width="316" height="83"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.34509803919999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Lu3-8Q-vxF" secondAttribute="bottom" constant="57" id="1fD-Le-DnK"/>
+                            <constraint firstItem="V41-KH-JKE" firstAttribute="centerX" secondItem="Lu3-8Q-vxF" secondAttribute="centerX" id="8ut-JM-lXL"/>
+                            <constraint firstItem="V41-KH-JKE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="561" id="9Nx-ir-zED"/>
+                            <constraint firstItem="V41-KH-JKE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="9UH-8R-75H"/>
+                            <constraint firstItem="Lu3-8Q-vxF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="FeM-8Z-oqc"/>
+                            <constraint firstItem="xn8-2T-JQn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bi2-4S-nGb"/>
+                            <constraint firstItem="Lu3-8Q-vxF" firstAttribute="top" secondItem="V41-KH-JKE" secondAttribute="bottom" constant="87" id="n3r-WP-nJ4"/>
+                            <constraint firstItem="xn8-2T-JQn" firstAttribute="centerX" secondItem="V41-KH-JKE" secondAttribute="centerX" id="tqP-GB-hFB"/>
+                            <constraint firstItem="xn8-2T-JQn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vV6-CG-qtY"/>
+                            <constraint firstItem="xn8-2T-JQn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="2" id="yCd-gE-T57"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="appleButtonStackView" destination="Lu3-8Q-vxF" id="BDu-GK-f5X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

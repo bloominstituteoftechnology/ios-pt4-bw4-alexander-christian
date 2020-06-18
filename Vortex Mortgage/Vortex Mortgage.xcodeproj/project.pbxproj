@@ -10,9 +10,10 @@
 		1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD842499DBE800183547 /* OnboardingOneViewController.swift */; };
 		1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD862499E01200183547 /* OnboardingTwoViewController.swift */; };
 		1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD882499E02500183547 /* OnboardingThreeViewController.swift */; };
+		1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6C249ADE7F005EE536 /* ViewController.swift */; };
+		1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */; };
 		1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC77382499C11100ACCDB9 /* AppDelegate.swift */; };
 		1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */; };
-		1FBC773D2499C11100ACCDB9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC773C2499C11100ACCDB9 /* ViewController.swift */; };
 		1FBC77402499C11100ACCDB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC773E2499C11100ACCDB9 /* Main.storyboard */; };
 		1FBC77422499C11400ACCDB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77412499C11400ACCDB9 /* Assets.xcassets */; };
 		1FBC77452499C11400ACCDB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77432499C11400ACCDB9 /* LaunchScreen.storyboard */; };
@@ -25,10 +26,11 @@
 		1734DD842499DBE800183547 /* OnboardingOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOneViewController.swift; sourceTree = "<group>"; };
 		1734DD862499E01200183547 /* OnboardingTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwoViewController.swift; sourceTree = "<group>"; };
 		1734DD882499E02500183547 /* OnboardingThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThreeViewController.swift; sourceTree = "<group>"; };
+		1F4F0B6C249ADE7F005EE536 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1FBC77352499C11100ACCDB9 /* Vortex Mortgage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vortex Mortgage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBC77382499C11100ACCDB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1FBC773C2499C11100ACCDB9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1FBC773F2499C11100ACCDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1FBC77412499C11400ACCDB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FBC77442499C11400ACCDB9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +57,8 @@
 				1734DD842499DBE800183547 /* OnboardingOneViewController.swift */,
 				1734DD862499E01200183547 /* OnboardingTwoViewController.swift */,
 				1734DD882499E02500183547 /* OnboardingThreeViewController.swift */,
+				1F4F0B6C249ADE7F005EE536 /* ViewController.swift */,
+				1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -79,12 +83,11 @@
 			isa = PBXGroup;
 			children = (
 				1734DD832499DB0B00183547 /* Controllers */,
-				1FBC77382499C11100ACCDB9 /* AppDelegate.swift */,
 				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
-				1FBC773C2499C11100ACCDB9 /* ViewController.swift */,
 				1FBC775B2499C80A00ACCDB9 /* Storyboards */,
 				1FBC77412499C11400ACCDB9 /* Assets.xcassets */,
 				1FBC77432499C11400ACCDB9 /* LaunchScreen.storyboard */,
+				1FBC77382499C11100ACCDB9 /* AppDelegate.swift */,
 				1FBC77462499C11400ACCDB9 /* Info.plist */,
 			);
 			path = "Vortex Mortgage";
@@ -175,10 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */,
+				1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */,
 				1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */,
 				1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */,
 				1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */,
-				1FBC773D2499C11100ACCDB9 /* ViewController.swift in Sources */,
 				1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */,
 				1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */,
 			);

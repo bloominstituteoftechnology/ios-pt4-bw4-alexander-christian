@@ -42,6 +42,14 @@
                                 <rect key="frame" x="73" y="720" width="233" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nq3-wd-gIa">
+                                <rect key="frame" x="98" y="303" width="218" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take me to Calculations"/>
+                                <connections>
+                                    <segue destination="WiW-s3-EOH" kind="presentation" modalPresentationStyle="fullScreen" id="p5u-UM-EoX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.34509803919999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -61,6 +69,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="27.536231884057973" y="117.85714285714285"/>
+        </scene>
+        <!--Dashboard-->
+        <scene sceneID="SGe-cX-Lhe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Dashboard" id="WiW-s3-EOH" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="U8A-RO-Lop"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0KR-IQ-rxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="130"/>
         </scene>
     </scenes>
     <resources>

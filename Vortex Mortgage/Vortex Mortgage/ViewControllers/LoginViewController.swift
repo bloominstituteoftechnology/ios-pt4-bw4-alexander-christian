@@ -100,14 +100,18 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     
     private func saveUserInKeychain(_ userIdentifier: String) {
         do {
-             
+             try KeychainItem(service: "com.alexThompson.Vortex-Mortgage", account: "userIdentifier")
         } catch {
-            
+            print("Unable to save user identifier to keychain")
         }
     }
     
     private func showAlert(username: String, password: String) {
+        let message = "Vortex Mortgage has recieved you're credentials \n\n Username: \(username.capitalized)\n Password: \(password.removingPercentEncoding!)"
+        let alertController = UIAlertController(title: "Keychain", message: message, preferredStyle: .alert)
         
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 

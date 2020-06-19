@@ -13,10 +13,12 @@ class ResultsViewController: UIViewController {
     var totalAmount: Float?
     var totalInterest: Float?
     var totalYearsTerm: Float?
+    var totalPayment: Float?
     
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var totalInterestLabel: UILabel!
     @IBOutlet weak var totalAmountTerm: UILabel!
+    @IBOutlet weak var totalMonthlyPayment: UILabel!
     
     
     
@@ -37,6 +39,11 @@ class ResultsViewController: UIViewController {
         if let myTotalTerm = totalYearsTerm {
             let myNewTotalTerm = String(format: "%.0f", myTotalTerm)
             totalAmountTerm.text = "\(myNewTotalTerm)"
+        }
+        
+        if let myTotalPayment = totalPayment {
+            let myNewTotalPayment = String(format: "%.02", myTotalPayment)
+            totalMonthlyPayment.text = "$\(myNewTotalPayment)"
         }
         
     }

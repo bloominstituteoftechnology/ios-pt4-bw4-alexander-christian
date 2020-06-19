@@ -17,6 +17,7 @@ class CalculateViewController: UIViewController {
     var totalAmount: Float = 0
     var totalInterest: Float = 0
     var totalYearsTerm: Float = 0
+    var totalPayment: Float = 0
     
     //Outlets:
     @IBOutlet weak var homePriceTextField: UITextField!
@@ -63,6 +64,7 @@ class CalculateViewController: UIViewController {
         totalAmount = totalAmountLoan
         totalInterest = calculateInterest
         totalYearsTerm = mortgageTermSliderAmount
+        totalPayment = totalAmount / (mortgageTermSliderAmount * 12)
         
         NotificationCenter.default.post(name: Notification.Name("Result"), object: totalAmount)
         self.performSegue(withIdentifier: "goToResults", sender: self)
@@ -94,6 +96,7 @@ class CalculateViewController: UIViewController {
             destinationVC.totalAmount = self.totalAmount
             destinationVC.totalInterest = self.totalInterest
             destinationVC.totalYearsTerm = self.totalYearsTerm
+            destinationVC.totalPayment = self.totalPayment
         }
     }
 

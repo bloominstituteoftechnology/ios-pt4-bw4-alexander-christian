@@ -92,10 +92,10 @@ class CalculateViewController: UIViewController {
         if segue.identifier == "goToResults" {
             let destinationVC = segue.destination as! ResultsViewController
             //destinationVC.incomingValue = CalcValue.init(value: totalAmountLoan) //totalResult
-            destinationVC.totalAmount = self.totalAmount
-            destinationVC.totalInterest = self.totalInterest
-            destinationVC.totalYearsTerm = self.totalYearsTerm
-            destinationVC.totalPayment = self.totalPayment
+            destinationVC.totalAmount = totalAmount
+            destinationVC.totalInterest = totalInterest
+            destinationVC.totalYearsTerm = totalYearsTerm
+            destinationVC.totalPayment = totalPayment
         }
     }
 

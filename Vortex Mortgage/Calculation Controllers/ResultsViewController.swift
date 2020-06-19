@@ -26,6 +26,8 @@ class ResultsViewController: UIViewController {
         super.viewDidLoad()
         
         //NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification(_:)), name: Notification.Name("Result"), object: nil)
+        
+        guard isViewLoaded else { return }
         if let total = totalAmount {
             let myNewtotal = String(format: "%.2f", total)
             resultLabel.text = "$\(myNewtotal)"
@@ -42,7 +44,7 @@ class ResultsViewController: UIViewController {
         }
         
         if let myTotalPayment = totalPayment {
-            let myNewTotalPayment = String(format: "%.02", myTotalPayment)
+            let myNewTotalPayment = String(format: "%.0f", myTotalPayment)
             totalMonthlyPayment.text = "$\(myNewTotalPayment)"
         }
     }

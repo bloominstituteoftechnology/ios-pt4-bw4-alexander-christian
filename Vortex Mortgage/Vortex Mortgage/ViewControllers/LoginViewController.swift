@@ -100,7 +100,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     
     private func saveUserInKeychain(_ userIdentifier: String) {
         do {
-             try KeychainItem(service: "com.alexThompson.Vortex-Mortgage", account: "userIdentifier")
+            try KeychainItem(service: "com.alexThompson.Vortex-Mortgage", account: "userIdentifier").saveItem(userIdentifier)
         } catch {
             print("Unable to save user identifier to keychain")
         }
@@ -112,6 +112,10 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         
         alertController.addAction(UIAlertAction(title: "Dismiss", style: .cancel, handler: nil))
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        // Handle error
     }
 }
 

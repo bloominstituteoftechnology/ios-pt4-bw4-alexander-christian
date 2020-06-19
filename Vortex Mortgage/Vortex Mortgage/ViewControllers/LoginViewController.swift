@@ -100,7 +100,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     
     private func saveUserInKeychain(_ userIdentifier: String) {
         do {
-            try 
+             
         } catch {
             
         }

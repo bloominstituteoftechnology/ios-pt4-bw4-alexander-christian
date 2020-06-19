@@ -67,20 +67,53 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 
                 // Save user in keychain
                 self.saveUserInKeychain(userIdentifier)
+                
+            case let passwordCredential as ASPasswordCredential:
+                
+                // Sign in using an existing iCloud Keychain credential.
+                let username = passwordCredential.user
+                let password = passwordCredential.password
+                print("Username: \(username), Password: \(password.removingPercentEncoding!)")
+                
+                // For testing purposes create an alert to check everything
+                DispatchQueue.main.async {
+                    self.showAlert(username: username, password: password)
+                }
             default:
                 break
             }
         }
     
+    private func passDataToProfileViewController(userIdentifier: String, fullName: PersonNameComponents?, email: String?) {
+        guard let viewController = self.presentingViewController as? ProfileViewController else { return }
+        
+        DispatchQueue.main.async {
+            viewController.nameLabel.text = userIdentifier
+            
+            if let email = email {
+                viewController.emailLabel.text = email
+            }
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     
     private func saveUserInKeychain(_ userIdentifier: String) {
+        do {
+            try 
+        } catch {
+            
+        }
+    }
+    
+    private func showAlert(username: String, password: String) {
         
     }
 }
 
 extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        <#code#>
+        return self.view.window!
     }
     
         

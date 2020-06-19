@@ -7,18 +7,33 @@
 //
 
 import UIKit
+import AuthenticationServices
 
 class ProfileViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var myTitle: UINavigationItem!
+    @IBOutlet var firstName: UILabel!
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        DispatchQueue.main.async {
+            self.showLoginViewController()
+            
+        }
     }
     
-    func updateViews() {
-        guard isViewLoaded else { return }
+    @IBAction func signOutPressed() {
+        KeychainItem.deleteUserIdentifierFromKeychain()
+        nameLabel.text = ""
+        emailLabel.text = ""
+        
+        DispatchQueue.main.async {
+            self.showLoginViewController()
+        }
     }
 
     /*

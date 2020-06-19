@@ -120,7 +120,7 @@ struct KeychainItem {
     
     static var currentUserIdentifier: String {
         do {
-            let storedIdentifier = try KeychainItem(service: "com.alexThompson.Vortex-Mortgage", account: "userIdentifier").readItem()
+            let storedIdentifier = try KeychainItem(service: "com.ChristianLorenzo.Vortex-Mortgage", account: "userIdentifier").readItem()
             return storedIdentifier
             
         } catch {
@@ -130,7 +130,7 @@ struct KeychainItem {
     
     static func deleteUserIdentifierFromKeychain() {
         do {
-            try KeychainItem(service: "com.alexThompson.Vortex-Mortgage", account: "userIdentifier").deleteItem()
+            try KeychainItem(service: "com.ChristianLorenzo.Vortex-Mortgage", account: "userIdentifier").deleteItem()
         } catch {
             print("Unable to delete userIdentifier from keychain unfortunatly")
         }

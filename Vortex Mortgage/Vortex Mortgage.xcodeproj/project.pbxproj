@@ -35,6 +35,7 @@
 		174ADAEF249C29CA004E768F /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		1F4F0B6C249ADE7F005EE536 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vortex Mortgage.entitlements"; sourceTree = "<group>"; };
 		1F9BF6C2249C66570083F051 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		1F9BF6C6249C7A930083F051 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
@@ -74,14 +75,6 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
-		1F9BF6C8249C7F480083F051 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				1F9BF6C6249C7A930083F051 /* KeychainHelper.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		174ADAEC249C29A9004E768F /* Calculation Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +82,14 @@
 				174ADAEF249C29CA004E768F /* ResultsViewController.swift */,
 			);
 			path = "Calculation Controllers";
+			sourceTree = "<group>";
+		};
+		1F9BF6C8249C7F480083F051 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1F9BF6C6249C7A930083F051 /* KeychainHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		1FBC772C2499C11100ACCDB9 = {
@@ -111,6 +112,7 @@
 		1FBC77372499C11100ACCDB9 /* Vortex Mortgage */ = {
 			isa = PBXGroup;
 			children = (
+				1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */,
 				1734DD832499DB0B00183547 /* ViewControllers */,
 				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
 				1F9BF6C8249C7F480083F051 /* Helpers */,
@@ -364,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Vortex Mortgage/Vortex Mortgage.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UK9B9BTNM;
 				INFOPLIST_FILE = "Vortex Mortgage/Info.plist";
@@ -371,7 +374,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alexThompson.Vortex-Mortgage";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ChristianLorenzo.Vortex-Mortgage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -382,6 +385,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Vortex Mortgage/Vortex Mortgage.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UK9B9BTNM;
 				INFOPLIST_FILE = "Vortex Mortgage/Info.plist";
@@ -389,7 +393,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.alexThompson.Vortex-Mortgage";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ChristianLorenzo.Vortex-Mortgage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

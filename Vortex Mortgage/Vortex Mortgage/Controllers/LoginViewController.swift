@@ -36,8 +36,8 @@ class LoginViewController: UIViewController {
         request.requestedScopes = [.fullName, .email]
         
         let controller = ASAuthorizationController(authorizationRequests: [request])
-//        controller.delegate = self
-//        controller.presentationContextProvider = self
+        controller.delegate = self
+        controller.presentationContextProvider = self
         controller.performRequests()
         
     }
@@ -51,7 +51,37 @@ class LoginViewController: UIViewController {
         
         // Create an authorization controller with said requests
         let authorizationController = ASAuthorizationController(authorizationRequests: requests)
-//        authorizationController.delegate = self
+        authorizationController.delegate = self
         authorizationController.performRequests()
     }
+}
+
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+            switch authorization.credential {
+            case let appleIDCredential as ASAuthorizationAppleIDCredential:
+                let userIdentifier = appleIDCredential.user
+                let fullName = appleIDCredential.fullName
+                let email = appleIDCredential.email
+                print("Users name is \(fullName!), users email is \(email!).")
+                
+                // Save user in keychain
+                self.saveUserInKeychain(userIdentifier)
+            default:
+                break
+            }
+        }
+    
+    
+    private func saveUserInKeychain(_ userIdentifier: String) {
+        
+    }
+}
+
+extension LoginViewController: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        <#code#>
+    }
+    
+        
 }

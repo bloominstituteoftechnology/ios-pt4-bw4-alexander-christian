@@ -10,9 +10,10 @@ import UIKit
 
 class ResultsViewController: UIViewController {
     
-    let calculationController = CalculateViewController()
-    
-    
+    var totalAmount: Float?
+    var totalInterest: Float?
+    var totalYearsTerm: Float?
+    var totalPayment: Float?
     
     @IBOutlet weak var resultLabel: UILabel!
     @IBOutlet weak var totalInterestLabel: UILabel!

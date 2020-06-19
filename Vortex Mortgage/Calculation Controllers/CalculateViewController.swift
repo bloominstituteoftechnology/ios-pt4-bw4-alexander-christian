@@ -63,7 +63,7 @@ class CalculateViewController: UIViewController {
         totalAmount = totalAmountLoan
         totalInterest = calculateInterest
         totalYearsTerm = mortgageTermSliderAmount
-        totalPayment = totalAmount / convertedTerm
+        totalPayment = (totalAmount / convertedTerm)
         
         NotificationCenter.default.post(name: Notification.Name("Result"), object: totalAmount)
         self.performSegue(withIdentifier: "goToResults", sender: self)
@@ -90,8 +90,8 @@ class CalculateViewController: UIViewController {
      //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResults" {
-            guard let destinationVC = segue.destination as? ResultsViewController else { return }
-            destinationVC.calculationController = CalculateViewController
+            let destinationVC = segue.destination as! ResultsViewController
+            //destinationVC.incomingValue = CalcValue.init(value: totalAmountLoan) //totalResult
             destinationVC.totalAmount = self.totalAmount
             destinationVC.totalInterest = self.totalInterest
             destinationVC.totalYearsTerm = self.totalYearsTerm

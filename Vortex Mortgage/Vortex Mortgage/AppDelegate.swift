@@ -7,14 +7,28 @@
 //
 
 import UIKit
+import AuthenticationServices
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let appleIDProvider = ASAuthorizationAppleIDProvider()
+        appleIDProvider.getCredentialState(forUserID: KeychainItem.currentUserIdentifier) { (credentialState, error) in
+            switch credentialState {
+            case .authorized:
+                break
+            case .revoked, .notFound:
+                DispatchQueue.main.async {
+                    self.window?.rootViewController?.showLoginViewController()
+                }
+            default:
+                break
+            }
+        }
         return true
     }
 

@@ -52,6 +52,7 @@ class LoginViewController: UIViewController {
         // Create an authorization controller with said requests
         let authorizationController = ASAuthorizationController(authorizationRequests: requests)
         authorizationController.delegate = self
+        authorizationController.presentationContextProvider = self
         authorizationController.performRequests()
     }
 }
@@ -63,10 +64,12 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 let userIdentifier = appleIDCredential.user
                 let fullName = appleIDCredential.fullName
                 let email = appleIDCredential.email
-                print("Users name is \(fullName!), users email is \(email!).")
+//                print("Users name is \(fullName!), users email is \(email!).")
                 
                 // Save user in keychain
                 self.saveUserInKeychain(userIdentifier)
+                
+                self.passDataToProfileViewController(userIdentifier: userIdentifier, fullName: fullName, email: email)
                 
             case let passwordCredential as ASPasswordCredential:
                 
@@ -88,7 +91,14 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         guard let viewController = self.presentingViewController as? ProfileViewController else { return }
         
         DispatchQueue.main.async {
-            viewController.nameLabel.text = userIdentifier
+            
+            if let givenName = fullName?.givenName {
+                viewController.firstName.text = givenName
+            }
+            
+            if let familyName = fullName?.familyName {
+                viewController.nameLabel.text = familyName
+            }
             
             if let email = email {
                 viewController.emailLabel.text = email
@@ -100,7 +110,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     
     private func saveUserInKeychain(_ userIdentifier: String) {
         do {
-            try KeychainItem(service: "com.alexThompson.Vortex-Mortgage", account: "userIdentifier").saveItem(userIdentifier)
+            try KeychainItem(service: "com.ChristianLorenzo.Vortex-Mortgage", account: "userIdentifier").saveItem(userIdentifier)
         } catch {
             print("Unable to save user identifier to keychain")
         }
@@ -123,6 +133,17 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return self.view.window!
     }
+}
+
+extension UIViewController {
     
-        
+    func showLoginViewController() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as?
+            LoginViewController {
+            loginViewController.modalPresentationStyle = .formSheet
+            loginViewController.isModalInPresentation = true
+            self.present(loginViewController, animated: true, completion: nil)
+        }
+    }
 }

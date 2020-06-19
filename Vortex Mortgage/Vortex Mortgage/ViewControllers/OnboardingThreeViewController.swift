@@ -19,7 +19,7 @@ class OnboardingThreeViewController: UIViewController {
     
     @IBAction func thirdVCButtonPressed(_ sender: Any) {
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-        let mainVC = storyBoard.instantiateViewController(withIdentifier: "mainVC") as! LoginViewController
+        let mainVC = storyBoard.instantiateViewController(withIdentifier: "profileViewController") as! ProfileViewController
         mainVC.modalPresentationStyle = .fullScreen
         self.present(mainVC, animated: true, completion: nil)
     }

@@ -238,16 +238,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Total Loan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ2-nD-tdp">
-                                <rect key="frame" x="16" y="132" width="382" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Loan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ2-nD-tdp">
+                                <rect key="frame" x="20" y="94" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tb-1K-Zmr">
-                                <rect key="frame" x="16" y="188" width="382" height="52"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Interest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nyd-IT-htg">
+                                <rect key="frame" x="20" y="198" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mortage Term" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VYh-tK-WH3">
+                                <rect key="frame" x="20" y="302" width="374" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tb-1K-Zmr">
+                                <rect key="frame" x="20" y="138" width="374" height="52"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="52" id="ueg-Qo-Hil"/>
+                                    <constraint firstAttribute="height" constant="52" id="pid-so-vs9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount in $" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ypd-aG-Q9k">
+                                <rect key="frame" x="20" y="242" width="374" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="3bP-QF-Qq1"/>
+                                    <constraint firstAttribute="height" constant="52" id="jCs-jZ-1Mt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
@@ -261,29 +283,52 @@
                                     <action selector="recalculateButtonPressed:" destination="SB1-EY-P3A" eventType="touchUpInside" id="9vv-bR-Nje"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount of Years" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kd-0K-55R">
+                                <rect key="frame" x="20" y="346" width="374" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="EDb-lx-aoO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="4tb-1K-Zmr" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="16" id="07f-In-o5K"/>
-                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="Y8C-UB-Fz9" secondAttribute="trailing" constant="50" id="0g7-AC-zjF"/>
-                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="4tb-1K-Zmr" secondAttribute="trailing" constant="16" id="19b-XR-LBc"/>
-                            <constraint firstItem="Y8C-UB-Fz9" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="50" id="6N4-3W-Xq1"/>
-                            <constraint firstItem="ZJ2-nD-tdp" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="16" id="NDT-kK-MNx"/>
-                            <constraint firstItem="Y8C-UB-Fz9" firstAttribute="top" secondItem="4tb-1K-Zmr" secondAttribute="bottom" constant="422" id="T0v-Es-cSL"/>
-                            <constraint firstItem="ZJ2-nD-tdp" firstAttribute="top" secondItem="N7b-ac-9Qs" secondAttribute="top" constant="88" id="TSo-L8-YwR"/>
-                            <constraint firstItem="4tb-1K-Zmr" firstAttribute="top" secondItem="ZJ2-nD-tdp" secondAttribute="bottom" constant="20" id="hEw-ql-D22"/>
-                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="ZJ2-nD-tdp" secondAttribute="trailing" constant="16" id="mJ8-7X-tIc"/>
+                            <constraint firstItem="ypd-aG-Q9k" firstAttribute="top" secondItem="Nyd-IT-htg" secondAttribute="bottom" constant="8" id="0Na-vx-piH"/>
+                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="4tb-1K-Zmr" secondAttribute="trailing" constant="20" id="0gR-Wr-X09"/>
+                            <constraint firstItem="Y8C-UB-Fz9" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="50" id="38m-5U-kSb"/>
+                            <constraint firstItem="VYh-tK-WH3" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="20" id="6QS-gu-bOo"/>
+                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="VYh-tK-WH3" secondAttribute="trailing" constant="20" id="ACm-lI-HRf"/>
+                            <constraint firstItem="Nyd-IT-htg" firstAttribute="top" secondItem="4tb-1K-Zmr" secondAttribute="bottom" constant="8" id="EJG-YE-abX"/>
+                            <constraint firstItem="ZJ2-nD-tdp" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="20" id="JWR-sA-2i1"/>
+                            <constraint firstItem="Nyd-IT-htg" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="20" id="NQ7-iK-aEh"/>
+                            <constraint firstItem="9Kd-0K-55R" firstAttribute="top" secondItem="VYh-tK-WH3" secondAttribute="bottom" constant="8" id="PAg-H3-P8g"/>
+                            <constraint firstItem="4tb-1K-Zmr" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="20" id="RUY-JA-YCm"/>
+                            <constraint firstItem="ypd-aG-Q9k" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="20" id="e99-JZ-idB"/>
+                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="Y8C-UB-Fz9" secondAttribute="trailing" constant="50" id="evs-mI-2Ga"/>
+                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="ypd-aG-Q9k" secondAttribute="trailing" constant="20" id="h3H-ud-ZPl"/>
+                            <constraint firstItem="ZJ2-nD-tdp" firstAttribute="top" secondItem="N7b-ac-9Qs" secondAttribute="top" constant="50" id="nuQ-oC-Cm1"/>
+                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="ZJ2-nD-tdp" secondAttribute="trailing" constant="20" id="oCd-yD-lF2"/>
+                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="Nyd-IT-htg" secondAttribute="trailing" constant="20" id="oFa-EB-S7t"/>
+                            <constraint firstItem="4tb-1K-Zmr" firstAttribute="top" secondItem="ZJ2-nD-tdp" secondAttribute="bottom" constant="8" id="oaR-w1-hWr"/>
+                            <constraint firstItem="VYh-tK-WH3" firstAttribute="top" secondItem="ypd-aG-Q9k" secondAttribute="bottom" constant="8" id="sWB-Pi-nyM"/>
+                            <constraint firstItem="Y8C-UB-Fz9" firstAttribute="top" secondItem="9Kd-0K-55R" secondAttribute="bottom" constant="264" id="tyn-0Y-fI4"/>
+                            <constraint firstItem="N7b-ac-9Qs" firstAttribute="trailing" secondItem="9Kd-0K-55R" secondAttribute="trailing" constant="20" id="uXv-Rb-pOX"/>
+                            <constraint firstItem="9Kd-0K-55R" firstAttribute="leading" secondItem="N7b-ac-9Qs" secondAttribute="leading" constant="20" id="vat-FY-Mgb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N7b-ac-9Qs"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wgu-e8-Fmt"/>
                     <connections>
                         <outlet property="resultLabel" destination="4tb-1K-Zmr" id="fB2-Qq-GfA"/>
+                        <outlet property="totalAmountTerm" destination="9Kd-0K-55R" id="jfl-4r-omE"/>
+                        <outlet property="totalInterestLabel" destination="ypd-aG-Q9k" id="Hgs-Sd-ZDc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBe-Cb-T9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="210"/>
+            <point key="canvasLocation" x="942.02898550724649" y="209.59821428571428"/>
         </scene>
     </scenes>
     <resources>

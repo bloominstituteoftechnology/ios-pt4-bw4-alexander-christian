@@ -11,18 +11,36 @@ import UIKit
 class ResultsViewController: UIViewController {
     
     var totalAmount: Float?
+    var totalInterest: Float?
+    var totalYearsTerm: Float?
     
     @IBOutlet weak var resultLabel: UILabel!
+    @IBOutlet weak var totalInterestLabel: UILabel!
+    @IBOutlet weak var totalAmountTerm: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //NotificationCenter.default.addObserver(self, selector: #selector(didGetNotification(_:)), name: Notification.Name("Result"), object: nil)
         if let total = totalAmount {
-            resultLabel.text = "$\(total)"
+            let myNewtotal = String(format: "%.2f", total)
+            resultLabel.text = "$\(myNewtotal)"
+        }
+        
+        if let myTotalInterest = totalInterest {
+            let myNewTotalInterest = String(format: "%.2f", myTotalInterest)
+            totalInterestLabel.text = "$\(myNewTotalInterest)"
+        }
+        
+        if let myTotalTerm = totalYearsTerm {
+            let myNewTotalTerm = String(format: "%.0f", myTotalTerm)
+            totalAmountTerm.text = "\(myNewTotalTerm)"
         }
         
     }
+    
     
     @objc func didGetNotification(_ notification: Notification) {
         let totalAmount = notification.object as! String?

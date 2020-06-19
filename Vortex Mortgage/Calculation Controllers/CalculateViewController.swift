@@ -14,10 +14,10 @@ struct CalcValue {
 
 class CalculateViewController: UIViewController {
     
-    var totalAmount: Float = 0
-    var totalInterest: Float = 0
-    var totalYearsTerm: Float = 0
-    var totalPayment: Float = 0
+    var totalAmount: Float = 0.0
+    var totalInterest: Float = 0.0
+    var totalYearsTerm: Float = 0.0
+    var totalPayment: Float = 0.0
     
     //Outlets:
     @IBOutlet weak var homePriceTextField: UITextField!
@@ -53,18 +53,17 @@ class CalculateViewController: UIViewController {
         guard let downPayment = downPaymentTextField.text, !downPayment.isEmpty, let downPaymentNumber = Float(downPayment) else { return }
         let mortgageTermSliderAmount = mortgageTermSlider.value
         let mortgageInterestRateAmount = mortgageInterestSlider.value
-        
         let totalLoan = homeValueNumber - downPaymentNumber
         let calculateInterest = mortgageInterestRateAmount / 100 / 1.5 * totalLoan
-        
         let totalAmountLoan = calculateInterest * mortgageInterestRateAmount + totalLoan
+        let convertedTerm = mortgageTermSliderAmount * 12
         //let currencyConversion = convertFloatToCurrency(amount: totalAmountLoan)
         
         //Getting the totals to pass on.
         totalAmount = totalAmountLoan
         totalInterest = calculateInterest
         totalYearsTerm = mortgageTermSliderAmount
-        totalPayment = totalAmount / (mortgageTermSliderAmount * 12)
+        totalPayment = (totalAmount / convertedTerm)
         
         NotificationCenter.default.post(name: Notification.Name("Result"), object: totalAmount)
         self.performSegue(withIdentifier: "goToResults", sender: self)

@@ -45,14 +45,13 @@ class ResultsViewController: UIViewController {
             let myNewTotalPayment = String(format: "%.02", myTotalPayment)
             totalMonthlyPayment.text = "$\(myNewTotalPayment)"
         }
-        
     }
     
     
-    @objc func didGetNotification(_ notification: Notification) {
-        let totalAmount = notification.object as! String?
-        resultLabel.text = totalAmount
-    }
+//    @objc func didGetNotification(_ notification: Notification) {
+//        let totalAmount = notification.object as! String?
+//        resultLabel.text = totalAmount
+//    }
     
     
     @IBAction func recalculateButtonPressed(_ sender: UIButton) {

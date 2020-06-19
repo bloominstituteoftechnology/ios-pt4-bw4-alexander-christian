@@ -12,8 +12,9 @@
 		1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD882499E02500183547 /* OnboardingThreeViewController.swift */; };
 		174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAED249C29C2004E768F /* CalculateViewController.swift */; };
 		174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAEF249C29CA004E768F /* ResultsViewController.swift */; };
-		1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6C249ADE7F005EE536 /* ViewController.swift */; };
 		1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */; };
+		1F8BA316249D67F30080022D /* Mortgage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BA315249D67F30080022D /* Mortgage.swift */; };
+		1F8BA319249D686A0080022D /* CalculationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F8BA318249D686A0080022D /* CalculationController.swift */; };
 		1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC77382499C11100ACCDB9 /* AppDelegate.swift */; };
 		1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */; };
 		1FBC77402499C11100ACCDB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC773E2499C11100ACCDB9 /* Main.storyboard */; };
@@ -30,8 +31,9 @@
 		1734DD882499E02500183547 /* OnboardingThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThreeViewController.swift; sourceTree = "<group>"; };
 		174ADAED249C29C2004E768F /* CalculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		174ADAEF249C29CA004E768F /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		1F4F0B6C249ADE7F005EE536 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1F8BA315249D67F30080022D /* Mortgage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mortgage.swift; sourceTree = "<group>"; };
+		1F8BA318249D686A0080022D /* CalculationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationController.swift; sourceTree = "<group>"; };
 		1FBC77352499C11100ACCDB9 /* Vortex Mortgage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vortex Mortgage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBC77382499C11100ACCDB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,31 +57,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1734DD832499DB0B00183547 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				1734DD842499DBE800183547 /* OnboardingOneViewController.swift */,
-				1734DD862499E01200183547 /* OnboardingTwoViewController.swift */,
-				1734DD882499E02500183547 /* OnboardingThreeViewController.swift */,
-				1F4F0B6C249ADE7F005EE536 /* ViewController.swift */,
-				1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		174ADAEC249C29A9004E768F /* Calculation Controllers */ = {
+		174ADAEC249C29A9004E768F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				174ADAED249C29C2004E768F /* CalculateViewController.swift */,
 				174ADAEF249C29CA004E768F /* ResultsViewController.swift */,
+				1734DD842499DBE800183547 /* OnboardingOneViewController.swift */,
+				1734DD862499E01200183547 /* OnboardingTwoViewController.swift */,
+				1734DD882499E02500183547 /* OnboardingThreeViewController.swift */,
+				1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */,
 			);
-			path = "Calculation Controllers";
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1F8BA317249D684B0080022D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1F8BA315249D67F30080022D /* Mortgage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1F8BA31A249D6A0E0080022D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1F8BA318249D686A0080022D /* CalculationController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		1FBC772C2499C11100ACCDB9 = {
 			isa = PBXGroup;
 			children = (
-				174ADAEC249C29A9004E768F /* Calculation Controllers */,
 				1FBC77372499C11100ACCDB9 /* Vortex Mortgage */,
 				1FBC77362499C11100ACCDB9 /* Products */,
 			);
@@ -96,11 +105,13 @@
 		1FBC77372499C11100ACCDB9 /* Vortex Mortgage */ = {
 			isa = PBXGroup;
 			children = (
-				1734DD832499DB0B00183547 /* Controllers */,
-				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
+				1F8BA317249D684B0080022D /* Models */,
+				1F8BA31A249D6A0E0080022D /* Controllers */,
+				174ADAEC249C29A9004E768F /* ViewControllers */,
 				1FBC775B2499C80A00ACCDB9 /* Storyboards */,
 				1FBC77412499C11400ACCDB9 /* Assets.xcassets */,
 				1FBC77432499C11400ACCDB9 /* LaunchScreen.storyboard */,
+				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
 				1FBC77382499C11100ACCDB9 /* AppDelegate.swift */,
 				1FBC77462499C11400ACCDB9 /* Info.plist */,
 			);
@@ -193,10 +204,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */,
-				1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */,
+				1F8BA319249D686A0080022D /* CalculationController.swift in Sources */,
 				1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */,
 				1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */,
 				1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */,
+				1F8BA316249D67F30080022D /* Mortgage.swift in Sources */,
 				174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */,
 				174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */,
 				1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */,

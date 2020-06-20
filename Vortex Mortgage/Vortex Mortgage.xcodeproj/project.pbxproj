@@ -12,8 +12,11 @@
 		1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD882499E02500183547 /* OnboardingThreeViewController.swift */; };
 		174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAED249C29C2004E768F /* CalculateViewController.swift */; };
 		174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAEF249C29CA004E768F /* ResultsViewController.swift */; };
-		1F101BF8249E68A700F6A835 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101BF7249E68A700F6A835 /* PieChartView.swift */; };
-		1F101BFA249E68BA00F6A835 /* PieChartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F101BF9249E68BA00F6A835 /* PieChartView.xib */; };
+		1F101C26249E83CA00F6A835 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C25249E83CA00F6A835 /* Test.swift */; };
+		1F101C2C249E9A3500F6A835 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C28249E9A3500F6A835 /* PieChartView.swift */; };
+		1F101C2D249E9A3500F6A835 /* PieChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C29249E9A3500F6A835 /* PieChartRow.swift */; };
+		1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2A249E9A3500F6A835 /* PieChartCell.swift */; };
+		1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2F249E9E3200F6A835 /* Helpers.swift */; };
 		1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6C249ADE7F005EE536 /* ViewController.swift */; };
 		1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */; };
 		1F9BF6C3249C66570083F051 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C2249C66570083F051 /* Profile.storyboard */; };
@@ -35,8 +38,11 @@
 		1734DD882499E02500183547 /* OnboardingThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThreeViewController.swift; sourceTree = "<group>"; };
 		174ADAED249C29C2004E768F /* CalculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		174ADAEF249C29CA004E768F /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		1F101BF7249E68A700F6A835 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
-		1F101BF9249E68BA00F6A835 /* PieChartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PieChartView.xib; sourceTree = "<group>"; };
+		1F101C25249E83CA00F6A835 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		1F101C28249E9A3500F6A835 /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
+		1F101C29249E9A3500F6A835 /* PieChartRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartRow.swift; sourceTree = "<group>"; };
+		1F101C2A249E9A3500F6A835 /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
+		1F101C2F249E9E3200F6A835 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		1F4F0B6C249ADE7F005EE536 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vortex Mortgage.entitlements"; sourceTree = "<group>"; };
@@ -77,6 +83,11 @@
 				1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */,
 				174ADAED249C29C2004E768F /* CalculateViewController.swift */,
 				174ADAEF249C29CA004E768F /* ResultsViewController.swift */,
+				1F101C25249E83CA00F6A835 /* Test.swift */,
+				1F101C2A249E9A3500F6A835 /* PieChartCell.swift */,
+				1F101C29249E9A3500F6A835 /* PieChartRow.swift */,
+				1F101C28249E9A3500F6A835 /* PieChartView.swift */,
+				1F101C2F249E9E3200F6A835 /* Helpers.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -92,7 +103,6 @@
 		1FBC772C2499C11100ACCDB9 = {
 			isa = PBXGroup;
 			children = (
-				1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */,
 				1FBC77372499C11100ACCDB9 /* Vortex Mortgage */,
 				1FBC77362499C11100ACCDB9 /* Products */,
 			);
@@ -109,6 +119,7 @@
 		1FBC77372499C11100ACCDB9 /* Vortex Mortgage */ = {
 			isa = PBXGroup;
 			children = (
+				1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */,
 				1734DD832499DB0B00183547 /* ViewControllers */,
 				1FBC775B2499C80A00ACCDB9 /* Storyboards */,
 				1F9BF6C8249C7F480083F051 /* Helpers */,
@@ -116,8 +127,6 @@
 				1FBC77412499C11400ACCDB9 /* Assets.xcassets */,
 				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
 				1FBC77382499C11100ACCDB9 /* AppDelegate.swift */,
-				1F101BF7249E68A700F6A835 /* PieChartView.swift */,
-				1F101BF9249E68BA00F6A835 /* PieChartView.xib */,
 				1FBC77462499C11400ACCDB9 /* Info.plist */,
 			);
 			path = "Vortex Mortgage";
@@ -197,7 +206,6 @@
 				1FBC77582499C7F900ACCDB9 /* Dashboard.storyboard in Resources */,
 				1FBC77422499C11400ACCDB9 /* Assets.xcassets in Resources */,
 				1FBC775A2499C80100ACCDB9 /* Settings.storyboard in Resources */,
-				1F101BFA249E68BA00F6A835 /* PieChartView.xib in Resources */,
 				1FBC77402499C11100ACCDB9 /* Main.storyboard in Resources */,
 				1F9BF6C3249C66570083F051 /* Profile.storyboard in Resources */,
 				1FBC77562499C7F000ACCDB9 /* Onboarding.storyboard in Resources */,
@@ -211,16 +219,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F101BF8249E68A700F6A835 /* PieChartView.swift in Sources */,
+				1F101C2C249E9A3500F6A835 /* PieChartView.swift in Sources */,
 				1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */,
 				1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */,
 				1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */,
 				1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */,
 				1F9BF6C7249C7A930083F051 /* KeychainHelper.swift in Sources */,
+				1F101C2D249E9A3500F6A835 /* PieChartRow.swift in Sources */,
+				1F101C26249E83CA00F6A835 /* Test.swift in Sources */,
 				1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */,
 				174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */,
 				174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */,
+				1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */,
 				1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */,
+				1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */,
 				1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */,
 				1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */,
 			);
@@ -376,6 +388,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ChristianLorenzo.Vortex-Mortgage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -395,6 +408,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ChristianLorenzo.Vortex-Mortgage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

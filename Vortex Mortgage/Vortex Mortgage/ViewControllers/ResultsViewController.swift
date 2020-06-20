@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ResultsViewController: UIViewController {
     
@@ -23,6 +24,12 @@ class ResultsViewController: UIViewController {
         }
         
     }
+    
+    @IBSegueAction func swiftUIAction(_ coder: NSCoder) -> UIViewController? {
+        return UIHostingController(coder: coder, rootView: PieChartView(data:[56,78,53,65,54], title: "SwiftUI", legend: "Legend"))
+    }
+    
+    
     
     @objc func didGetNotification(_ notification: Notification) {
         let totalAmount = notification.object as! String?

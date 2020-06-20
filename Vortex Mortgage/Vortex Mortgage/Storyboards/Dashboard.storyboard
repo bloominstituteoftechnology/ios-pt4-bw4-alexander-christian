@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ejc-9m-R8x">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RDd-Yp-ov5">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -19,13 +19,30 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ZxN-1v-xEc" kind="relationship" relationship="viewControllers" id="dKu-UC-e5n"/>
-                        <segue destination="qxo-BR-OOT" kind="relationship" relationship="viewControllers" id="dm9-DY-8Eg"/>
+                        <segue destination="ejc-9m-R8x" kind="relationship" relationship="viewControllers" id="Tvg-ST-Ho4"/>
+                        <segue destination="lLg-25-1JL" kind="relationship" relationship="viewControllers" id="4XJ-p8-fG4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Gb-fv-JQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-699" y="-202"/>
+            <point key="canvasLocation" x="-893" y="-191"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="4dh-h5-vFC">
+            <objects>
+                <navigationController id="lLg-25-1JL" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="vfY-v0-LRU"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VfA-PJ-dln">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ZxN-1v-xEc" kind="relationship" relationship="rootViewController" id="oWQ-0J-QGj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v0k-Ww-UbE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="-467"/>
         </scene>
         <!--Item-->
         <scene sceneID="AOk-At-uWI">
@@ -63,23 +80,24 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCS-dE-7yd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="225" y="-496"/>
+            <point key="canvasLocation" x="686" y="-524"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="gCX-Ty-aMP">
             <objects>
                 <navigationController id="ejc-9m-R8x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="wZb-GR-uco"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YkD-DO-g0M">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="RDd-Yp-ov5" kind="relationship" relationship="rootViewController" id="dFK-eu-7gB"/>
+                        <segue destination="qxo-BR-OOT" kind="relationship" relationship="rootViewController" id="ly1-Ei-xef"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EI9-pE-LfJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1486" y="-202"/>
+            <point key="canvasLocation" x="-7" y="181"/>
         </scene>
         <!--Item-->
         <scene sceneID="lPD-bz-wQL">
@@ -166,6 +184,7 @@
                                 <state key="normal" title="Calculate Your Payment"/>
                                 <connections>
                                     <action selector="calculatePaymentPressed:" destination="qxo-BR-OOT" eventType="touchUpInside" id="JTt-N2-pb6"/>
+                                    <segue destination="SB1-EY-P3A" kind="show" identifier="goToResults" id="U95-MQ-uGa"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Down Payment Here $" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7l-qr-5pQ">
@@ -216,6 +235,7 @@
                         <viewLayoutGuide key="safeArea" id="4oR-Km-qaj"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="divide.circle.fill" catalog="system" id="HYn-uk-rGc"/>
+                    <navigationItem key="navigationItem" id="J8B-P7-xYK"/>
                     <connections>
                         <outlet property="downPaymentTextField" destination="L7l-qr-5pQ" id="5Gz-Gm-jKp"/>
                         <outlet property="homePriceTextField" destination="d5Q-HV-rFe" id="c4C-Vx-sL0"/>
@@ -223,12 +243,11 @@
                         <outlet property="mortgageInterestSlider" destination="Jnc-YW-fsX" id="Vj1-Ht-p0W"/>
                         <outlet property="mortgageTermLabel" destination="gq3-wq-4Ah" id="x4h-9W-Tp6"/>
                         <outlet property="mortgageTermSlider" destination="Kyg-rT-bgU" id="6ux-5Q-AF5"/>
-                        <segue destination="SB1-EY-P3A" kind="modal" identifier="goToResults" modalPresentationStyle="fullScreen" id="OXd-Vn-Hr1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaz-70-GOk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="225" y="210"/>
+            <point key="canvasLocation" x="704" y="188"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="N5V-FR-trc">
@@ -239,13 +258,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Total Loan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJ2-nD-tdp">
-                                <rect key="frame" x="16" y="132" width="382" height="36"/>
+                                <rect key="frame" x="16" y="176" width="382" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AMount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4tb-1K-Zmr">
-                                <rect key="frame" x="16" y="188" width="382" height="52"/>
+                                <rect key="frame" x="16" y="232" width="382" height="52"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="ueg-Qo-Hil"/>
                                 </constraints>
@@ -254,7 +273,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8C-UB-Fz9">
-                                <rect key="frame" x="50" y="662" width="314" height="36"/>
+                                <rect key="frame" x="50" y="706" width="314" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Recalculate"/>
                                 <connections>
@@ -276,14 +295,30 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="N7b-ac-9Qs"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Wgu-e8-Fmt"/>
+                    <navigationItem key="navigationItem" id="Wgu-e8-Fmt">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="JvZ-aG-Cld">
+                            <connections>
+                                <segue destination="PRx-Zx-6t5" kind="show" destinationCreationSelector="swiftUIAction:" id="c46-1i-eSS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="resultLabel" destination="4tb-1K-Zmr" id="fB2-Qq-GfA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBe-Cb-T9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="978" y="210"/>
+            <point key="canvasLocation" x="1449" y="188"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="265-m1-W4W">
+            <objects>
+                <hostingController id="PRx-Zx-6t5" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="coc-rq-AE0"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SeO-ws-gWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2432" y="188"/>
         </scene>
     </scenes>
     <resources>

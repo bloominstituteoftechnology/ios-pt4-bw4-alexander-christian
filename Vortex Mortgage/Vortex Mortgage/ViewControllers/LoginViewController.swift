@@ -18,12 +18,11 @@ class LoginViewController: UIViewController {
 
 
     
-    @IBOutlet var appleButtonStackView: ASAuthorizationAppleIDButton!
+    @IBOutlet var appleButtonStackView: UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProviderLoginView()
-        setUI()
 
     }
 
@@ -40,11 +39,11 @@ class LoginViewController: UIViewController {
         
         
     
-    func setupProviderLoginView() -> ASAuthorizationAppleIDButton {
+    func setupProviderLoginView() {
         let appleButton = ASAuthorizationAppleIDButton()
         appleButton.addTarget(self, action: #selector(handleAuthorization), for: .touchUpInside)
-
-        return appleButton
+        
+        appleButtonStackView.addArrangedSubview(appleButton)
     }
     
     @objc func handleAuthorization() {
@@ -157,9 +156,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        if (error as NSError).code != 1001 {
-            appleSignInBlock?(nil, error.localizedDescription)
-        }
+        print(error.localizedDescription)
     }
 }
 
@@ -179,46 +176,5 @@ extension UIViewController {
             loginViewController.isModalInPresentation = true
             self.present(loginViewController, animated: true, completion: nil)
         }
-    }
-}
-
-extension LoginViewController {
-    func startAnimatingPressActions() {
-        appleButtonStackView.addTarget(self, action: #selector(animateDown), for: [.touchDown, .touchDragEnter])
-        appleButtonStackView.addTarget(self, action: #selector(animateUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
-    }
-    
-    func setUI() {
-        // set button Animation
-        appleButtonStackView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-        startAnimatingPressActions()
-        UIView.animate(withDuration: 2.0,
-                       delay: 0,
-                       usingSpringWithDamping: 0.2,
-                       initialSpringVelocity: 5.0,
-                       options: .allowUserInteraction,
-                       animations: { [weak self] in
-                        self?.appleButtonStackView.transform = .identity
-            },
-                       completion: nil)
-    }
-    
-    @objc private func animateDown(sender: UIButton) {
-        animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95))
-    }
-    
-    @objc private func animateUp(sender: UIButton) {
-        animate(sender, transform: .identity)
-    }
-    
-    private func animate(_ button: UIButton, transform: CGAffineTransform) {
-        UIView.animate(withDuration: 0.4,
-                       delay: 0,
-                       usingSpringWithDamping: 0.5,
-                       initialSpringVelocity: 3,
-                       options: [.curveEaseInOut],
-                       animations: {
-                        button.transform = transform
-        }, completion: nil)
     }
 }

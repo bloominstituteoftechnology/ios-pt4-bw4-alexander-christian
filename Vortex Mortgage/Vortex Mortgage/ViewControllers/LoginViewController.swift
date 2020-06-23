@@ -9,25 +9,42 @@
 import UIKit
 import AuthenticationServices
 
+typealias AppleSignInBlock = ((_ userInfo:AppleInfoModel?,_ errorMessge:String?)->())?
+
+
 class LoginViewController: UIViewController {
     
-@IBOutlet var appleButtonStackView: UIStackView!
+    var appleSignInBlock: AppleSignInBlock!
+
+
+    
+    @IBOutlet var appleButtonStackView: ASAuthorizationAppleIDButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupProviderLoginView()
+        setUI()
 
     }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         performExistingAccountSetupFlows()
+        
     }
     
-    func setupProviderLoginView() {
+    
+    
+    
+        
+        
+    
+    func setupProviderLoginView() -> ASAuthorizationAppleIDButton {
         let appleButton = ASAuthorizationAppleIDButton()
         appleButton.addTarget(self, action: #selector(handleAuthorization), for: .touchUpInside)
-        self.appleButtonStackView.addArrangedSubview(appleButton)
+
+        return appleButton
     }
     
     @objc func handleAuthorization() {
@@ -62,21 +79,33 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             switch authorization.credential {
             case let appleIDCredential as ASAuthorizationAppleIDCredential:
                 let userIdentifier = appleIDCredential.user
-                let fullName = appleIDCredential.fullName
-                let email = appleIDCredential.email
-//                print("Users name is \(fullName!), users email is \(email!).")
+                let firstName = appleIDCredential.fullName?.givenName ?? KeychainItem.firstName ?? ""
+                let lastName = appleIDCredential.fullName?.familyName ?? KeychainItem.lastName ?? ""
+                let email = appleIDCredential.email ?? KeychainItem.email ?? ""
+                
+                let fullName = firstName + " " + lastName
+                
+                KeychainItem.userid = userIdentifier
+                KeychainItem.firstName = firstName
+                KeychainItem.lastName = lastName
+                KeychainItem.email = email
+                
+                let userInfo = AppleInfoModel(userid: userIdentifier, email: email, firstName: firstName, lastName: lastName, fullName: fullName)
+                
+                print(userInfo)
                 
                 // Save user in keychain
                 self.saveUserInKeychain(userIdentifier)
                 
-                self.passDataToProfileViewController(userIdentifier: userIdentifier, fullName: fullName, email: email)
+               
+                
+                self.passDataToProfileViewController(userIdentifier: userIdentifier, fullName: firstName, email: email)
                 
             case let passwordCredential as ASPasswordCredential:
                 
                 // Sign in using an existing iCloud Keychain credential.
                 let username = passwordCredential.user
                 let password = passwordCredential.password
-                print("Username: \(username), Password: \(password.removingPercentEncoding!)")
                 
                 // For testing purposes create an alert to check everything
                 DispatchQueue.main.async {
@@ -87,30 +116,33 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             }
         }
     
-    private func passDataToProfileViewController(userIdentifier: String, fullName: PersonNameComponents?, email: String?) {
+    private func passDataToProfileViewController(userIdentifier: String?, fullName: String?, email: String?) {
         guard let viewController = self.presentingViewController as? ProfileViewController else { return }
         
         DispatchQueue.main.async {
             
-            if let givenName = fullName?.givenName {
-                viewController.firstName.text = givenName
+            if let id = userIdentifier {
+                viewController.id.text = id
             }
             
-            if let familyName = fullName?.familyName {
-                viewController.nameLabel.text = familyName
-            }
+            viewController.firstName.text = fullName
+            
+            
             
             if let email = email {
                 viewController.emailLabel.text = email
+
             }
             self.dismiss(animated: true, completion: nil)
+            
+            
         }
     }
     
     
     private func saveUserInKeychain(_ userIdentifier: String) {
         do {
-            try KeychainItem(service: "com.ChristianLorenzo.Vortex-Mortgage", account: "userIdentifier").saveItem(userIdentifier)
+            try KeychainItem(service: "VortexMortgage", account: "userIdentifier").saveItem(userIdentifier)
         } catch {
             print("Unable to save user identifier to keychain")
         }
@@ -125,7 +157,9 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
     }
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        // Handle error
+        if (error as NSError).code != 1001 {
+            appleSignInBlock?(nil, error.localizedDescription)
+        }
     }
 }
 
@@ -141,9 +175,50 @@ extension UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         if let loginViewController = storyboard.instantiateViewController(withIdentifier: "loginViewController") as?
             LoginViewController {
-            loginViewController.modalPresentationStyle = .formSheet
+            loginViewController.modalPresentationStyle = .fullScreen
             loginViewController.isModalInPresentation = true
             self.present(loginViewController, animated: true, completion: nil)
         }
+    }
+}
+
+extension LoginViewController {
+    func startAnimatingPressActions() {
+        appleButtonStackView.addTarget(self, action: #selector(animateDown), for: [.touchDown, .touchDragEnter])
+        appleButtonStackView.addTarget(self, action: #selector(animateUp), for: [.touchDragExit, .touchCancel, .touchUpInside, .touchUpOutside])
+    }
+    
+    func setUI() {
+        // set button Animation
+        appleButtonStackView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
+        startAnimatingPressActions()
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 5.0,
+                       options: .allowUserInteraction,
+                       animations: { [weak self] in
+                        self?.appleButtonStackView.transform = .identity
+            },
+                       completion: nil)
+    }
+    
+    @objc private func animateDown(sender: UIButton) {
+        animate(sender, transform: CGAffineTransform.identity.scaledBy(x: 0.95, y: 0.95))
+    }
+    
+    @objc private func animateUp(sender: UIButton) {
+        animate(sender, transform: .identity)
+    }
+    
+    private func animate(_ button: UIButton, transform: CGAffineTransform) {
+        UIView.animate(withDuration: 0.4,
+                       delay: 0,
+                       usingSpringWithDamping: 0.5,
+                       initialSpringVelocity: 3,
+                       options: [.curveEaseInOut],
+                       animations: {
+                        button.transform = transform
+        }, completion: nil)
     }
 }

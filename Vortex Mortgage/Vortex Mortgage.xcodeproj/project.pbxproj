@@ -17,6 +17,7 @@
 		1F101C2D249E9A3500F6A835 /* PieChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C29249E9A3500F6A835 /* PieChartRow.swift */; };
 		1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2A249E9A3500F6A835 /* PieChartCell.swift */; };
 		1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2F249E9E3200F6A835 /* Helpers.swift */; };
+		1F2AC68824A1D00800E6F0C5 /* AppleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F2AC68724A1D00800E6F0C5 /* AppleSignIn.swift */; };
 		1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6C249ADE7F005EE536 /* ViewController.swift */; };
 		1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */; };
 		1F9BF6C3249C66570083F051 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C2249C66570083F051 /* Profile.storyboard */; };
@@ -43,6 +44,7 @@
 		1F101C29249E9A3500F6A835 /* PieChartRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartRow.swift; sourceTree = "<group>"; };
 		1F101C2A249E9A3500F6A835 /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
 		1F101C2F249E9E3200F6A835 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		1F2AC68724A1D00800E6F0C5 /* AppleSignIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignIn.swift; sourceTree = "<group>"; };
 		1F4F0B6C249ADE7F005EE536 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vortex Mortgage.entitlements"; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				1FBC77412499C11400ACCDB9 /* Assets.xcassets */,
 				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
 				1FBC77382499C11100ACCDB9 /* AppDelegate.swift */,
+				1F2AC68724A1D00800E6F0C5 /* AppleSignIn.swift */,
 				1FBC77462499C11400ACCDB9 /* Info.plist */,
 			);
 			path = "Vortex Mortgage";
@@ -221,6 +224,7 @@
 			files = (
 				1F101C2C249E9A3500F6A835 /* PieChartView.swift in Sources */,
 				1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */,
+				1F2AC68824A1D00800E6F0C5 /* AppleSignIn.swift in Sources */,
 				1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */,
 				1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */,
 				1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */,

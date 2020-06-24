@@ -15,3 +15,5 @@ struct AppleInfoModel {
     let lastName:String
     let fullName:String
 }
+
+// adding a change

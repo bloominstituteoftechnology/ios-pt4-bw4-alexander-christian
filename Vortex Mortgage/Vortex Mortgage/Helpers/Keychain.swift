@@ -19,6 +19,7 @@ struct KeychainItem {
     
     // MARK: Properties
     
+    
     let service: String
     
     private(set) var account: String
@@ -32,6 +33,7 @@ struct KeychainItem {
         self.account = account
         self.accessGroup = accessGroup
     }
+    
     
     // MARK: Keychain access
     
@@ -120,7 +122,7 @@ struct KeychainItem {
     
     static var currentUserIdentifier: String {
         do {
-            let storedIdentifier = try KeychainItem(service: "com.ChristianLorenzo.Vortex-Mortgage", account: "userIdentifier").readItem()
+            let storedIdentifier = try KeychainItem(service: bundleIdentifier, account: "userIdentifier").readItem()
             return storedIdentifier
             
         } catch {
@@ -130,9 +132,88 @@ struct KeychainItem {
     
     static func deleteUserIdentifierFromKeychain() {
         do {
-            try KeychainItem(service: "com.ChristianLorenzo.Vortex-Mortgage", account: "userIdentifier").deleteItem()
+            try KeychainItem(service: bundleIdentifier, account: "userIdentifier").deleteItem()
         } catch {
             print("Unable to delete userIdentifier from keychain unfortunatly")
         }
     }
 }
+
+extension KeychainItem {
+    static var bundleIdentifier: String {
+        return Bundle.main.bundleIdentifier ?? "com.ChristianLorenzo.Vortex-Mortgage"
+    }
+    
+    static var userid: String? {
+        get {
+            return try? KeychainItem(service: bundleIdentifier, account: "userid").readItem()
+        }
+        set {
+            guard let value = newValue else {
+                try? KeychainItem(service: bundleIdentifier, account: "userid").deleteItem()
+                return
+            }
+            do {
+                try KeychainItem(service: bundleIdentifier, account: "userid").saveItem(value)
+            } catch {
+                print("Unable to save userIdentifier to keychain.")
+            }
+        }
+    }
+    
+    //Get and Set Current User First Name. Set nil to delete.
+    static var firstName: String? {
+        get {
+            return try? KeychainItem(service: bundleIdentifier, account: "firstName").readItem()
+        }
+        set {
+            guard let value = newValue else {
+                try? KeychainItem(service: bundleIdentifier, account: "firstName").deleteItem()
+                return
+            }
+            do {
+                try KeychainItem(service: bundleIdentifier, account: "firstName").saveItem(value)
+            } catch {
+                print("Unable to save userFirstName to keychain.")
+            }
+        }
+    }
+    
+    //Get and Set Current User Last Name. Set nil to delete.
+    static var lastName: String? {
+        get {
+            return try? KeychainItem(service: bundleIdentifier, account: "lastName").readItem()
+        }
+        set {
+            guard let value = newValue else {
+                try? KeychainItem(service: bundleIdentifier, account: "lastName").deleteItem()
+                return
+            }
+            do {
+                try KeychainItem(service: bundleIdentifier, account: "lastName").saveItem(value)
+            } catch {
+                print("Unable to save userLastName to keychain.")
+            }
+        }
+    }
+    
+    
+    //Get and Set Current User Email. Set nil to delete.
+    static var email: String? {
+        get {
+            return try? KeychainItem(service: bundleIdentifier, account: "email").readItem()
+        }
+        set {
+            guard let value = newValue else {
+                try? KeychainItem(service: bundleIdentifier, account: "email").deleteItem()
+                return
+            }
+            do {
+                try KeychainItem(service: bundleIdentifier, account: "email").saveItem(value)
+            } catch {
+                print("Unable to save userEmail to keychain.")
+            }
+        }
+    }
+}
+

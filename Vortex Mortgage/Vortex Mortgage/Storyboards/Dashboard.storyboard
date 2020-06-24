@@ -80,6 +80,8 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCS-dE-7yd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+
+
             <point key="canvasLocation" x="686" y="-524"/>
         </scene>
         <!--Item-->

@@ -10,10 +10,9 @@ import UIKit
 import AuthenticationServices
 
 class ProfileViewController: UIViewController {
-    @IBOutlet var nameLabel: UILabel!
     @IBOutlet var emailLabel: UILabel!
-    @IBOutlet var myTitle: UINavigationItem!
     @IBOutlet var firstName: UILabel!
+    @IBOutlet var id: UILabel!
     
     
     
@@ -27,8 +26,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func signOutPressed() {
-        KeychainItem.deleteUserIdentifierFromKeychain()
-        nameLabel.text = ""
+        firstName.text = ""
         emailLabel.text = ""
         
         DispatchQueue.main.async {

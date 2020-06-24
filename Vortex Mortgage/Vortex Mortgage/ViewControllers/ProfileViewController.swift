@@ -21,7 +21,6 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         DispatchQueue.main.async {
             self.showLoginViewController()
-            
         }
     }
     

@@ -31,6 +31,7 @@
 		1FBE82F224A2F4FF00C6752E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F124A2F4FF00C6752E /* Keychain.swift */; };
 		1FBE82F424A2F51F00C6752E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F324A2F51E00C6752E /* LoginViewController.swift */; };
 		1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F524A2F53800C6752E /* AppleSignIn.swift */; };
+		1FBE82F824A3025400C6752E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F724A3025400C6752E /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		1FBE82F124A2F4FF00C6752E /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		1FBE82F324A2F51E00C6752E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../../../../../Desktop/test/test/LoginViewController.swift; sourceTree = "<group>"; };
 		1FBE82F524A2F53800C6752E /* AppleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignIn.swift; sourceTree = "<group>"; };
+		1FBE82F724A3025400C6752E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +87,11 @@
 				1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */,
 				174ADAED249C29C2004E768F /* CalculateViewController.swift */,
 				174ADAEF249C29CA004E768F /* ResultsViewController.swift */,
+				1FBE82F724A3025400C6752E /* HomeViewController.swift */,
 				1F101C25249E83CA00F6A835 /* Test.swift */,
 				1F101C2A249E9A3500F6A835 /* PieChartCell.swift */,
 				1F101C29249E9A3500F6A835 /* PieChartRow.swift */,
 				1F101C28249E9A3500F6A835 /* PieChartView.swift */,
-				1F101C2F249E9E3200F6A835 /* Helpers.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBE82F124A2F4FF00C6752E /* Keychain.swift */,
+				1F101C2F249E9E3200F6A835 /* Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */,
 				1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */,
 				1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */,
+				1FBE82F824A3025400C6752E /* HomeViewController.swift in Sources */,
 				1FBE82F224A2F4FF00C6752E /* Keychain.swift in Sources */,
 				1F101C2D249E9A3500F6A835 /* PieChartRow.swift in Sources */,
 				1F101C26249E83CA00F6A835 /* Test.swift in Sources */,

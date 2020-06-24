@@ -80,7 +80,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tCS-dE-7yd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="686" y="-524"/>
+            <point key="canvasLocation" x="854" y="-467"/>
         </scene>
         <!--Item-->
         <scene sceneID="gCX-Ty-aMP">
@@ -184,7 +184,6 @@
                                 <state key="normal" title="Calculate Your Payment"/>
                                 <connections>
                                     <action selector="calculatePaymentPressed:" destination="qxo-BR-OOT" eventType="touchUpInside" id="JTt-N2-pb6"/>
-                                    <segue destination="SB1-EY-P3A" kind="show" identifier="goToResults" id="U95-MQ-uGa"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Down Payment Here $" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L7l-qr-5pQ">
@@ -243,11 +242,12 @@
                         <outlet property="mortgageInterestSlider" destination="Jnc-YW-fsX" id="Vj1-Ht-p0W"/>
                         <outlet property="mortgageTermLabel" destination="gq3-wq-4Ah" id="x4h-9W-Tp6"/>
                         <outlet property="mortgageTermSlider" destination="Kyg-rT-bgU" id="6ux-5Q-AF5"/>
+                        <segue destination="2ZK-jI-b6d" kind="modal" identifier="goToResults" modalPresentationStyle="fullScreen" id="lrv-md-v8X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaz-70-GOk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="704" y="188"/>
+            <point key="canvasLocation" x="759" y="181"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="N5V-FR-trc">
@@ -308,7 +308,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mBe-Cb-T9k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1449" y="188"/>
+            <point key="canvasLocation" x="2406" y="181"/>
         </scene>
         <!--Hosting Controller-->
         <scene sceneID="265-m1-W4W">
@@ -318,7 +318,25 @@
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SeO-ws-gWb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2432" y="188"/>
+            <point key="canvasLocation" x="3228.985507246377" y="180.80357142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a5V-AE-Yne">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ZK-jI-b6d" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WnR-Ad-qAB">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SB1-EY-P3A" kind="relationship" relationship="rootViewController" id="3Zx-fG-faO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCs-7W-tnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1600" y="181"/>
         </scene>
     </scenes>
     <resources>

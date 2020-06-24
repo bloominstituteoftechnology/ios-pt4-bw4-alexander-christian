@@ -58,7 +58,7 @@ class CalculateViewController: UIViewController {
         //let currencyConversion = convertFloatToCurrency(amount: totalAmountLoan)
         totalAmount = totalAmountLoan
         
-        NotificationCenter.default.post(name: Notification.Name("Result"), object: totalAmount)
+        //NotificationCenter.default.post(name: Notification.Name("Result"), object: totalAmount)
         self.performSegue(withIdentifier: "goToResults", sender: self)
     }
     
@@ -83,11 +83,10 @@ class CalculateViewController: UIViewController {
      //In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResults" {
-            let destinationVC = segue.destination as! ResultsViewController
+            let destinationVC = segue.destination as! UINavigationController
+            let topResultsVC = destinationVC.topViewController as! ResultsViewController
             //destinationVC.incomingValue = CalcValue.init(value: totalAmountLoan) //totalResult
-            destinationVC.totalAmount = self.totalAmount
+            topResultsVC.totalAmount = self.totalAmount
         }
     }
-
-
 }

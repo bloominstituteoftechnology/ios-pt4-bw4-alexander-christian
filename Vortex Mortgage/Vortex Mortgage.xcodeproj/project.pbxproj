@@ -18,10 +18,8 @@
 		1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2A249E9A3500F6A835 /* PieChartCell.swift */; };
 		1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2F249E9E3200F6A835 /* Helpers.swift */; };
 		1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6C249ADE7F005EE536 /* ViewController.swift */; };
-		1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */; };
 		1F9BF6C3249C66570083F051 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C2249C66570083F051 /* Profile.storyboard */; };
 		1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */; };
-		1F9BF6C7249C7A930083F051 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C6249C7A930083F051 /* KeychainHelper.swift */; };
 		1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC77382499C11100ACCDB9 /* AppDelegate.swift */; };
 		1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */; };
 		1FBC77402499C11100ACCDB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC773E2499C11100ACCDB9 /* Main.storyboard */; };
@@ -30,6 +28,9 @@
 		1FBC77562499C7F000ACCDB9 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77552499C7F000ACCDB9 /* Onboarding.storyboard */; };
 		1FBC77582499C7F900ACCDB9 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77572499C7F900ACCDB9 /* Dashboard.storyboard */; };
 		1FBC775A2499C80100ACCDB9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77592499C80100ACCDB9 /* Settings.storyboard */; };
+		1FBE82F224A2F4FF00C6752E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F124A2F4FF00C6752E /* Keychain.swift */; };
+		1FBE82F424A2F51F00C6752E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F324A2F51E00C6752E /* LoginViewController.swift */; };
+		1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F524A2F53800C6752E /* AppleSignIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,11 +45,9 @@
 		1F101C2A249E9A3500F6A835 /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
 		1F101C2F249E9E3200F6A835 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		1F4F0B6C249ADE7F005EE536 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vortex Mortgage.entitlements"; sourceTree = "<group>"; };
 		1F9BF6C2249C66570083F051 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		1F9BF6C6249C7A930083F051 /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
 		1FBC77352499C11100ACCDB9 /* Vortex Mortgage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Vortex Mortgage.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBC77382499C11100ACCDB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +58,9 @@
 		1FBC77552499C7F000ACCDB9 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		1FBC77572499C7F900ACCDB9 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		1FBC77592499C80100ACCDB9 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		1FBE82F124A2F4FF00C6752E /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		1FBE82F324A2F51E00C6752E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../../../../../Desktop/test/test/LoginViewController.swift; sourceTree = "<group>"; };
+		1FBE82F524A2F53800C6752E /* AppleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +81,7 @@
 				1734DD862499E01200183547 /* OnboardingTwoViewController.swift */,
 				1734DD882499E02500183547 /* OnboardingThreeViewController.swift */,
 				1F4F0B6C249ADE7F005EE536 /* ViewController.swift */,
-				1F4F0B6E249ADE9A005EE536 /* LoginViewController.swift */,
+				1FBE82F324A2F51E00C6752E /* LoginViewController.swift */,
 				1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */,
 				174ADAED249C29C2004E768F /* CalculateViewController.swift */,
 				174ADAEF249C29CA004E768F /* ResultsViewController.swift */,
@@ -95,7 +97,7 @@
 		1F9BF6C8249C7F480083F051 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1F9BF6C6249C7A930083F051 /* KeychainHelper.swift */,
+				1FBE82F124A2F4FF00C6752E /* Keychain.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -126,6 +128,7 @@
 				1FBC77432499C11400ACCDB9 /* LaunchScreen.storyboard */,
 				1FBC77412499C11400ACCDB9 /* Assets.xcassets */,
 				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
+				1FBE82F524A2F53800C6752E /* AppleSignIn.swift */,
 				1FBC77382499C11100ACCDB9 /* AppDelegate.swift */,
 				1FBC77462499C11400ACCDB9 /* Info.plist */,
 			);
@@ -220,11 +223,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F101C2C249E9A3500F6A835 /* PieChartView.swift in Sources */,
-				1F4F0B6F249ADE9A005EE536 /* LoginViewController.swift in Sources */,
 				1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */,
+				1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */,
 				1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */,
 				1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */,
-				1F9BF6C7249C7A930083F051 /* KeychainHelper.swift in Sources */,
+				1FBE82F224A2F4FF00C6752E /* Keychain.swift in Sources */,
 				1F101C2D249E9A3500F6A835 /* PieChartRow.swift in Sources */,
 				1F101C26249E83CA00F6A835 /* Test.swift in Sources */,
 				1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */,
@@ -232,6 +235,7 @@
 				174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */,
 				1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */,
 				1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */,
+				1FBE82F424A2F51F00C6752E /* LoginViewController.swift in Sources */,
 				1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */,
 				1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */,
 				1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */,

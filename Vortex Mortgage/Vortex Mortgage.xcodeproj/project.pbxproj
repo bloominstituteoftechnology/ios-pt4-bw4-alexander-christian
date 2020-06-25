@@ -29,9 +29,13 @@
 		1FBC77582499C7F900ACCDB9 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77572499C7F900ACCDB9 /* Dashboard.storyboard */; };
 		1FBC775A2499C80100ACCDB9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77592499C80100ACCDB9 /* Settings.storyboard */; };
 		1FBE82F224A2F4FF00C6752E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F124A2F4FF00C6752E /* Keychain.swift */; };
-		1FBE82F424A2F51F00C6752E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F324A2F51E00C6752E /* LoginViewController.swift */; };
 		1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F524A2F53800C6752E /* AppleSignIn.swift */; };
+<<<<<<< HEAD
 		1FBE82F824A3025400C6752E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F724A3025400C6752E /* HomeViewController.swift */; };
+||||||| merged common ancestors
+=======
+		1FBE82FA24A30F3B00C6752E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F924A30F3B00C6752E /* LoginViewController.swift */; };
+>>>>>>> main
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,9 +64,13 @@
 		1FBC77572499C7F900ACCDB9 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		1FBC77592499C80100ACCDB9 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		1FBE82F124A2F4FF00C6752E /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		1FBE82F324A2F51E00C6752E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ../../../../../../Desktop/test/test/LoginViewController.swift; sourceTree = "<group>"; };
 		1FBE82F524A2F53800C6752E /* AppleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignIn.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		1FBE82F724A3025400C6752E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+||||||| merged common ancestors
+=======
+		1FBE82F924A30F3B00C6752E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+>>>>>>> main
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +91,7 @@
 				1734DD862499E01200183547 /* OnboardingTwoViewController.swift */,
 				1734DD882499E02500183547 /* OnboardingThreeViewController.swift */,
 				1F4F0B6C249ADE7F005EE536 /* ViewController.swift */,
-				1FBE82F324A2F51E00C6752E /* LoginViewController.swift */,
+				1FBE82F924A30F3B00C6752E /* LoginViewController.swift */,
 				1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */,
 				174ADAED249C29C2004E768F /* CalculateViewController.swift */,
 				174ADAEF249C29CA004E768F /* ResultsViewController.swift */,
@@ -239,7 +247,7 @@
 				174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */,
 				1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */,
 				1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */,
-				1FBE82F424A2F51F00C6752E /* LoginViewController.swift in Sources */,
+				1FBE82FA24A30F3B00C6752E /* LoginViewController.swift in Sources */,
 				1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */,
 				1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */,
 				1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */,

@@ -32,6 +32,7 @@
 		1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F524A2F53800C6752E /* AppleSignIn.swift */; };
 		1FBE82FA24A30F3B00C6752E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F924A30F3B00C6752E /* LoginViewController.swift */; };
 		1FDF700C24A44D88004E8C8D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF700B24A44D88004E8C8D /* HomeViewController.swift */; };
+		1FFD2F4324A458C300BD9817 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFD2F4224A458C300BD9817 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		1FBE82F524A2F53800C6752E /* AppleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignIn.swift; sourceTree = "<group>"; };
 		1FBE82F924A30F3B00C6752E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1FDF700B24A44D88004E8C8D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		1FFD2F4224A458C300BD9817 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				1FBE82F924A30F3B00C6752E /* LoginViewController.swift */,
 				1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */,
 				1FDF700B24A44D88004E8C8D /* HomeViewController.swift */,
+				1FFD2F4224A458C300BD9817 /* SettingsTableViewController.swift */,
 				174ADAED249C29C2004E768F /* CalculateViewController.swift */,
 				174ADAEF249C29CA004E768F /* ResultsViewController.swift */,
 				1F101C25249E83CA00F6A835 /* Test.swift */,
@@ -241,6 +244,7 @@
 				1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */,
 				1FBE82FA24A30F3B00C6752E /* LoginViewController.swift in Sources */,
 				1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */,
+				1FFD2F4324A458C300BD9817 /* SettingsTableViewController.swift in Sources */,
 				1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */,
 				1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */,
 			);

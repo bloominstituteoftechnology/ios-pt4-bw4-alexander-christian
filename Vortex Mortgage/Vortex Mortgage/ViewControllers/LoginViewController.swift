@@ -86,6 +86,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 // Save user in keychain
                 self.saveUserInKeychain(userIdentifier)
                 
+                // dismiss the login view controller since im not landing on the profile vc anymore
                 self.dismiss(animated: true, completion: nil)
                 self.passDataToProfileViewController(userIdentifier: userIdentifier, fullName: firstName, email: email)
                 

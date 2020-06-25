@@ -61,6 +61,7 @@
 		1FBE82F124A2F4FF00C6752E /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		1FBE82F524A2F53800C6752E /* AppleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignIn.swift; sourceTree = "<group>"; };
 		1FBE82F924A30F3B00C6752E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		1FDF700724A439FF004E8C8D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBE82F124A2F4FF00C6752E /* Keychain.swift */,
+				1FDF700724A439FF004E8C8D /* README.md */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

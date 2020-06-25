@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="27.536231884057973" y="117.85714285714285"/>
+            <point key="canvasLocation" x="1004" y="80"/>
         </scene>
         <!--Dashboard-->
         <scene sceneID="SGe-cX-Lhe">
@@ -78,7 +78,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0KR-IQ-rxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="754" y="118"/>
+            <point key="canvasLocation" x="1462" y="51"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="w13-bN-JNI">
@@ -95,6 +95,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVX-kw-73v">
+                                <rect key="frame" x="184" y="589" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="i02-rc-5FD" kind="show" id="7PR-fU-t2W"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="gBn-gH-jb0"/>
@@ -103,6 +111,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SN5-JO-mgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-761" y="118"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="Wzz-N1-Ll5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="i02-rc-5FD" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="g8s-ng-BSa"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f9I-OW-qMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="41" y="64"/>
         </scene>
     </scenes>
     <resources>

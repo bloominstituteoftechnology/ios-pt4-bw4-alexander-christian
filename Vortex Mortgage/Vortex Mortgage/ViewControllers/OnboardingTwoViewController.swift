@@ -25,10 +25,21 @@ class OnboardingTwoViewController: UIViewController {
     /*
     // MARK: - Navigation
 
+<<<<<<< Updated upstream:Vortex Mortgage/Vortex Mortgage/Controllers/OnboardingTwoViewController.swift
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+||||||| merged common ancestors:Vortex Mortgage/Vortex Mortgage/ViewControllers/OnboardingTwoViewController.swift
+    // df sdfsdfsdfsdfa stsdfsspsrsdf(dfesse:sdfStdfosdarddfsdfsdsSegue, sender: Any?) {
+        // sdfsdfGet sdfsdfthe nesf visdfsdfesdfw csdfsdfntroldfsddfsdfsdffer usdsdestidffsation.
+        // Pass the selected object to the new view controller.dsfsdfs
+=======
+    // In a storyboard-basedsdfsdf application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+>>>>>>> Stashed changes:Vortex Mortgage/Vortex Mortgage/ViewControllers/OnboardingTwoViewController.swift
     }
     */
 

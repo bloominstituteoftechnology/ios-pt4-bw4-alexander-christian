@@ -11,48 +11,55 @@
         <scene sceneID="G9v-AI-4lH">
             <objects>
                 <tableViewController id="43d-M8-mn4" customClass="SettingsTableViewController" customModule="Vortex_Mortgage" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tbo-Vf-YXh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="static" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="tbo-Vf-YXh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Jgl-6g-rvT">
-                            <rect key="frame" x="0.0" y="133.5" width="414" height="81"/>
+                            <rect key="frame" x="0.0" y="96" width="414" height="81"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJ6-GN-FRN">
-                                    <rect key="frame" x="161" y="8" width="93" height="38"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xJ6-GN-FRN">
+                                    <rect key="frame" x="139" y="24" width="141" height="35"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.right.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AK1-eH-3i3">
-                                            <rect key="frame" x="1" y="9.5" width="22" height="17"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QV5-ha-79O">
-                                            <rect key="frame" x="23" y="3" width="62" height="30"/>
+                                            <rect key="frame" x="8" y="-3" width="103" height="38"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="KohinoorGujarati-Bold" family="Kohinoor Gujarati" pointSize="17"/>
                                             <state key="normal" title="Logout">
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
+                                            <connections>
+                                                <action selector="logoutPressed:" destination="43d-M8-mn4" eventType="touchUpInside" id="cx5-O1-dec"/>
+                                            </connections>
                                         </button>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.right.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="AK1-eH-3i3">
+                                            <rect key="frame" x="8" y="3.5" width="22" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 </view>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="xJ6-GN-FRN" secondAttribute="bottom" constant="22" id="E1a-wP-Svh"/>
+                                <constraint firstItem="xJ6-GN-FRN" firstAttribute="top" secondItem="Jgl-6g-rvT" secondAttribute="top" constant="24" id="QWG-aA-t8g"/>
+                                <constraint firstItem="xJ6-GN-FRN" firstAttribute="leading" secondItem="Jgl-6g-rvT" secondAttribute="leading" constant="139" id="s1D-Pp-dhF"/>
+                                <constraint firstAttribute="trailing" secondItem="xJ6-GN-FRN" secondAttribute="trailing" constant="134" id="uKO-VR-d0Y"/>
+                            </constraints>
                         </view>
                         <sections>
-                            <tableViewSection headerTitle="😀 Account" id="taM-lz-qCx">
+                            <tableViewSection id="MWk-Dd-8LL">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="fi2-Ap-6o8" rowHeight="60" style="IBUITableViewCellStyleDefault" id="JTi-jR-3JR">
-                                        <rect key="frame" x="0.0" y="55.5" width="414" height="60"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EditProfile" textLabel="fi2-Ap-6o8" rowHeight="60" style="IBUITableViewCellStyleDefault" id="JTi-jR-3JR">
+                                        <rect key="frame" x="20" y="18" width="374" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JTi-jR-3JR" id="5x0-3B-ugA">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="60"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Edit profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fi2-Ap-6o8">
-                                                    <rect key="frame" x="20" y="0.0" width="355" height="60"/>
+                                                    <rect key="frame" x="20" y="0.0" width="315" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -60,8 +67,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <connections>
-                                            <segue destination="1O4-La-knW" kind="show" id="kkh-uE-FAA"/>
+                                            <segue destination="1O4-La-knW" kind="show" id="ibg-4u-Qav"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -73,10 +81,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="1Gd-Oa-anW"/>
+                    <connections>
+                        <outlet property="containerView" destination="Jgl-6g-rvT" id="6qy-IG-u5Q"/>
+                        <outlet property="logoutView" destination="xJ6-GN-FRN" id="HMf-HA-oOu"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPs-qe-gct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-336.23188405797106" y="105.80357142857143"/>
+            <point key="canvasLocation" x="-891" y="90"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZNU-de-bmy">
@@ -92,23 +104,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7gW-tJ-1xJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="545" y="119"/>
+            <point key="canvasLocation" x="-142" y="90"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zd3-Ki-iPz">
             <objects>
-                <navigationController id="33R-oj-xiF" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="33R-oj-xiF" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2U9-4R-3jP">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="43d-M8-mn4" kind="relationship" relationship="rootViewController" id="ZU7-BR-mUM"/>
+                        <segue destination="43d-M8-mn4" kind="relationship" relationship="rootViewController" id="j0k-Lb-QQu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ei0-wP-qEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1255" y="106"/>
+            <point key="canvasLocation" x="-1559" y="91"/>
         </scene>
     </scenes>
     <resources>

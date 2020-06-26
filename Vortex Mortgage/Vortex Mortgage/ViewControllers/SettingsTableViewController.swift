@@ -11,14 +11,23 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
     
     @IBOutlet var logoutView: UIView!
+    @IBOutlet var containerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        logoutView.layer.cornerRadius = 16
-        logoutView.layer.shadowColor = UIColor.black.cgColor
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "EditProfile")
+        
+        logoutView.layer.cornerRadius = 10
+        containerView.backgroundColor = .clear
+        logoutView.layer.shadowColor = UIColor.lightGray.cgColor
         logoutView.layer.shadowOffset = .zero
-        logoutView.layer.shadowRadius = 16
+        logoutView.layer.shadowRadius = 10
+        logoutView.layer.shadowOpacity = 0.5
+    }
+    
+    @IBAction func logoutPressed(_ UIsender: Any) {
+        print("Ha ha")
     }
 
     // MARK: - Table view data source
@@ -34,13 +43,13 @@ class SettingsTableViewController: UITableViewController {
     }
 
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
+//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "EditProfile", for: indexPath)
+//
+//        // Configure the cell...
+//
+//        return cell
+//    }
 
     /*
     // Override to support conditional editing of the table view.

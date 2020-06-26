@@ -47,7 +47,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take me to Calculations"/>
                                 <connections>
-                                    <segue destination="WiW-s3-EOH" kind="presentation" modalPresentationStyle="fullScreen" id="p5u-UM-EoX"/>
+                                    <segue destination="3SZ-BI-kRh" kind="show" id="IfB-Xu-CUF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,17 +68,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1004" y="80"/>
+            <point key="canvasLocation" x="477" y="25"/>
         </scene>
-        <!--Dashboard-->
-        <scene sceneID="SGe-cX-Lhe">
+        <!--Settings-->
+        <scene sceneID="yLN-PE-3fZ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Dashboard" id="WiW-s3-EOH" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="U8A-RO-Lop"/>
+                <viewControllerPlaceholder storyboardName="Settings" id="3SZ-BI-kRh" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="S9Q-dk-5xn"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0KR-IQ-rxf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ctf-NH-abT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1462" y="51"/>
+            <point key="canvasLocation" x="1196" y="-56"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="w13-bN-JNI">
@@ -112,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="-761" y="118"/>
         </scene>
-        <!--Settings-->
+        <!--Dashboard-->
         <scene sceneID="Wzz-N1-Ll5">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="i02-rc-5FD" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Dashboard" id="i02-rc-5FD" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="g8s-ng-BSa"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9I-OW-qMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

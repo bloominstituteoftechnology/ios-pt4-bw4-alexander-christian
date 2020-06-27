@@ -162,7 +162,7 @@
                                 <rect key="frame" x="50" y="389" width="222" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="tel"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" smartDashesType="yes" textContentType="tel"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fMX-uq-BEV">
                                 <rect key="frame" x="50" y="325" width="222" height="34"/>
@@ -180,12 +180,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Scv-Lc-Tgt"/>
                     </view>
-                    <connections>
-                        <outlet property="firstName" destination="Je4-vV-C9q" id="HFS-fZ-fpH"/>
-                        <outlet property="lastName" destination="xU7-Qk-sZY" id="4bX-Ot-mMM"/>
-                        <outlet property="profileImage" destination="Wbq-gZ-CWf" id="zPF-Hn-9Ez"/>
-                        <outlet property="profileView" destination="I6b-Dt-Klq" id="2RB-Cd-FWA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioz-Ru-JRi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

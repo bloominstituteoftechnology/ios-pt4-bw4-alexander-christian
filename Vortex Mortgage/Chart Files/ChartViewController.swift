@@ -77,7 +77,7 @@ class ChartViewController: UIViewController {
     func updateSegment() {
         pieChartView.segments = [
             LabelledSegment(color: #colorLiteral(red: 1.0, green: 0.121568627, blue: 0.28627451, alpha: 1.0), name: "Interest %", value: CGFloat(interestPercentageSlider.value * priceSlider.value / 100)),
-            LabelledSegment(color: #colorLiteral(red: 1.0, green: 0.541176471, blue: 0.0, alpha: 1.0), name: "Home Price", value: CGFloat((priceSlider.value))),
+            LabelledSegment(color: #colorLiteral(red: 1.0, green: 0.541176471, blue: 0.0, alpha: 1.0), name: "Loan Value", value: CGFloat((priceSlider.value))),
             //LabelledSegment(color: #colorLiteral(red: 0.478431373, green: 0.423529412, blue: 1.0, alpha: 1.0), name: "Purple",     value: 0),
             LabelledSegment(color: #colorLiteral(red: 0.0, green: 0.870588235, blue: 1.0, alpha: 1.0), name: "Light Blue", value: CGFloat(termSlider.value)),
             //LabelledSegment(color: #colorLiteral(red: 0.392156863, green: 0.945098039, blue: 0.717647059, alpha: 1.0), name: "Green",      value: 0),
@@ -204,7 +204,7 @@ class ChartViewController: UIViewController {
         
         downPaymentSlider.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            downPaymentSlider.topAnchor.constraint(equalTo: dpwnPaymentLabel.bottomAnchor, constant: 12),
+            downPaymentSlider.topAnchor.constraint(equalTo: downPaymentSign.bottomAnchor, constant: 12),
             downPaymentSlider.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             downPaymentSlider.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
@@ -262,6 +262,13 @@ class ChartViewController: UIViewController {
             termAmountLabel.topAnchor.constraint(equalTo: interestPercentageSlider.bottomAnchor, constant: 30),
             termAmountLabel.leadingAnchor.constraint(greaterThanOrEqualTo: termSignLabel.trailingAnchor, constant: 20),
             termAmountLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+        
+        termSlider.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            termSlider.topAnchor.constraint(equalTo: termSignLabel.bottomAnchor, constant: 12),
+            termSlider.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            termSlider.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         
         

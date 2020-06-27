@@ -15,10 +15,6 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "EditProfile")
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ChangePassword")
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Facebook")
-        
         logoutView.layer.cornerRadius = 10
         logoutView.layer.shadowColor = UIColor.lightGray.cgColor
         logoutView.layer.shadowOffset = .zero

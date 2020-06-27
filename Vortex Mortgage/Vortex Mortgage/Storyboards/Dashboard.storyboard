@@ -11,7 +11,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="XSB-eo-MDa">
             <objects>
-                <tabBarController id="RDd-Yp-ov5" sceneMemberID="viewController">
+                <tabBarController modalPresentationStyle="fullScreen" id="RDd-Yp-ov5" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="0gQ-0O-KYn"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jb8-dt-0bl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>

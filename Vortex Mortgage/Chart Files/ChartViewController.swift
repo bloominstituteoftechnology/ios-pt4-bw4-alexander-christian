@@ -10,7 +10,68 @@ import UIKit
 
 class ChartViewController: UIViewController {
     
+    let pieChartView = PieChartView()
+    var myNewHomePrice: Float = 0.00
+    var myNewDownPayment: Float = 0.00
+    var myNewInterestRate: Float = 0.00
+    var totalMonthlyPayment: Float = 0.00
+    var loanTerm: Float = 0.00
     
+    //Outlets:
+    @IBOutlet weak var imageView1: UIView!
+    @IBOutlet weak var totalMonthlyLabel: UILabel!
+    @IBOutlet weak var homePriceLabel: UILabel!
+    @IBOutlet weak var priceSlider: UISlider!
+    @IBOutlet weak var dpwnPaymentLabel: UILabel!
+    @IBOutlet weak var downPaymentPercentageLabel: UILabel!
+    @IBOutlet weak var downPaymentSlider: UISlider!
+    @IBOutlet weak var interestPercentageLabel: UILabel!
+    @IBOutlet weak var interestPercentageSlider: UISlider!
+    @IBOutlet weak var downPaymentSign: UILabel!
+    @IBOutlet weak var interestPercentageSign: UILabel!
+    @IBOutlet weak var homePriceSign: UILabel!
+    @IBOutlet weak var termSignLabel: UILabel!
+    @IBOutlet weak var termAmountLabel: UILabel!
+    @IBOutlet weak var termSlider: UISlider!
+    
+    //Actions:
+    @IBAction func amountSlider(_ sender: UISlider) {
+        updateSegment()
+        
+        let homePrice = String(format: "%.2f", sender.value)
+        homePriceLabel.text = "$\(homePrice)"
+        myNewHomePrice = Float(homePrice)!
+    }
+    
+    
+    @IBAction func downPaymentSliderChanged(_ sender: UISlider) {
+        updateSegment()
+        
+        let downPaymentPercentage = String(format: "%.0f", sender.value)
+        downPaymentPercentageLabel.text = "\(downPaymentPercentage)%"
+        myNewDownPayment = Float(downPaymentPercentage)!
+        
+        let downPaymentAmount = (myNewHomePrice * myNewDownPayment) / 100
+        dpwnPaymentLabel.text = "$\(downPaymentAmount)"
+    }
+    
+    
+    @IBAction func interestPercetangeSliderChanged(_ sender: UISlider) {
+        updateSegment()
+        
+        let interestRate = String(format: "%.2f", sender.value)
+        interestPercentageLabel.text = "\(interestRate)%"
+        myNewInterestRate = Float(interestRate)!
+    }
+    
+    
+    @IBAction func termSliderChanged(_ sender: UISlider) {
+        updateSegment()
+        
+        let loanTermLabel = String(format: "%.0f", sender.value)
+        termAmountLabel.text = "\(loanTermLabel)"
+        loanTerm = Float(loanTermLabel)!
+    }
     
     
     func updateSegment() {
@@ -25,7 +86,7 @@ class ChartViewController: UIViewController {
     }
     
     
-   override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         updateSegment()
@@ -33,7 +94,7 @@ class ChartViewController: UIViewController {
         let padding: CGFloat = 100
         let height = (view.frame.height - padding * 3) / 2.5
         
-        pieChartView.frame = imageView.bounds
+        pieChartView.frame = imageView1.bounds
         pieChartView.segmentLabelFont = .systemFont(ofSize: 10)
         
         //Code for Label Border:
@@ -63,27 +124,38 @@ class ChartViewController: UIViewController {
         dpwnPaymentLabel.layer.cornerRadius = 5
         dpwnPaymentLabel.clipsToBounds = true
         
+        interestPercentageSign.layer.borderColor = UIColor.black.cgColor
+        interestPercentageSign.layer.borderWidth = 1.0
+        interestPercentageSign.layer.cornerRadius = 5
+        interestPercentageSign.clipsToBounds = true
+        
+        termSignLabel.layer.borderColor = UIColor.black.cgColor
+        termSignLabel.layer.borderWidth = 1.0
+        termSignLabel.layer.cornerRadius = 5
+        termSignLabel.clipsToBounds = true
+        
         //Constraints code:
         pieChartView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.addSubview(pieChartView)
+        imageView1.addSubview(pieChartView)
         NSLayoutConstraint.activate([
-            imageView.leadingAnchor.constraint(equalTo: pieChartView.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: pieChartView.trailingAnchor),
-            imageView.topAnchor.constraint(equalTo: pieChartView.topAnchor),
-            imageView.bottomAnchor.constraint(equalTo: pieChartView.bottomAnchor)
+            imageView1.leadingAnchor.constraint(equalTo: pieChartView.leadingAnchor),
+            imageView1.trailingAnchor.constraint(equalTo: pieChartView.trailingAnchor),
+            imageView1.topAnchor.constraint(equalTo: pieChartView.topAnchor),
+            imageView1.bottomAnchor.constraint(equalTo: pieChartView.bottomAnchor)
         ])
         
         //Constraints for the totalMonthlyLabel:
         totalMonthlyLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            totalMonthlyLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
-            totalMonthlyLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
-            totalMonthlyLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor)
+            totalMonthlyLabel.leadingAnchor.constraint(equalTo: imageView1.leadingAnchor),
+            totalMonthlyLabel.trailingAnchor.constraint(equalTo: imageView1.trailingAnchor),
+            totalMonthlyLabel.topAnchor.constraint(equalTo: imageView1.bottomAnchor)
         ])
         
         //Constraints for the loanOutlet label:
         homePriceLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            homePriceLabel.widthAnchor.constraint(equalToConstant: 140),
             homePriceLabel.topAnchor.constraint(equalTo: totalMonthlyLabel.bottomAnchor, constant: 8),
             homePriceLabel.leadingAnchor.constraint(greaterThanOrEqualTo: homePriceSign.trailingAnchor, constant: 8),
             homePriceLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
@@ -94,7 +166,7 @@ class ChartViewController: UIViewController {
             homePriceSign.widthAnchor.constraint(equalToConstant: 125),
             homePriceSign.topAnchor.constraint(equalTo: totalMonthlyLabel.bottomAnchor, constant: 8),
             homePriceSign.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            homePriceSign.trailingAnchor.constraint(equalTo: homePriceLabel.leadingAnchor, constant: -124),
+            homePriceSign.trailingAnchor.constraint(equalTo: homePriceLabel.leadingAnchor, constant: -90),
         ])
         
         //Constraints for the price slider:
@@ -108,8 +180,9 @@ class ChartViewController: UIViewController {
         //Constraints for downPayment Label:
         dpwnPaymentLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            dpwnPaymentLabel.widthAnchor.constraint(equalToConstant: 130),
             dpwnPaymentLabel.topAnchor.constraint(equalTo: priceSlider.bottomAnchor, constant: 30),
-            dpwnPaymentLabel.leadingAnchor.constraint(greaterThanOrEqualTo: downPaymentPercentageLabel.trailingAnchor, constant: 8),
+            dpwnPaymentLabel.leadingAnchor.constraint(greaterThanOrEqualTo: downPaymentPercentageLabel.trailingAnchor, constant: 10),
             dpwnPaymentLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         
@@ -118,15 +191,15 @@ class ChartViewController: UIViewController {
             downPaymentSign.widthAnchor.constraint(equalToConstant: 125),
             downPaymentSign.topAnchor.constraint(equalTo: priceSlider.bottomAnchor, constant: 30),
             downPaymentSign.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            downPaymentSign.trailingAnchor.constraint(equalTo: downPaymentPercentageLabel.leadingAnchor, constant: -24)
+            downPaymentSign.trailingAnchor.constraint(equalTo: downPaymentPercentageLabel.leadingAnchor, constant: -14)
         ])
         
         downPaymentPercentageLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            downPaymentPercentageLabel.widthAnchor.constraint(equalToConstant: 76),
+            downPaymentPercentageLabel.widthAnchor.constraint(equalToConstant: 58),
             downPaymentPercentageLabel.topAnchor.constraint(equalTo: priceSlider.bottomAnchor, constant: 30),
-            downPaymentPercentageLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            downPaymentPercentageLabel.trailingAnchor.constraint(equalTo: dpwnPaymentLabel.leadingAnchor, constant: -24)
+            downPaymentPercentageLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
+            downPaymentPercentageLabel.trailingAnchor.constraint(equalTo: dpwnPaymentLabel.leadingAnchor, constant: -14)
         ])
         
         downPaymentSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -138,6 +211,7 @@ class ChartViewController: UIViewController {
         
         interestPercentageLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
+            interestPercentageLabel.widthAnchor.constraint(equalToConstant: 140),
             interestPercentageLabel.topAnchor.constraint(equalTo: downPaymentSlider.bottomAnchor, constant: 30),
             interestPercentageLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             interestPercentageLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
@@ -148,7 +222,7 @@ class ChartViewController: UIViewController {
             interestPercentageSign.widthAnchor.constraint(equalToConstant: 125),
             interestPercentageSign.topAnchor.constraint(equalTo: downPaymentSlider.bottomAnchor, constant: 30),
             interestPercentageSign.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            interestPercentageSign.trailingAnchor.constraint(equalTo: interestPercentageLabel.leadingAnchor, constant: -124)
+            interestPercentageSign.trailingAnchor.constraint(equalTo: interestPercentageLabel.leadingAnchor, constant: -86)
         ])
         
         interestPercentageSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -171,6 +245,22 @@ class ChartViewController: UIViewController {
             termAmountLabel.widthAnchor.constraint(equalToConstant: 125),
             termAmountLabel.topAnchor.constraint(equalTo: interestPercentageSlider.bottomAnchor, constant: 30),
             termAmountLabel.leadingAnchor.constraint(equalTo: termSignLabel.trailingAnchor, constant: 20),
+            termAmountLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+        
+        termSignLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            termSignLabel.widthAnchor.constraint(equalToConstant: 125),
+            termSignLabel.topAnchor.constraint(equalTo: interestPercentageSlider.bottomAnchor, constant: 30),
+            termSignLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            termSignLabel.trailingAnchor.constraint(equalTo: termAmountLabel.leadingAnchor, constant: -100),
+        ])
+        
+        termAmountLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            termAmountLabel.widthAnchor.constraint(equalToConstant: 130),
+            termAmountLabel.topAnchor.constraint(equalTo: interestPercentageSlider.bottomAnchor, constant: 30),
+            termAmountLabel.leadingAnchor.constraint(greaterThanOrEqualTo: termSignLabel.trailingAnchor, constant: 20),
             termAmountLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         

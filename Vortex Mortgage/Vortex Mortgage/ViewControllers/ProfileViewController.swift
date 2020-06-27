@@ -25,28 +25,31 @@ class ProfileViewController: UIViewController {
     @IBOutlet var id: UILabel!
     @IBOutlet var profileView: UIView!
     @IBOutlet var profileImage: UIView!
+    @IBOutlet var phoneNumberLabel: UILabel!
+    @IBOutlet var phoneNumberTextField: UITextField!
+    @IBOutlet var locationLabel: UILabel!
+    @IBOutlet var locationTextField: UITextField!
     
     
+    //MARK: View Controller life cycle
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         firstName.text = first
         lastName.text = last
         emailLabel.text = email
+        emailLabel.layer.borderWidth = 0.5
+        emailLabel.layer.borderColor = UIColor.black.cgColor
+        emailLabel.layer.cornerRadius = 5
         profileImage.layer.cornerRadius = 20
         profileView.layer.cornerRadius = 38
         
     }
     
-    @IBAction func signOutPressed() {
-        KeychainItem.deleteUserIdentifierFromKeychain()
-        firstName.text = ""
-        emailLabel.text = ""
+    //MARK: Actions
+    
+    @IBAction func editProfileTapped(_ sender: Any) {
         
-        DispatchQueue.main.async {
-            self.showLoginViewController()
-        }
     }
 
     /*

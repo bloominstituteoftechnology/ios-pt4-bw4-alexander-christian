@@ -16,7 +16,6 @@
 		174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAED249C29C2004E768F /* CalculateViewController.swift */; };
 		174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAEF249C29CA004E768F /* ResultsViewController.swift */; };
 		1F101C26249E83CA00F6A835 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C25249E83CA00F6A835 /* Test.swift */; };
-		1F101C2C249E9A3500F6A835 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C28249E9A3500F6A835 /* PieChartView.swift */; };
 		1F101C2D249E9A3500F6A835 /* PieChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C29249E9A3500F6A835 /* PieChartRow.swift */; };
 		1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2A249E9A3500F6A835 /* PieChartCell.swift */; };
 		1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2F249E9E3200F6A835 /* Helpers.swift */; };
@@ -49,7 +48,6 @@
 		174ADAED249C29C2004E768F /* CalculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		174ADAEF249C29CA004E768F /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		1F101C25249E83CA00F6A835 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		1F101C28249E9A3500F6A835 /* PieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		1F101C29249E9A3500F6A835 /* PieChartRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartRow.swift; sourceTree = "<group>"; };
 		1F101C2A249E9A3500F6A835 /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
 		1F101C2F249E9E3200F6A835 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 				1F101C25249E83CA00F6A835 /* Test.swift */,
 				1F101C2A249E9A3500F6A835 /* PieChartCell.swift */,
 				1F101C29249E9A3500F6A835 /* PieChartRow.swift */,
-				1F101C28249E9A3500F6A835 /* PieChartView.swift */,
 				1F101C2F249E9E3200F6A835 /* Helpers.swift */,
 			);
 			path = ViewControllers;
@@ -249,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				174AACD824A5C854002418B8 /* Compatibilty.swift in Sources */,
-				1F101C2C249E9A3500F6A835 /* PieChartView.swift in Sources */,
 				1F90EB5D24AAE10000A03BDE /* UIImage.swift in Sources */,
 				1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */,
 				1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */,

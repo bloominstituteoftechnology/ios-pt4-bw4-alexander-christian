@@ -81,12 +81,12 @@ class CalculateViewController: UIViewController {
     // MARK: - Navigation
 
      //In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToResults" {
-            let destinationVC = segue.destination as! UINavigationController
-            let topResultsVC = destinationVC.topViewController as! ResultsViewController
-            //destinationVC.incomingValue = CalcValue.init(value: totalAmountLoan) //totalResult
-            topResultsVC.totalAmount = self.totalAmount
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "goToResults" {
+//            let destinationVC = segue.destination as! UINavigationController
+//            let topResultsVC = destinationVC.topViewController as! ResultsViewController
+//            //destinationVC.incomingValue = CalcValue.init(value: totalAmountLoan) //totalResult
+//            topResultsVC.totalAmount = self.totalAmount
+//        }
+//    }
 }

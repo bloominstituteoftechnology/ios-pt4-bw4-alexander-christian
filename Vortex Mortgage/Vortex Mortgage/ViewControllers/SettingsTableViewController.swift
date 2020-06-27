@@ -11,15 +11,15 @@ import UIKit
 class SettingsTableViewController: UITableViewController {
     
     @IBOutlet var logoutView: UIView!
-    @IBOutlet var containerView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "EditProfile")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "ChangePassword")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Facebook")
         
         logoutView.layer.cornerRadius = 10
-        containerView.backgroundColor = .clear
         logoutView.layer.shadowColor = UIColor.lightGray.cgColor
         logoutView.layer.shadowOffset = .zero
         logoutView.layer.shadowRadius = 10
@@ -34,7 +34,7 @@ class SettingsTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

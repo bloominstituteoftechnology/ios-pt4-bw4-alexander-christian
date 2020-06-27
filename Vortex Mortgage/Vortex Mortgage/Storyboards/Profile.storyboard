@@ -78,6 +78,13 @@
                                 <color key="textColor" red="0.65507277397260277" green="0.33890595626712328" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN7-eK-n5a">
+                                <rect key="frame" x="50" y="394" width="309" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                <color key="textColor" red="0.65507277399999997" green="0.33890595629999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xx-MG-VzP">
                                 <rect key="frame" x="50" y="454" width="309" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -97,18 +104,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYT-rf-aqs">
-                                <rect key="frame" x="164" y="648" width="46" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYT-rf-aqs">
+                                <rect key="frame" x="247" y="728" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveTapped:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="iFN-NS-OjR"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XN7-eK-n5a">
-                                <rect key="frame" x="50" y="394" width="309" height="25"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kW6-zK-Cpa">
+                                <rect key="frame" x="16" y="727" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                <color key="textColor" red="0.65507277399999997" green="0.33890595629999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="1" green="0.79326305650684936" blue="0.859375" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelTapped:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="hdj-v7-NiP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.34509803919999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -120,15 +139,19 @@
                         <viewLayoutGuide key="safeArea" id="KWk-B0-4uF"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="kW6-zK-Cpa" id="Od8-mx-Vah"/>
                         <outlet property="emailLabel" destination="oX5-ox-yRV" id="uc2-Wr-ZTP"/>
                         <outlet property="firstName" destination="gmV-U4-vU4" id="XkG-Ue-9kB"/>
                         <outlet property="lastName" destination="alq-eb-Yq5" id="iTq-Q2-QGe"/>
+                        <outlet property="locationImage" destination="EYS-MW-I4I" id="L1O-sZ-hKS"/>
                         <outlet property="locationLabel" destination="8xx-MG-VzP" id="UjN-NN-LNG"/>
                         <outlet property="locationTextField" destination="hJp-Yr-lnN" id="HXr-E2-Vtd"/>
+                        <outlet property="phoneImage" destination="TEo-Ff-LFB" id="WWU-SZ-DGT"/>
                         <outlet property="phoneNumberLabel" destination="XN7-eK-n5a" id="yb8-Iq-I7q"/>
                         <outlet property="phoneNumberTextField" destination="yh9-RY-phi" id="WLY-H5-Fiw"/>
                         <outlet property="profileImage" destination="vnm-Lu-ysd" id="9Xc-lt-gJv"/>
                         <outlet property="profileView" destination="Hxq-K9-524" id="wjq-3i-bvv"/>
+                        <outlet property="saveButton" destination="yYT-rf-aqs" id="Cox-nv-WqA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uld-lj-UXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

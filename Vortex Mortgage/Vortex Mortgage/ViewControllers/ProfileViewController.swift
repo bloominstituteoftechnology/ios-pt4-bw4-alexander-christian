@@ -53,9 +53,6 @@ class ProfileViewController: UIViewController {
     }
     
     func addUITweaks() {
-        emailLabel.layer.borderWidth = 0.5
-        emailLabel.layer.borderColor = UIColor.black.cgColor
-        emailLabel.layer.cornerRadius = 5
         profileImage.layer.cornerRadius = 20
         profileView.layer.cornerRadius = 38
         saveButton.layer.cornerRadius = 10

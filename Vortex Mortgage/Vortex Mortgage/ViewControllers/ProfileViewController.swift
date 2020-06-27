@@ -35,7 +35,7 @@ class ProfileViewController: UIViewController {
         lastName.text = last
         emailLabel.text = email
         profileImage.layer.cornerRadius = 20
-        profileView.layer.cornerRadius = 30
+        profileView.layer.cornerRadius = 38
         
     }
     

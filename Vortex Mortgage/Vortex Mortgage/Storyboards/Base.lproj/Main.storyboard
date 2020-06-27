@@ -47,7 +47,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take me to Calculations"/>
                                 <connections>
-                                    <segue destination="3SZ-BI-kRh" kind="show" id="IfB-Xu-CUF"/>
+                                    <segue destination="3SZ-BI-kRh" kind="presentation" id="IfB-Xu-CUF"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -68,17 +68,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="477" y="25"/>
+            <point key="canvasLocation" x="658" y="48"/>
         </scene>
-        <!--Settings-->
+        <!--Profile-->
         <scene sceneID="yLN-PE-3fZ">
             <objects>
-                <viewControllerPlaceholder storyboardName="Settings" id="3SZ-BI-kRh" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" id="3SZ-BI-kRh" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="S9Q-dk-5xn"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ctf-NH-abT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1196" y="-56"/>
+            <point key="canvasLocation" x="1357" y="-55"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="w13-bN-JNI">
@@ -100,7 +100,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
-                                    <segue destination="i02-rc-5FD" kind="show" id="7PR-fU-t2W"/>
+                                    <segue destination="i02-rc-5FD" kind="show" identifier="ProfileSegue" id="7PR-fU-t2W"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -110,17 +110,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SN5-JO-mgI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-761" y="118"/>
+            <point key="canvasLocation" x="-745" y="82"/>
         </scene>
-        <!--Dashboard-->
+        <!--Profile-->
         <scene sceneID="Wzz-N1-Ll5">
             <objects>
-                <viewControllerPlaceholder storyboardName="Dashboard" id="i02-rc-5FD" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Profile" id="i02-rc-5FD" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="g8s-ng-BSa"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f9I-OW-qMB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="41" y="64"/>
+            <point key="canvasLocation" x="-242" y="25"/>
         </scene>
     </scenes>
     <resources>

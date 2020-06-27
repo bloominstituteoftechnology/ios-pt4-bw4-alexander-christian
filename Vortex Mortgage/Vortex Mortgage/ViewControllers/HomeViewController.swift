@@ -9,7 +9,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,14 +23,15 @@ class HomeViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ProfileSegue" {
+            guard let firstName = firstName, let lastName = lastName, let email = email else { return }
+            guard let vc = segue.destination as? ProfileViewController else { return }
+            vc.email = email
+            vc.first = firstName
+            vc.last = lastName
+        }
     }
-    */
-
 }

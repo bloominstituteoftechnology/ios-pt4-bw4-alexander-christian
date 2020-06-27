@@ -10,19 +10,33 @@ import UIKit
 import AuthenticationServices
 
 class ProfileViewController: UIViewController {
-    @IBOutlet var emailLabel: UILabel!
+    
+    
+    //MARK: Properties
+    var email: String?
+    var first: String?
+    var last: String?
+    
+    //MARK: Outlets
+    
     @IBOutlet var firstName: UILabel!
+    @IBOutlet var lastName: UILabel!
+    @IBOutlet var emailLabel: UILabel!
     @IBOutlet var id: UILabel!
+    @IBOutlet var profileView: UIView!
+    @IBOutlet var profileImage: UIView!
     
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.main.async {
-            self.showLoginViewController()
-            
-        }
+        firstName.text = first
+        lastName.text = last
+        emailLabel.text = email
+        profileImage.layer.cornerRadius = 20
+        profileView.layer.cornerRadius = 30
+        
     }
     
     @IBAction func signOutPressed() {

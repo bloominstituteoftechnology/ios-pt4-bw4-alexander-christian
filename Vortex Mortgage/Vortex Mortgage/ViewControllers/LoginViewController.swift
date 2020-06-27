@@ -88,7 +88,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 
                 // dismiss the login view controller since im not landing on the profile vc anymore
                 self.dismiss(animated: true, completion: nil)
-                self.passDataToProfileViewController(userIdentifier: userIdentifier, fullName: firstName, email: email)
+                self.passDataToProfileViewController(userIdentifier: userIdentifier, firstName: firstName, lastName: lastName, email: email)
                 
             case let passwordCredential as ASPasswordCredential:
                 
@@ -105,23 +105,25 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             }
         }
     
-    private func passDataToProfileViewController(userIdentifier: String?, fullName: String?, email: String?) {
-        guard let viewController = self.presentingViewController as? ProfileViewController else { return }
+    private func passDataToProfileViewController(userIdentifier: String?, firstName: String?, lastName: String?, email: String?) {
+        guard let viewController = self.presentingViewController as? HomeViewController else { return }
 
         DispatchQueue.main.async {
 
 
-            viewController.firstName.text = fullName
+            viewController.firstName = firstName
+            print(firstName!)
 
-
-
+            viewController.lastName = lastName
+            print(lastName!)
             if let email = email {
-                viewController.emailLabel.text = email
+                viewController.email = email
+                print(email)
+                
 
             }
-            self.dismiss(animated: true, completion: nil)
-
-
+            
+            self.present(viewController, animated: true)
         }
     }
     

@@ -14,8 +14,28 @@ class ChartViewController: UIViewController {
     var myNewHomePrice: Float = 0.00
     var myNewDownPayment: Float = 0.00
     var myNewInterestRate: Float = 0.00
-    var totalMonthlyPayment: Float = 0.00
     var loanTerm: Float = 0.00
+    var downPaymentMinusHomePrice: Float = 0.00
+    
+    //Computed Properties:
+    var loanAmount: Float {
+        downPaymentMinusHomePrice
+    }
+    
+    var loanAmountWithTerm: Float { //Monthly Payment without interest
+        loanAmount / loanTerm
+    }
+    
+    var interestAmountInCurrency: Float { //Interest calulation based on loan amount.
+        (loanAmount * myNewInterestRate) / 100
+    }
+    
+    var interestDividedByTerm: Float {
+        interestAmountInCurrency / loanTerm
+    }
+    
+    var totalMonthlyPayment: Float = 0.00
+    
     
     //Outlets:
     @IBOutlet weak var imageView1: UIView!
@@ -33,6 +53,7 @@ class ChartViewController: UIViewController {
     @IBOutlet weak var termSignLabel: UILabel!
     @IBOutlet weak var termAmountLabel: UILabel!
     @IBOutlet weak var termSlider: UISlider!
+    @IBOutlet weak var calculatePaymentOutlet: UIButton!
     
     //Actions:
     @IBAction func amountSlider(_ sender: UISlider) {
@@ -53,6 +74,7 @@ class ChartViewController: UIViewController {
         
         let downPaymentAmount = (myNewHomePrice * myNewDownPayment) / 100
         dpwnPaymentLabel.text = "$\(downPaymentAmount)"
+        downPaymentMinusHomePrice = myNewHomePrice - downPaymentAmount
     }
     
     
@@ -70,26 +92,35 @@ class ChartViewController: UIViewController {
         
         let loanTermLabel = String(format: "%.0f", sender.value)
         termAmountLabel.text = "\(loanTermLabel)"
-        loanTerm = Float(loanTermLabel)!
+        let loanTerm1 = Float(loanTermLabel)!
+        loanTerm = loanTerm1 * 12
     }
     
+    @IBAction func calculatePaymentTapped(_ sender: UIButton) {
+        totalMonthlyPayment = loanAmountWithTerm + interestDividedByTerm
+        let roundedResult = totalMonthlyPayment.rounded(toPlaces: 2)
+        totalMonthlyLabel.text = "Monthly Payment: $\(roundedResult)"
+    }
     
     func updateSegment() {
         pieChartView.segments = [
             LabelledSegment(color: #colorLiteral(red: 1.0, green: 0.121568627, blue: 0.28627451, alpha: 1.0), name: "Interest %", value: CGFloat(interestPercentageSlider.value * priceSlider.value / 100)),
-            LabelledSegment(color: #colorLiteral(red: 1.0, green: 0.541176471, blue: 0.0, alpha: 1.0), name: "Loan Value", value: CGFloat((priceSlider.value))),
+            LabelledSegment(color: #colorLiteral(red: 1.0, green: 0.541176471, blue: 0.0, alpha: 1.0), name: "Loan Value", value: CGFloat(downPaymentMinusHomePrice)),
             //LabelledSegment(color: #colorLiteral(red: 0.478431373, green: 0.423529412, blue: 1.0, alpha: 1.0), name: "Purple",     value: 0),
-            LabelledSegment(color: #colorLiteral(red: 0.0, green: 0.870588235, blue: 1.0, alpha: 1.0), name: "Light Blue", value: CGFloat(termSlider.value)),
+            LabelledSegment(color: #colorLiteral(red: 0.0, green: 0.870588235, blue: 1.0, alpha: 1.0), name: "Loan Term", value: CGFloat(termSlider.value * 12)),
             //LabelledSegment(color: #colorLiteral(red: 0.392156863, green: 0.945098039, blue: 0.717647059, alpha: 1.0), name: "Green",      value: 0),
             LabelledSegment(color: #colorLiteral(red: 0.0, green: 0.392156863, blue: 1.0, alpha: 1.0), name: "Down Pmt",   value: CGFloat(downPaymentSlider.value * priceSlider.value / 100))
         ]
     }
     
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         updateSegment()
+        //totalMonthly()
         
         let padding: CGFloat = 100
         let height = (view.frame.height - padding * 3) / 2.5
@@ -271,6 +302,13 @@ class ChartViewController: UIViewController {
             termSlider.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         
+        calculatePaymentOutlet.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            calculatePaymentOutlet.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 2),
+            calculatePaymentOutlet.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            calculatePaymentOutlet.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+        ])
+        
         
         //    simplePieChartView.frame = CGRect(
         //      x: 0, y: height + padding * 2,
@@ -285,5 +323,12 @@ class ChartViewController: UIViewController {
         //    ]
         //    view.addSubview(simplePieChartView)
         
+    }
+}
+
+extension Float {
+    func rounded(toPlaces places: Int) -> Float {
+        let divisor = pow(10.0, Float(places))
+        return (self * divisor).rounded() / divisor
     }
 }

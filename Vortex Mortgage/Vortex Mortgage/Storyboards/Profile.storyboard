@@ -53,6 +53,15 @@
                                         <rect key="frame" x="128" y="95" width="119" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ei0-nr-cFl">
+                                        <rect key="frame" x="23" y="49" width="24" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="camera" catalog="system"/>
+                                        <connections>
+                                            <action selector="choosePhotoPressed:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="BdL-X0-2Z5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -98,6 +107,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cupertino, Califiornia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJp-Yr-lnN">
+                                <rect key="frame" x="50" y="450" width="158" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYT-rf-aqs">
                                 <rect key="frame" x="247" y="728" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -122,12 +137,19 @@
                                     <action selector="cancelTapped:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="hdj-v7-NiP"/>
                                 </connections>
                             </button>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cupertino, Califiornia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJp-Yr-lnN">
-                                <rect key="frame" x="50" y="450" width="158" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSd-dh-u1b">
+                                <rect key="frame" x="247" y="727" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <color key="backgroundColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="savePhotoPressed:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="eWE-zW-ueL"/>
+                                    <action selector="saveTapped:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="15N-V4-f5R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.34509803919999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -162,6 +184,7 @@
     <resources>
         <image name="apps.iphone" width="11" height="18"/>
         <image name="avatar" width="200" height="200"/>
+        <image name="camera" catalog="system" width="128" height="96"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>

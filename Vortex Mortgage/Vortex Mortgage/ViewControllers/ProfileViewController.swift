@@ -40,7 +40,6 @@ class ProfileViewController: UIViewController {
     
     var originalImage: UIImage? {
         didSet {
-//            guard let originalImage = originalImage else { return }
             
             var scaledSize = profileImage.bounds.size
             let scale: CGFloat = UIScreen.main.scale
@@ -83,7 +82,7 @@ class ProfileViewController: UIViewController {
         cancelButton.layer.shadowOpacity = 0.5
     }
     
-    private func presentImagePicketController() {
+    private func presentImagePickerController() {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
             print("The photo library isn't available.")
             return
@@ -92,6 +91,8 @@ class ProfileViewController: UIViewController {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
     }
     //MARK: Actions
     
@@ -158,8 +159,57 @@ class ProfileViewController: UIViewController {
             locationImage.isHidden = false
         }
     }
+    
+    @IBAction func choosePhotoPressed(_ sender: Any) {
+        presentImagePickerController()
+    }
+    
+    @IBAction func savePhotoPressed(_ sender: Any) {
+        guard let originalImage = originalImage else { return }
+        
+        PHPhotoLibrary.requestAuthorization { status in
+            guard status == .authorized else { return }
+            
+            PHPhotoLibrary.shared().performChanges({
+                PHAssetChangeRequest.creationRequestForAsset(from: originalImage)
+            }) { success, error in
+                if let error = error {
+                    print("An error occured: \(error)")
+                    return
+                }
+                
+                DispatchQueue.main.async {
+                    self.presentSuccessfulAlert()
+                }
+            }
+        }
+    }
+    
+    private func presentSuccessfulAlert() {
+        let alert = UIAlertController(title: "Success!", message: "Photo Saved", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
 }
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        let picture = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
+        profileImage.image = picture
+
+        let data = picture.pngData()
+        
+        let fileManager = FileManager.default
+        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("image")
+        
+        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
     
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

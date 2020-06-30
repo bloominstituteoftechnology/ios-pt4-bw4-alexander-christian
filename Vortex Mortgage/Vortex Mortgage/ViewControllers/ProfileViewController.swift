@@ -36,7 +36,19 @@ class ProfileViewController: UIViewController {
     @IBOutlet var locationImage: UIImageView!
     @IBOutlet var cancelButton: UIButton!
     
+    // MARK: Core Image Placeholder properties
     
+    var originalImage: UIImage? {
+        didSet {
+//            guard let originalImage = originalImage else { return }
+            
+            var scaledSize = profileImage.bounds.size
+            let scale: CGFloat = UIScreen.main.scale
+            
+            scaledSize =  CGSize(width: scaledSize.width * scale, height: scaledSize.height * scale)
+        }
+    }
+
     //MARK: View Controller life cycle
     
     
@@ -45,6 +57,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         updateViews()
         addUITweaks()
+        
+        originalImage = profileImage.image
     }
     
     func updateViews() {
@@ -67,6 +81,17 @@ class ProfileViewController: UIViewController {
         cancelButton.layer.shadowOffset = .zero
         cancelButton.layer.shadowRadius = 10
         cancelButton.layer.shadowOpacity = 0.5
+    }
+    
+    private func presentImagePicketController() {
+        guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
+            print("The photo library isn't available.")
+            return
+        }
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
     }
     //MARK: Actions
     
@@ -133,4 +158,8 @@ class ProfileViewController: UIViewController {
             locationImage.isHidden = false
         }
     }
+}
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
 }

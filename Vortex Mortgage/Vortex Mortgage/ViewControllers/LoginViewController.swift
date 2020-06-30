@@ -109,8 +109,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         guard let viewController = self.presentingViewController as? HomeViewController else { return }
 
         DispatchQueue.main.async {
-
-
+            
             viewController.firstName = firstName
             print(firstName!)
 
@@ -119,16 +118,11 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             if let email = email {
                 viewController.email = email
                 print(email)
-                
-
             }
             
             self.present(viewController, animated: true)
         }
     }
-    
-    
-    
     
     private func saveUserInKeychain(_ userIdentifier: String) {
         do {

@@ -40,7 +40,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="i3f-97-nfn">
-                            <rect key="frame" x="0.0" y="327" width="414" height="81"/>
+                            <rect key="frame" x="0.0" y="416" width="414" height="81"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ba-aE-tRA">
@@ -137,13 +137,40 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="ye3-Zs-Izz">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Facebook" textLabel="tlE-DB-YwG" rowHeight="53" style="IBUITableViewCellStyleDefault" id="49z-cG-Zo2">
+                                        <rect key="frame" x="20" y="345" width="374" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="49z-cG-Zo2" id="oMX-7j-1ZU">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="All disfunctional ran out of time :(" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tlE-DB-YwG">
+                                                    <rect key="frame" x="20" y="0.0" width="315" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="cVc-RW-Fim" id="07G-49-3Jb"/>
                             <outlet property="delegate" destination="cVc-RW-Fim" id="emf-Ax-f8c"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="NSs-G0-oK3"/>
+                    <navigationItem key="navigationItem" title="Settings" id="NSs-G0-oK3">
+                        <barButtonItem key="rightBarButtonItem" title="Profile" style="plain" id="LMo-Ep-AYg">
+                            <connections>
+                                <segue destination="3fl-yz-ykR" kind="show" id="daZ-in-GAD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="logoutView" destination="5ba-aE-tRA" id="j9X-dF-ONd"/>
                     </connections>
@@ -151,6 +178,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hl-jk-g5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-746.37681159420299" y="81.696428571428569"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="UMz-MC-gu3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="3fl-yz-ykR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="CnS-Vt-xCN"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JyP-UF-HDu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="11"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zd3-Ki-iPz">

@@ -196,7 +196,6 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         let picture = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
-        
         profileImage.image = picture
 
         let data = picture.pngData()

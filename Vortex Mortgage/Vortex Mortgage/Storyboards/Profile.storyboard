@@ -53,6 +53,15 @@
                                         <rect key="frame" x="128" y="95" width="119" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-ON-oFr">
+                                        <rect key="frame" x="19" y="50" width="24" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" image="camera" catalog="system"/>
+                                        <connections>
+                                            <action selector="choosePhotoPressed:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="lXE-sT-uWD"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -162,6 +171,7 @@
     <resources>
         <image name="apps.iphone" width="11" height="18"/>
         <image name="avatar" width="200" height="200"/>
+        <image name="camera" catalog="system" width="128" height="96"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>
         <image name="square.and.pencil" catalog="system" width="128" height="118"/>

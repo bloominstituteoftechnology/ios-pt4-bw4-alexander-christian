@@ -21,7 +21,6 @@ class HomeViewController: UIViewController {
             self.showLoginViewController()
         }
     }
-    
 
     // MARK: - Navigation
 

@@ -18,6 +18,9 @@ class ProfileViewController: UIViewController {
     var last: String?
     var phoneNumber: String?
     var location: String?
+    var shouldBeDisplayed: Bool?
+    var savedPhoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")
+    var savedLocation = UserDefaults.standard.string(forKey: "location")
 
     //MARK: Outlets
     @IBOutlet var firstName: UILabel!
@@ -46,9 +49,23 @@ class ProfileViewController: UIViewController {
     //MARK: View Controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        ifShouldBeDisplayed()
+        phoneNumberTextField.text = savedPhoneNumber
         updateViews()
         addUITweaks()
         originalImage = profileImage.image
+        shouldBeDisplayed = false
+        locationTextField.text = savedLocation
+       
+        
+        if locationTextField.text == ""  {
+        locationImage.isHidden = true
+        locationLabel.isHidden = true
+        } else {
+            locationImage.isHidden = false
+            locationLabel.isHidden = false
+            locationLabel.text = locationTextField.text
+        }
     }
     
     func updateViews() {
@@ -56,7 +73,28 @@ class ProfileViewController: UIViewController {
         self.emailLabel.text = email
         self.firstName.text = first
         self.lastName.text = last
+        
+        if phoneNumberTextField.text == ""  {
+        phoneImage.isHidden = true
+        phoneNumberLabel.isHidden = true
+        } else {
+            phoneImage.isHidden = false
+            phoneNumberLabel.isHidden = false
+            phoneNumberLabel.text = phoneNumberTextField.text
+        }
     }
+    
+    func ifShouldBeDisplayed() {
+        if shouldBeDisplayed == false {
+            phoneImage.isHidden = false
+            locationImage.isHidden = false
+        } else {
+            phoneImage.isHidden = true
+            locationImage.isHidden = true
+        }
+    }
+    
+    
     
     func addUITweaks() {
         profileImage.layer.cornerRadius = 20
@@ -94,10 +132,6 @@ class ProfileViewController: UIViewController {
         } else {
             phoneNumberLabel.isHidden = false
         }
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -123,7 +157,9 @@ class ProfileViewController: UIViewController {
         phoneNumber = phoneNumberTextField.text
         location = locationTextField.text
         locationLabel.text = location
-        phoneNumberLabel.text = phoneNumber
+        UserDefaults.standard.set(location, forKey: "location")
+        UserDefaults.standard.set(phoneNumber, forKey: "phoneNumber")
+        phoneNumberLabel.text = UserDefaults.standard.string(forKey: "phoneNumber")
         phoneNumberTextField.isHidden = true
         locationTextField.isHidden = true
         cancelButton.isHidden = true
@@ -144,6 +180,10 @@ class ProfileViewController: UIViewController {
     
     @IBAction func choosePhotoPressed(_ sender: Any) {
         presentImagePickerController()
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        present(imagePicker, animated: true, completion: nil)
     }
     
     @IBAction func savePhotoPressed(_ sender: Any) {
@@ -171,10 +211,12 @@ class ProfileViewController: UIViewController {
     }
 }
 
+// MARK: Extentions
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let picture = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        
         profileImage.image = picture
         let data = picture.pngData()
         let fileManager = FileManager.default
@@ -182,6 +224,7 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
         picker.dismiss(animated: true, completion: nil)
     }
+    
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }

@@ -59,7 +59,7 @@
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="camera" catalog="system"/>
                                         <connections>
-                                            <action selector="choosePhotoPressed:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="lXE-sT-uWD"/>
+                                            <action selector="choosePhotoPressed:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="aWK-bD-PcE"/>
                                         </connections>
                                     </button>
                                 </subviews>

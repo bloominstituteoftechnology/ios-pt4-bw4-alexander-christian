@@ -17,6 +17,7 @@
 		1F101C2D249E9A3500F6A835 /* PieChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C29249E9A3500F6A835 /* PieChartRow.swift */; };
 		1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2A249E9A3500F6A835 /* PieChartCell.swift */; };
 		1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2F249E9E3200F6A835 /* Helpers.swift */; };
+		1F1AC37F24AAC0D800D2EBDA /* UIImage+Scaling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AC37E24AAC0D800D2EBDA /* UIImage+Scaling.swift */; };
 		1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6C249ADE7F005EE536 /* ViewController.swift */; };
 		1F9BF6C3249C66570083F051 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C2249C66570083F051 /* Profile.storyboard */; };
 		1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */; };
@@ -46,6 +47,7 @@
 		1F101C29249E9A3500F6A835 /* PieChartRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartRow.swift; sourceTree = "<group>"; };
 		1F101C2A249E9A3500F6A835 /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
 		1F101C2F249E9E3200F6A835 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		1F1AC37E24AAC0D800D2EBDA /* UIImage+Scaling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Scaling.swift"; sourceTree = "<group>"; };
 		1F4F0B6C249ADE7F005EE536 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vortex Mortgage.entitlements"; sourceTree = "<group>"; };
 		1F9BF6C2249C66570083F051 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				1FBE82F124A2F4FF00C6752E /* Keychain.swift */,
+				1F1AC37E24AAC0D800D2EBDA /* UIImage+Scaling.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F101C2C249E9A3500F6A835 /* PieChartView.swift in Sources */,
+				1F1AC37F24AAC0D800D2EBDA /* UIImage+Scaling.swift in Sources */,
 				1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */,
 				1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */,
 				1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */,

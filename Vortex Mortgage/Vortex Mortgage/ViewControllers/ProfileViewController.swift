@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import CoreImage
+import Photos
 
 class ProfileViewController: UIViewController {
     
@@ -24,7 +26,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var lastName: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var profileView: UIView!
-    @IBOutlet var profileImage: UIView!
+    @IBOutlet var profileImage: UIImageView!
     @IBOutlet var phoneNumberLabel: UILabel!
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var locationLabel: UILabel!

@@ -98,12 +98,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cupertino, Califiornia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJp-Yr-lnN">
-                                <rect key="frame" x="50" y="450" width="158" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYT-rf-aqs">
                                 <rect key="frame" x="247" y="728" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -128,6 +122,12 @@
                                     <action selector="cancelTapped:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="hdj-v7-NiP"/>
                                 </connections>
                             </button>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cupertino, Califiornia" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hJp-Yr-lnN">
+                                <rect key="frame" x="50" y="450" width="158" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.34509803919999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -149,7 +149,7 @@
                         <outlet property="phoneImage" destination="TEo-Ff-LFB" id="WWU-SZ-DGT"/>
                         <outlet property="phoneNumberLabel" destination="XN7-eK-n5a" id="yb8-Iq-I7q"/>
                         <outlet property="phoneNumberTextField" destination="yh9-RY-phi" id="WLY-H5-Fiw"/>
-                        <outlet property="profileImage" destination="vnm-Lu-ysd" id="9Xc-lt-gJv"/>
+                        <outlet property="profileImage" destination="vnm-Lu-ysd" id="1zP-fx-anW"/>
                         <outlet property="profileView" destination="Hxq-K9-524" id="wjq-3i-bvv"/>
                         <outlet property="saveButton" destination="yYT-rf-aqs" id="Cox-nv-WqA"/>
                     </connections>

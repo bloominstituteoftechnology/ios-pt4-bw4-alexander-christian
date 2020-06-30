@@ -10,6 +10,7 @@
 		1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD842499DBE800183547 /* OnboardingOneViewController.swift */; };
 		1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD862499E01200183547 /* OnboardingTwoViewController.swift */; };
 		1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD882499E02500183547 /* OnboardingThreeViewController.swift */; };
+		174364D824ABF71E001ABB64 /* PaymentScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174364D724ABF71E001ABB64 /* PaymentScheduleTableViewCell.swift */; };
 		174457B924AAE388009A54E4 /* PaymentScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174457B824AAE387009A54E4 /* PaymentScheduleHeaderView.swift */; };
 		174457BB24AAF005009A54E4 /* PaymentScheduleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174457BA24AAF005009A54E4 /* PaymentScheduleHeaderView.xib */; };
 		174457BD24AB0527009A54E4 /* PaymentScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174457BC24AB0527009A54E4 /* PaymentScheduleTableViewController.swift */; };
@@ -40,6 +41,7 @@
 		1734DD842499DBE800183547 /* OnboardingOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOneViewController.swift; sourceTree = "<group>"; };
 		1734DD862499E01200183547 /* OnboardingTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwoViewController.swift; sourceTree = "<group>"; };
 		1734DD882499E02500183547 /* OnboardingThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThreeViewController.swift; sourceTree = "<group>"; };
+		174364D724ABF71E001ABB64 /* PaymentScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		174457B824AAE387009A54E4 /* PaymentScheduleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScheduleHeaderView.swift; sourceTree = "<group>"; };
 		174457BA24AAF005009A54E4 /* PaymentScheduleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentScheduleHeaderView.xib; sourceTree = "<group>"; };
 		174457BC24AB0527009A54E4 /* PaymentScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScheduleTableViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				174457B824AAE387009A54E4 /* PaymentScheduleHeaderView.swift */,
 				174457BA24AAF005009A54E4 /* PaymentScheduleHeaderView.xib */,
+				174364D724ABF71E001ABB64 /* PaymentScheduleTableViewCell.swift */,
 			);
 			path = TableViewHeader;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */,
 				1FDF700C24A44D88004E8C8D /* HomeViewController.swift in Sources */,
 				174AACD624A5C7C0002418B8 /* ChartViewController.swift in Sources */,
+				174364D824ABF71E001ABB64 /* PaymentScheduleTableViewCell.swift in Sources */,
 				1FBE82F224A2F4FF00C6752E /* Keychain.swift in Sources */,
 				1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */,
 				174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */,

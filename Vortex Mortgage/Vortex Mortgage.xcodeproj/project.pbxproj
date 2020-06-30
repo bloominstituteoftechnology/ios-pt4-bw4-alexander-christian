@@ -10,6 +10,7 @@
 		1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD842499DBE800183547 /* OnboardingOneViewController.swift */; };
 		1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD862499E01200183547 /* OnboardingTwoViewController.swift */; };
 		1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD882499E02500183547 /* OnboardingThreeViewController.swift */; };
+		174457B924AAE388009A54E4 /* PaymentScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174457B824AAE387009A54E4 /* PaymentScheduleHeaderView.swift */; };
 		174AACD624A5C7C0002418B8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174AACD524A5C7C0002418B8 /* ChartViewController.swift */; };
 		174AACD824A5C854002418B8 /* Compatibilty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174AACD724A5C854002418B8 /* Compatibilty.swift */; };
 		174AACDA24A5C898002418B8 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174AACD924A5C898002418B8 /* PieChartView.swift */; };
@@ -35,6 +36,7 @@
 		1734DD842499DBE800183547 /* OnboardingOneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingOneViewController.swift; sourceTree = "<group>"; };
 		1734DD862499E01200183547 /* OnboardingTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwoViewController.swift; sourceTree = "<group>"; };
 		1734DD882499E02500183547 /* OnboardingThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThreeViewController.swift; sourceTree = "<group>"; };
+		174457B824AAE387009A54E4 /* PaymentScheduleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScheduleHeaderView.swift; sourceTree = "<group>"; };
 		174AACD524A5C7C0002418B8 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		174AACD724A5C854002418B8 /* Compatibilty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compatibilty.swift; sourceTree = "<group>"; };
 		174AACD924A5C898002418B8 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		174457B724AAE33A009A54E4 /* TableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				174457B824AAE387009A54E4 /* PaymentScheduleHeaderView.swift */,
+			);
+			path = TableViewHeader;
+			sourceTree = "<group>";
+		};
 		174AACD424A5C766002418B8 /* Chart Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 		1FBC772C2499C11100ACCDB9 = {
 			isa = PBXGroup;
 			children = (
+				174457B724AAE33A009A54E4 /* TableViewHeader */,
 				174AACD424A5C766002418B8 /* Chart Files */,
 				1FBC77372499C11100ACCDB9 /* Vortex Mortgage */,
 				1FBC77362499C11100ACCDB9 /* Products */,
@@ -233,6 +244,7 @@
 				1FBE82F224A2F4FF00C6752E /* Keychain.swift in Sources */,
 				1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */,
 				174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */,
+				174457B924AAE388009A54E4 /* PaymentScheduleHeaderView.swift in Sources */,
 				174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */,
 				1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */,
 				1FBE82FA24A30F3B00C6752E /* LoginViewController.swift in Sources */,

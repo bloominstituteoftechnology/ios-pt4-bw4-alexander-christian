@@ -47,7 +47,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Take me to Calculations"/>
                                 <connections>
-                                    <segue destination="3SZ-BI-kRh" kind="presentation" id="IfB-Xu-CUF"/>
+                                    <segue destination="3SZ-BI-kRh" kind="presentation" modalPresentationStyle="fullScreen" id="IfB-Xu-CUF"/>
                                 </connections>
                             </button>
                         </subviews>

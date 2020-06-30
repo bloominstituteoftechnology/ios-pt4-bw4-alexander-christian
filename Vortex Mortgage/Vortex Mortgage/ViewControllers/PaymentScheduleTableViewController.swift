@@ -10,16 +10,29 @@ import UIKit
 
 class PaymentScheduleTableViewController: UITableViewController {
     
+    
     var chartViewController = ChartViewController()
-    var myItems = ["Ferrari", "Lambo", "Mazze"]
-
+    var paymentScheduleHeaderView = PaymentScheduleHeaderView()
+    var myItems: [[String]] = [["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"]]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         let headerNib = UINib.init(nibName: "PaymentScheduleHeaderView", bundle: Bundle.main)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "PaymentScheduleHeaderView")
+        
+        
+//        for data in myItems[1].description {
+//            if case let paymentScheduleHeaderView.principalLabel.text = "\(data)" {
+//
+//            } else {
+//                return
+//            }
+//        }
+        
     }
 
     // MARK: - Table view data source
@@ -37,7 +50,7 @@ class PaymentScheduleTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "PaymentScheduleHeaderView") as! PaymentScheduleHeaderView
         
-        headerView.interestLabel.text = "My Cars"
+        //headerView.interestLabel.text = "My Cars"
         return headerView
     }
     
@@ -47,15 +60,19 @@ class PaymentScheduleTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as! PaymentScheduleTableViewCell
 
         // Configure the cell...
-        cell.textLabel?.text = myItems[indexPath.row]
+        let myArray = self.myItems[indexPath.row]
+        cell.InterestInfoLabel.text = myArray[0]
+        cell.principalInfoLabel.text = myArray[1]
+        cell.remainingInfoLabel.text = myArray[2]
 
+        
         return cell
     }
     
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

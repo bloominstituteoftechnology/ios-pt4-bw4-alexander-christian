@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var lastName: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var profileView: UIView!
-    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var profileImage: UIView!
     @IBOutlet var phoneNumberLabel: UILabel!
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var locationLabel: UILabel!
@@ -50,13 +50,10 @@ class ProfileViewController: UIViewController {
 
     //MARK: View Controller life cycle
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
         addUITweaks()
-        
         originalImage = profileImage.image
     }
     
@@ -86,14 +83,7 @@ class ProfileViewController: UIViewController {
         guard UIImagePickerController.isSourceTypeAvailable(.photoLibrary) else {
             print("The photo library isn't available.")
             return
-        }
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.delegate = self
-        
-        present(imagePicker, animated: true, completion: nil)
-    }
+          
     //MARK: Actions
     
     @IBAction func editProfileTapped(_ sender: Any) {
@@ -111,8 +101,14 @@ class ProfileViewController: UIViewController {
         } else {
             phoneNumberLabel.isHidden = false
         }
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
     }
-    
+
     @IBAction func cancelTapped(_ sender: Any) {
         
         locationTextField.isHidden = true

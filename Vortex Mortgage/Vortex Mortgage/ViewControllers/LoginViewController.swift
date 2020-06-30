@@ -113,6 +113,9 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
             viewController.firstName = firstName
             print(firstName!)
 
+            viewController.firstName = firstName
+            print(firstName!)
+
             viewController.lastName = lastName
             print(lastName!)
             if let email = email {

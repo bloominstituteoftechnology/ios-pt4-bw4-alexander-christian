@@ -15,10 +15,6 @@
 		174AACDA24A5C898002418B8 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174AACD924A5C898002418B8 /* PieChartView.swift */; };
 		174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAED249C29C2004E768F /* CalculateViewController.swift */; };
 		174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAEF249C29CA004E768F /* ResultsViewController.swift */; };
-		1F101C26249E83CA00F6A835 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C25249E83CA00F6A835 /* Test.swift */; };
-		1F101C2D249E9A3500F6A835 /* PieChartRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C29249E9A3500F6A835 /* PieChartRow.swift */; };
-		1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2A249E9A3500F6A835 /* PieChartCell.swift */; };
-		1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F101C2F249E9E3200F6A835 /* Helpers.swift */; };
 		1F4F0B6D249ADE7F005EE536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F4F0B6C249ADE7F005EE536 /* ViewController.swift */; };
 		1F90EB5D24AAE10000A03BDE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F90EB5C24AAE0FF00A03BDE /* UIImage.swift */; };
 		1F9BF6C3249C66570083F051 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C2249C66570083F051 /* Profile.storyboard */; };
@@ -47,10 +43,6 @@
 		174AACD924A5C898002418B8 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		174ADAED249C29C2004E768F /* CalculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		174ADAEF249C29CA004E768F /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
-		1F101C25249E83CA00F6A835 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
-		1F101C29249E9A3500F6A835 /* PieChartRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartRow.swift; sourceTree = "<group>"; };
-		1F101C2A249E9A3500F6A835 /* PieChartCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartCell.swift; sourceTree = "<group>"; };
-		1F101C2F249E9E3200F6A835 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		1F4F0B6C249ADE7F005EE536 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vortex Mortgage.entitlements"; sourceTree = "<group>"; };
 		1F90EB5C24AAE0FF00A03BDE /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -97,10 +89,6 @@
 				1FFD2F4224A458C300BD9817 /* SettingsTableViewController.swift */,
 				174ADAED249C29C2004E768F /* CalculateViewController.swift */,
 				174ADAEF249C29CA004E768F /* ResultsViewController.swift */,
-				1F101C25249E83CA00F6A835 /* Test.swift */,
-				1F101C2A249E9A3500F6A835 /* PieChartCell.swift */,
-				1F101C29249E9A3500F6A835 /* PieChartRow.swift */,
-				1F101C2F249E9E3200F6A835 /* Helpers.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -254,16 +242,12 @@
 				1FDF700C24A44D88004E8C8D /* HomeViewController.swift in Sources */,
 				174AACD624A5C7C0002418B8 /* ChartViewController.swift in Sources */,
 				1FBE82F224A2F4FF00C6752E /* Keychain.swift in Sources */,
-				1F101C2D249E9A3500F6A835 /* PieChartRow.swift in Sources */,
-				1F101C26249E83CA00F6A835 /* Test.swift in Sources */,
 				1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */,
 				174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */,
 				174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */,
-				1F101C30249E9E3200F6A835 /* Helpers.swift in Sources */,
 				1FBC77392499C11100ACCDB9 /* AppDelegate.swift in Sources */,
 				1FBE82FA24A30F3B00C6752E /* LoginViewController.swift in Sources */,
 				174AACDA24A5C898002418B8 /* PieChartView.swift in Sources */,
-				1F101C2E249E9A3500F6A835 /* PieChartCell.swift in Sources */,
 				1FFD2F4324A458C300BD9817 /* SettingsTableViewController.swift in Sources */,
 				1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */,
 				1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */,

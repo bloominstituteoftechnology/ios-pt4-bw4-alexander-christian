@@ -305,8 +305,8 @@ class ChartViewController: UIViewController {
         calculatePaymentOutlet.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             calculatePaymentOutlet.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 2),
-            calculatePaymentOutlet.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            calculatePaymentOutlet.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+            calculatePaymentOutlet.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
+            calculatePaymentOutlet.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0)
         ])
         
         

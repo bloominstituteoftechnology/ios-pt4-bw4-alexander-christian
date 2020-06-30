@@ -9,7 +9,12 @@
 import UIKit
 
 class PaymentScheduleHeaderView: UITableViewHeaderFooterView {
-
+    
+    
+    @IBOutlet weak var interestLabel: UILabel!
+    @IBOutlet weak var principalLabel: UILabel!
+    @IBOutlet weak var remainingBalanceLabel: UILabel!
+    
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.

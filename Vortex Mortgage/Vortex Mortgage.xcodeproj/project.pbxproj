@@ -11,6 +11,8 @@
 		1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD862499E01200183547 /* OnboardingTwoViewController.swift */; };
 		1734DD892499E02500183547 /* OnboardingThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1734DD882499E02500183547 /* OnboardingThreeViewController.swift */; };
 		174457B924AAE388009A54E4 /* PaymentScheduleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174457B824AAE387009A54E4 /* PaymentScheduleHeaderView.swift */; };
+		174457BB24AAF005009A54E4 /* PaymentScheduleHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174457BA24AAF005009A54E4 /* PaymentScheduleHeaderView.xib */; };
+		174457BD24AB0527009A54E4 /* PaymentScheduleTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174457BC24AB0527009A54E4 /* PaymentScheduleTableViewController.swift */; };
 		174AACD624A5C7C0002418B8 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174AACD524A5C7C0002418B8 /* ChartViewController.swift */; };
 		174AACD824A5C854002418B8 /* Compatibilty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174AACD724A5C854002418B8 /* Compatibilty.swift */; };
 		174AACDA24A5C898002418B8 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174AACD924A5C898002418B8 /* PieChartView.swift */; };
@@ -39,6 +41,8 @@
 		1734DD862499E01200183547 /* OnboardingTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingTwoViewController.swift; sourceTree = "<group>"; };
 		1734DD882499E02500183547 /* OnboardingThreeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingThreeViewController.swift; sourceTree = "<group>"; };
 		174457B824AAE387009A54E4 /* PaymentScheduleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScheduleHeaderView.swift; sourceTree = "<group>"; };
+		174457BA24AAF005009A54E4 /* PaymentScheduleHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentScheduleHeaderView.xib; sourceTree = "<group>"; };
+		174457BC24AB0527009A54E4 /* PaymentScheduleTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentScheduleTableViewController.swift; sourceTree = "<group>"; };
 		174AACD524A5C7C0002418B8 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		174AACD724A5C854002418B8 /* Compatibilty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compatibilty.swift; sourceTree = "<group>"; };
 		174AACD924A5C898002418B8 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 				1FFD2F4224A458C300BD9817 /* SettingsTableViewController.swift */,
 				174ADAED249C29C2004E768F /* CalculateViewController.swift */,
 				174ADAEF249C29CA004E768F /* ResultsViewController.swift */,
+				174457BC24AB0527009A54E4 /* PaymentScheduleTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -96,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				174457B824AAE387009A54E4 /* PaymentScheduleHeaderView.swift */,
+				174457BA24AAF005009A54E4 /* PaymentScheduleHeaderView.xib */,
 			);
 			path = TableViewHeader;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 				1FBC77422499C11400ACCDB9 /* Assets.xcassets in Resources */,
 				1FBC775A2499C80100ACCDB9 /* Settings.storyboard in Resources */,
 				1FBC77402499C11100ACCDB9 /* Main.storyboard in Resources */,
+				174457BB24AAF005009A54E4 /* PaymentScheduleHeaderView.xib in Resources */,
 				1F9BF6C3249C66570083F051 /* Profile.storyboard in Resources */,
 				1FBC77562499C7F000ACCDB9 /* Onboarding.storyboard in Resources */,
 			);
@@ -257,6 +264,7 @@
 				1FBE82FA24A30F3B00C6752E /* LoginViewController.swift in Sources */,
 				174AACDA24A5C898002418B8 /* PieChartView.swift in Sources */,
 				1FFD2F4324A458C300BD9817 /* SettingsTableViewController.swift in Sources */,
+				174457BD24AB0527009A54E4 /* PaymentScheduleTableViewController.swift in Sources */,
 				1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */,
 				1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */,
 			);

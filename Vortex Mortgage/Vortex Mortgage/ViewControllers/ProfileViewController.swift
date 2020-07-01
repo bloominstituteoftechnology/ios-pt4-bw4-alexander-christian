@@ -12,7 +12,7 @@ import Photos
 
 class ProfileViewController: UIViewController {
     
-    //MARK: Properties
+    //MARK: - Properties
     var email: String?
     var first: String?
     var last: String?
@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
     var savedPhoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")
     var savedLocation = UserDefaults.standard.string(forKey: "location")
 
-    //MARK: Outlets
+    //MARK: - Outlets
     @IBOutlet var firstName: UILabel!
     @IBOutlet var lastName: UILabel!
     @IBOutlet var emailLabel: UILabel!
@@ -37,7 +37,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet var locationImage: UIImageView!
     @IBOutlet var cancelButton: UIButton!
     
-    // MARK: Core Image Placeholder properties
+    // MARK: - Core Image Placeholder properties
     var originalImage: UIImage? {
         didSet {
             var scaledSize = profileImage.bounds.size
@@ -49,23 +49,15 @@ class ProfileViewController: UIViewController {
     //MARK: View Controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        ifShouldBeDisplayed()
         phoneNumberTextField.text = savedPhoneNumber
+        locationTextField.text = savedLocation
+        updateLocationLabel()
+        updatePhoneNumberLabel()
         updateViews()
         addUITweaks()
         originalImage = profileImage.image
         shouldBeDisplayed = false
-        locationTextField.text = savedLocation
-       
-        
-        if locationTextField.text == ""  {
-        locationImage.isHidden = true
-        locationLabel.isHidden = true
-        } else {
-            locationImage.isHidden = false
-            locationLabel.isHidden = false
-            locationLabel.text = locationTextField.text
-        }
+        dismissKeyboardFunc()
     }
     
     func updateViews() {
@@ -73,10 +65,23 @@ class ProfileViewController: UIViewController {
         self.emailLabel.text = email
         self.firstName.text = first
         self.lastName.text = last
-        
+    }
+    
+    func updateLocationLabel() {
+        if locationTextField.text == ""  {
+            locationImage.isHidden = true
+            locationLabel.isHidden = true
+        } else {
+            locationImage.isHidden = false
+            locationLabel.isHidden = false
+            locationLabel.text = locationTextField.text
+        }
+    }
+    
+    func updatePhoneNumberLabel() {
         if phoneNumberTextField.text == ""  {
-        phoneImage.isHidden = true
-        phoneNumberLabel.isHidden = true
+            phoneImage.isHidden = true
+            phoneNumberLabel.isHidden = true
         } else {
             phoneImage.isHidden = false
             phoneNumberLabel.isHidden = false
@@ -84,17 +89,14 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func ifShouldBeDisplayed() {
-        if shouldBeDisplayed == false {
-            phoneImage.isHidden = false
-            locationImage.isHidden = false
-        } else {
-            phoneImage.isHidden = true
-            locationImage.isHidden = true
-        }
+    func dismissKeyboardFunc() {
+        let tap:  UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
-    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
     
     func addUITweaks() {
         profileImage.layer.cornerRadius = 20
@@ -118,7 +120,7 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    //MARK: Actions
+    //MARK: - Actions
     @IBAction func editProfileTapped(_ sender: Any) {
         locationLabel.isHidden = true
         locationTextField.isHidden = false
@@ -132,6 +134,10 @@ class ProfileViewController: UIViewController {
         } else {
             phoneNumberLabel.isHidden = false
         }
+    }
+    
+    @IBAction func backButtonPressed() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelTapped(_ sender: Any) {
@@ -211,7 +217,7 @@ class ProfileViewController: UIViewController {
     }
 }
 
-// MARK: Extentions
+// MARK: - Extentions
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

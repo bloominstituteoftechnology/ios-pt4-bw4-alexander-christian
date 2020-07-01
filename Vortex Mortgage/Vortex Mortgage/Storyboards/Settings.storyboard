@@ -40,7 +40,7 @@
                             </constraints>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="i3f-97-nfn">
-                            <rect key="frame" x="0.0" y="327" width="414" height="81"/>
+                            <rect key="frame" x="0.0" y="505" width="414" height="81"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ba-aE-tRA">
@@ -54,7 +54,7 @@
                                                 <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </state>
                                             <connections>
-                                                <action selector="logoutPressed:" destination="cVc-RW-Fim" eventType="touchUpInside" id="LwA-1D-3YX"/>
+                                                <action selector="logoutPressed:" destination="cVc-RW-Fim" eventType="touchUpInside" id="2pl-0v-XAE"/>
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="arrow.right.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zd6-et-HxO">
@@ -137,6 +137,48 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="8MB-sc-xGw">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Facebook" textLabel="HD9-RU-Q47" rowHeight="53" style="IBUITableViewCellStyleDefault" id="ZAD-P7-zrm">
+                                        <rect key="frame" x="20" y="345" width="374" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZAD-P7-zrm" id="udf-Zt-m0F">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Run out of time so settings to be a" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HD9-RU-Q47">
+                                                    <rect key="frame" x="20" y="0.0" width="315" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="Cgj-Ta-MGG">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Facebook" textLabel="7BN-xD-WyA" rowHeight="53" style="IBUITableViewCellStyleDefault" id="YAu-oz-xM3">
+                                        <rect key="frame" x="20" y="434" width="374" height="53"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YAu-oz-xM3" id="NjA-xV-GJD">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="53"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Future Feature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7BN-xD-WyA">
+                                                    <rect key="frame" x="20" y="0.0" width="315" height="53"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="cVc-RW-Fim" id="07G-49-3Jb"/>
@@ -146,11 +188,22 @@
                     <navigationItem key="navigationItem" title="Settings" id="NSs-G0-oK3"/>
                     <connections>
                         <outlet property="logoutView" destination="5ba-aE-tRA" id="j9X-dF-ONd"/>
+                        <segue destination="kJD-vK-KEe" kind="show" identifier="GoBackToMain" id="Cy2-c3-kCP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Hl-jk-g5d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-746.37681159420299" y="81.696428571428569"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="9Rz-M0-fvt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="kJD-vK-KEe" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="RWM-rT-CBi"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fjH-EN-2Ib" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="78" y="21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zd3-Ki-iPz">

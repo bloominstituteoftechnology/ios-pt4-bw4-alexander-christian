@@ -22,15 +22,17 @@ class SettingsTableViewController: UITableViewController {
         logoutView.layer.shadowOpacity = 0.5
     }
     
-    @IBAction func logoutPressed(_ UIsender: Any) {
-        print("Ha ha")
+    @IBAction func logoutPressed(_ sender: Any) {
+        
     }
+    
+    
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 5
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

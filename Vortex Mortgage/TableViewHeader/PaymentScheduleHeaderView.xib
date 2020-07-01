@@ -46,15 +46,26 @@
                                 <constraint firstAttribute="height" constant="4" id="qwb-Rp-dG2"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kHY-UB-4w6">
+                            <rect key="frame" x="0.0" y="6" width="415" height="4"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="4" id="7Zf-kG-dXg"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
+                        <constraint firstAttribute="trailing" secondItem="kHY-UB-4w6" secondAttribute="trailing" id="0Ja-ZB-FOq"/>
                         <constraint firstAttribute="bottom" secondItem="80V-Wi-mg1" secondAttribute="bottom" constant="18" id="2qf-P0-EtP"/>
                         <constraint firstItem="XfK-x6-RfH" firstAttribute="leading" secondItem="nHC-IO-SW7" secondAttribute="leading" id="H63-hW-GXS"/>
                         <constraint firstItem="80V-Wi-mg1" firstAttribute="leading" secondItem="nHC-IO-SW7" secondAttribute="leading" constant="20" id="IR5-3e-kj6"/>
                         <constraint firstAttribute="bottom" secondItem="XfK-x6-RfH" secondAttribute="bottom" constant="6" id="RWX-xo-ZpU"/>
+                        <constraint firstItem="kHY-UB-4w6" firstAttribute="top" secondItem="nHC-IO-SW7" secondAttribute="top" constant="6" id="ZKe-Yh-c94"/>
+                        <constraint firstItem="80V-Wi-mg1" firstAttribute="top" secondItem="kHY-UB-4w6" secondAttribute="bottom" constant="8" id="flk-W1-9E9"/>
                         <constraint firstItem="XfK-x6-RfH" firstAttribute="top" secondItem="80V-Wi-mg1" secondAttribute="bottom" constant="8" id="hyR-7c-pqd"/>
                         <constraint firstAttribute="trailing" secondItem="XfK-x6-RfH" secondAttribute="trailing" id="hyg-89-MYz"/>
+                        <constraint firstItem="kHY-UB-4w6" firstAttribute="leading" secondItem="nHC-IO-SW7" secondAttribute="leading" id="s59-ib-j1j"/>
                         <constraint firstAttribute="trailing" secondItem="80V-Wi-mg1" secondAttribute="trailing" constant="20" id="v55-GS-aUc"/>
                         <constraint firstItem="80V-Wi-mg1" firstAttribute="top" secondItem="nHC-IO-SW7" secondAttribute="top" constant="18" id="z6V-Ff-sU9"/>
                     </constraints>

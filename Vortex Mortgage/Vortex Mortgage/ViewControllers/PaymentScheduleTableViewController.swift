@@ -10,10 +10,14 @@ import UIKit
 
 class PaymentScheduleTableViewController: UITableViewController {
     
-    
+    var loanAmount: Float = 0.00
+    var loanTerm: Float = 0.00
+    var myNewInterestRate: Float = 0.00
+    var myScheduledPayments: [[Float]] = [[]]
     var chartViewController = ChartViewController()
     var paymentScheduleHeaderView = PaymentScheduleHeaderView()
-    var myItems: [[String]] = [["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"]]
+    
+//    var myItems: [[String]] = [["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"]]
     
     
     override func viewDidLoad() {
@@ -23,18 +27,9 @@ class PaymentScheduleTableViewController: UITableViewController {
         
         let headerNib = UINib.init(nibName: "PaymentScheduleHeaderView", bundle: Bundle.main)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "PaymentScheduleHeaderView")
-        
-        
-//        for data in myItems[1].description {
-//            if case let paymentScheduleHeaderView.principalLabel.text = "\(data)" {
-//
-//            } else {
-//                return
-//            }
-//        }
-        
     }
-
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -44,7 +39,7 @@ class PaymentScheduleTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return myItems.count
+        return myScheduledPayments.count
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -63,10 +58,14 @@ class PaymentScheduleTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as! PaymentScheduleTableViewCell
 
         // Configure the cell...
-        let myArray = self.myItems[indexPath.row]
-        cell.InterestInfoLabel.text = myArray[0]
-        cell.principalInfoLabel.text = myArray[1]
-        cell.remainingInfoLabel.text = myArray[2]
+        let myArray = self.myScheduledPayments[indexPath.row]
+        cell.InterestInfoLabel.text = "\(myArray[0])"
+        cell.principalInfoLabel.text = "\(myArray[1])"
+        cell.remainingInfoLabel.text = "\(myArray[2])"
+        
+        if myArray[2] <= 0 {
+            cell.remainingInfoLabel.text = "0"
+        }
 
         
         return cell

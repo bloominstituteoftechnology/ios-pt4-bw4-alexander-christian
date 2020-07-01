@@ -15,7 +15,7 @@ class PaymentScheduleTableViewCell: UITableViewCell {
     @IBOutlet weak var principalInfoLabel: UILabel!
     @IBOutlet weak var remainingInfoLabel: UILabel!
     
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,6 +25,17 @@ class PaymentScheduleTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        InterestInfoLabel.layer.borderWidth = 1
+        InterestInfoLabel.layer.borderColor = UIColor.black.cgColor
+        InterestInfoLabel.clipsToBounds = true
+        
+        principalInfoLabel.layer.borderWidth = 1
+        principalInfoLabel.layer.borderColor = UIColor.black.cgColor
+        principalInfoLabel.clipsToBounds = true
+        
+        remainingInfoLabel.layer.borderWidth = 1
+        remainingInfoLabel.layer.borderColor = UIColor.black.cgColor
+        remainingInfoLabel.clipsToBounds = true
     }
 
 }

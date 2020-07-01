@@ -14,9 +14,10 @@ class ChartViewController: UIViewController {
     var myNewHomePrice: Float = 0.00
     var myNewDownPayment: Float = 0.00
     var myNewInterestRate: Float = 0.00
-    var loanTerm: Float = 0.00
+    var loanTerm1: Float = 0.00
     var downPaymentMinusHomePrice: Float = 0.00
-    
+    var loanTerm: Float = 0.00
+    var myScheduledPayments: [[Float]] = [[]]
     //Computed Properties:
     var loanAmount: Float {
         downPaymentMinusHomePrice
@@ -92,15 +93,46 @@ class ChartViewController: UIViewController {
         
         let loanTermLabel = String(format: "%.0f", sender.value)
         termAmountLabel.text = "\(loanTermLabel)"
-        let loanTerm1 = Float(loanTermLabel)!
+        loanTerm1 = Float(loanTermLabel)!
         loanTerm = loanTerm1 * 12
     }
     
     @IBAction func calculatePaymentTapped(_ sender: UIButton) {
-        totalMonthlyPayment = loanAmountWithTerm + interestDividedByTerm
+        
+        totalMonthlyPayment = getMonthlyPayment(loanAmount: loanAmount, termMonth: loanTerm, interestRate: myNewInterestRate)
         let roundedResult = totalMonthlyPayment.rounded(toPlaces: 2)
         totalMonthlyLabel.text = "Monthly Payment: $\(roundedResult)"
+        
+        myScheduledPayments = getPaymentSchedule(loanAmount: loanAmount, termMonth: Int(loanTerm), interestRate: myNewInterestRate)
     }
+    
+    func getMonthlyPayment(loanAmount: Float, termMonth: Float, interestRate: Float) -> Float {
+        let r : Float = interestRate / (100 * 12)
+        let m : Float = Float(termMonth)
+        let l : Float = loanAmount
+        let payment : Float = l * (r * pow((1 + r), m)) / (pow((1 + r), m) - 1)
+        return payment
+    }
+    
+    func getPaymentSchedule(loanAmount: Float, termMonth: Int, interestRate: Float) -> [[Float]] {
+        let r : Float = interestRate / (100 * 12)
+        let monthlyPayment = getMonthlyPayment(loanAmount: loanAmount, termMonth: loanTerm, interestRate: myNewInterestRate)
+        var totalInterest: Float = 0
+        var remainingBalance = loanAmount
+        var scheduleArray : [[Float]] = []
+        
+        for m in 1...termMonth {
+            let interest = remainingBalance * r
+            let principal = monthlyPayment - interest
+            totalInterest += interest
+            remainingBalance -= principal
+            scheduleArray += [[interest, principal, remainingBalance]]
+        }
+        
+        return scheduleArray
+    }
+
+    
     
     func updateSegment() {
         pieChartView.segments = [
@@ -112,8 +144,6 @@ class ChartViewController: UIViewController {
             LabelledSegment(color: #colorLiteral(red: 0.0, green: 0.392156863, blue: 1.0, alpha: 1.0), name: "Down Pmt",   value: CGFloat(downPaymentSlider.value * priceSlider.value / 100))
         ]
     }
-    
-    
     
     
     override func viewDidLoad() {
@@ -160,10 +190,20 @@ class ChartViewController: UIViewController {
         interestPercentageSign.layer.cornerRadius = 5
         interestPercentageSign.clipsToBounds = true
         
+        interestPercentageLabel.layer.borderColor = UIColor.black.cgColor
+        interestPercentageLabel.layer.borderWidth = 1.0
+        interestPercentageLabel.layer.cornerRadius = 5
+        interestPercentageLabel.clipsToBounds = true
+        
         termSignLabel.layer.borderColor = UIColor.black.cgColor
         termSignLabel.layer.borderWidth = 1.0
         termSignLabel.layer.cornerRadius = 5
         termSignLabel.clipsToBounds = true
+        
+        termAmountLabel.layer.borderColor = UIColor.black.cgColor
+        termAmountLabel.layer.borderWidth = 1.0
+        termAmountLabel.layer.cornerRadius = 5
+        termAmountLabel.clipsToBounds = true
         
         //Constraints code:
         pieChartView.translatesAutoresizingMaskIntoConstraints = false
@@ -211,9 +251,9 @@ class ChartViewController: UIViewController {
         //Constraints for downPayment Label:
         dpwnPaymentLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            dpwnPaymentLabel.widthAnchor.constraint(equalToConstant: 130),
+            dpwnPaymentLabel.widthAnchor.constraint(equalToConstant: 125),
             dpwnPaymentLabel.topAnchor.constraint(equalTo: priceSlider.bottomAnchor, constant: 30),
-            dpwnPaymentLabel.leadingAnchor.constraint(greaterThanOrEqualTo: downPaymentPercentageLabel.trailingAnchor, constant: 10),
+            dpwnPaymentLabel.leadingAnchor.constraint(greaterThanOrEqualTo: downPaymentPercentageLabel.trailingAnchor, constant: 20),
             dpwnPaymentLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         
@@ -230,7 +270,7 @@ class ChartViewController: UIViewController {
             downPaymentPercentageLabel.widthAnchor.constraint(equalToConstant: 58),
             downPaymentPercentageLabel.topAnchor.constraint(equalTo: priceSlider.bottomAnchor, constant: 30),
             downPaymentPercentageLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
-            downPaymentPercentageLabel.trailingAnchor.constraint(equalTo: dpwnPaymentLabel.leadingAnchor, constant: -14)
+            downPaymentPercentageLabel.trailingAnchor.constraint(equalTo: dpwnPaymentLabel.leadingAnchor, constant: -20)
         ])
         
         downPaymentSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -244,7 +284,7 @@ class ChartViewController: UIViewController {
         NSLayoutConstraint.activate([
             interestPercentageLabel.widthAnchor.constraint(equalToConstant: 140),
             interestPercentageLabel.topAnchor.constraint(equalTo: downPaymentSlider.bottomAnchor, constant: 30),
-            interestPercentageLabel.leadingAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
+            interestPercentageLabel.leadingAnchor.constraint(equalTo: interestPercentageSign.trailingAnchor),
             interestPercentageLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         
@@ -253,7 +293,7 @@ class ChartViewController: UIViewController {
             interestPercentageSign.widthAnchor.constraint(equalToConstant: 125),
             interestPercentageSign.topAnchor.constraint(equalTo: downPaymentSlider.bottomAnchor, constant: 30),
             interestPercentageSign.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            interestPercentageSign.trailingAnchor.constraint(equalTo: interestPercentageLabel.leadingAnchor, constant: -86)
+            interestPercentageSign.trailingAnchor.constraint(equalTo: interestPercentageLabel.leadingAnchor, constant: -91)
         ])
         
         interestPercentageSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -263,19 +303,11 @@ class ChartViewController: UIViewController {
             interestPercentageSlider.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         
-        termSignLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            termSignLabel.widthAnchor.constraint(equalToConstant: 125),
-            termSignLabel.topAnchor.constraint(equalTo: interestPercentageSlider.bottomAnchor, constant: 30),
-            termSignLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            termSignLabel.trailingAnchor.constraint(equalTo: termAmountLabel.leadingAnchor, constant: -124)
-        ])
-        
         termAmountLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            termAmountLabel.widthAnchor.constraint(equalToConstant: 125),
+            termAmountLabel.widthAnchor.constraint(equalToConstant: 155),
             termAmountLabel.topAnchor.constraint(equalTo: interestPercentageSlider.bottomAnchor, constant: 30),
-            termAmountLabel.leadingAnchor.constraint(equalTo: termSignLabel.trailingAnchor, constant: 20),
+            termAmountLabel.leadingAnchor.constraint(greaterThanOrEqualTo: termSignLabel.trailingAnchor, constant: 8),
             termAmountLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
         ])
         
@@ -283,16 +315,7 @@ class ChartViewController: UIViewController {
         NSLayoutConstraint.activate([
             termSignLabel.widthAnchor.constraint(equalToConstant: 125),
             termSignLabel.topAnchor.constraint(equalTo: interestPercentageSlider.bottomAnchor, constant: 30),
-            termSignLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            termSignLabel.trailingAnchor.constraint(equalTo: termAmountLabel.leadingAnchor, constant: -100),
-        ])
-        
-        termAmountLabel.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            termAmountLabel.widthAnchor.constraint(equalToConstant: 130),
-            termAmountLabel.topAnchor.constraint(equalTo: interestPercentageSlider.bottomAnchor, constant: 30),
-            termAmountLabel.leadingAnchor.constraint(greaterThanOrEqualTo: termSignLabel.trailingAnchor, constant: 20),
-            termAmountLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20)
+            termSignLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20)
         ])
         
         termSlider.translatesAutoresizingMaskIntoConstraints = false
@@ -323,6 +346,16 @@ class ChartViewController: UIViewController {
         //    ]
         //    view.addSubview(simplePieChartView)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToResults" {
+            let destinationVC = segue.destination as! PaymentScheduleTableViewController
+            destinationVC.loanAmount = self.loanAmount
+            destinationVC.loanTerm = self.loanTerm
+            destinationVC.myNewInterestRate = self.myNewInterestRate
+            destinationVC.myScheduledPayments = self.myScheduledPayments
+        }
     }
 }
 

@@ -422,6 +422,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Vortex Mortgage/Vortex Mortgage.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 6UK9B9BTNM;
 				INFOPLIST_FILE = "Vortex Mortgage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -445,6 +446,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Vortex Mortgage/Vortex Mortgage.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 35;
 				DEVELOPMENT_TEAM = 6UK9B9BTNM;
 				INFOPLIST_FILE = "Vortex Mortgage/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

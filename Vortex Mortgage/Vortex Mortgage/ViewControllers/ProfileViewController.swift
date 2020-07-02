@@ -21,6 +21,11 @@ class ProfileViewController: UIViewController {
     var shouldBeDisplayed: Bool?
     var savedPhoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")
     var savedLocation = UserDefaults.standard.string(forKey: "location")
+    
+    enum StorageType {
+        case userDefaults
+        case fileSystem
+    }
 
     //MARK: - Outlets
     @IBOutlet var firstName: UILabel!
@@ -118,6 +123,49 @@ class ProfileViewController: UIViewController {
             print("The photo library isn't available.")
             return
         }
+    }
+    
+    private func store(image: UIImage, forKey key: String, withStorageType storageType: StorageType) {
+        if let pngRepresentation = image.pngData() {
+            switch storageType {
+            case .fileSystem:
+                if let filePath = filePath(forKey: key) {
+                    do {
+                        try pngRepresentation.write(to: filePath, options: .atomic)
+                    } catch let error {
+                        print("Saving file resulted in error: ", error)
+                    }
+                }
+            case .userDefaults:
+                UserDefaults.standard.set(pngRepresentation, forKey: key)
+            }
+        }
+    }
+    
+    private func retrieveImage(forKey key: String, inStorageType storageType: StorageType) -> UIImage? {
+        switch storageType {
+        case .fileSystem:
+            if let filePath = self.filePath(forKey: key),
+                let fileData = FileManager.default.contents(atPath: filePath.path),
+                let image = UIImage(data: fileData) {
+                return image
+            }
+        case .userDefaults:
+            if let imageData = UserDefaults.standard.object(forKey: key) as? Data,
+                let image = UIImage(data: imageData) {
+                
+                return image
+            }
+        }
+        
+        return nil
+    }
+    
+    private func filePath(forKey key: String) -> URL? {
+        let fileManager = FileManager.default
+        guard let documentURL = fileManager.urls(for: .documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first else { return nil }
+        
+        return documentURL.appendingPathComponent(key + ".png")
     }
     
     //MARK: - Actions
@@ -224,10 +272,22 @@ extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationCo
         let picture = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
         
         profileImage.image = picture
-        let data = picture.pngData()
-        let fileManager = FileManager.default
-        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("image")
-        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
+        if let data = picture.pngData() {
+            let fileManager = FileManager.default
+            let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let url = documents.appendingPathComponent("avatar")
+            
+//            do {
+//                try data.write(to: url)
+//
+//                UserDefaults.standard.set(url, forKey: "picture")
+//            } catch {
+//                print("unable to write data to disk (\(error))")
+//            }
+        }
+        
+//        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("image")
+//        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
         picker.dismiss(animated: true, completion: nil)
     }
     

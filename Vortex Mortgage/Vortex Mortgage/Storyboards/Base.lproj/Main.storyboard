@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qTM-yb-Yq9">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,45 +12,42 @@
             <objects>
                 <viewController storyboardIdentifier="loginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Vortex_Mortgage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="xn8-2T-JQn">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="276"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="276" id="rga-mA-rdy"/>
+                                    <constraint firstAttribute="height" constant="276" id="MYl-bu-oPg"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qRC-v5-19J">
-                                <rect key="frame" x="10" y="563" width="374" height="43"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in using sign in with apple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faG-Ns-Bch">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signing in is easier than ever before" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ik-z9-1Wq">
-                                        <rect key="frame" x="0.0" y="21.5" width="374" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                        <color key="textColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wKo-If-i7L">
-                                <rect key="frame" x="73" y="720" width="233" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with Apple" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="faG-Ns-Bch">
+                                <rect key="frame" x="20" y="541" width="374" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="udC-rY-wr9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <color key="textColor" red="0.34896272420000002" green="0.43141144510000001" blue="0.79205805060000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wKo-If-i7L">
+                                <rect key="frame" x="91" y="619" width="233" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="gml-d1-2Yr"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.34509803919999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="xn8-2T-JQn" secondAttribute="trailing" id="1BX-0T-G3Q"/>
-                            <constraint firstItem="qRC-v5-19J" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="563" id="2wT-kM-K2u"/>
-                            <constraint firstItem="qRC-v5-19J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="IZw-gc-xSI"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qRC-v5-19J" secondAttribute="trailing" constant="30" id="TbI-rO-DhZ"/>
-                            <constraint firstItem="xn8-2T-JQn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="kzd-vX-X3X"/>
-                            <constraint firstItem="xn8-2T-JQn" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="moP-V4-7Of"/>
+                            <constraint firstItem="faG-Ns-Bch" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="6WK-yV-R6i"/>
+                            <constraint firstItem="xn8-2T-JQn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DFL-wk-vcz"/>
+                            <constraint firstItem="faG-Ns-Bch" firstAttribute="top" secondItem="xn8-2T-JQn" secondAttribute="bottom" constant="265" id="EAt-V4-MlS"/>
+                            <constraint firstItem="wKo-If-i7L" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="91" id="KIh-ha-5Gr"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="wKo-If-i7L" secondAttribute="trailing" constant="90" id="N0Q-PN-wzd"/>
+                            <constraint firstItem="xn8-2T-JQn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a8C-3S-jEE"/>
+                            <constraint firstItem="xn8-2T-JQn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="dPf-iW-Ksx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="faG-Ns-Bch" secondAttribute="trailing" constant="20" id="jSs-iq-6To"/>
+                            <constraint firstItem="wKo-If-i7L" firstAttribute="top" secondItem="faG-Ns-Bch" secondAttribute="bottom" constant="41" id="jut-Ul-X40"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -60,14 +57,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1162" y="49"/>
+            <point key="canvasLocation" x="1160.8695652173915" y="48.913043478260875"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="w13-bN-JNI">
             <objects>
                 <viewController storyboardIdentifier="homeViewController" modalPresentationStyle="fullScreen" id="qTM-yb-Yq9" customClass="HomeViewController" customModule="Vortex_Mortgage" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JbB-YO-Ee5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzi-YU-DMp">
@@ -91,7 +88,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rbi-VB-Aqj">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="319"/>
+                                <rect key="frame" x="0.0" y="-44" width="414" height="363"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="4k8-gB-r14">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="299"/>

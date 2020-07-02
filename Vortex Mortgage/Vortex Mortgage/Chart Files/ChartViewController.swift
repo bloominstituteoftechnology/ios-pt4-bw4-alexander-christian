@@ -106,6 +106,12 @@ class ChartViewController: UIViewController {
         myScheduledPayments = getPaymentSchedule(loanAmount: loanAmount, termMonth: Int(loanTerm), interestRate: myNewInterestRate)
     }
     
+    @IBAction func returnHome(_ sender: Any) {
+           self.dismiss(animated: true, completion: nil)
+       }
+       
+    
+    
     func getMonthlyPayment(loanAmount: Float, termMonth: Float, interestRate: Float) -> Float {
         let r : Float = interestRate / (100 * 12)
         let m : Float = Float(termMonth)
@@ -148,6 +154,7 @@ class ChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         updateSegment()
         //totalMonthly()
@@ -331,22 +338,8 @@ class ChartViewController: UIViewController {
             calculatePaymentOutlet.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0),
             calculatePaymentOutlet.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0)
         ])
-        
-        
-        //    simplePieChartView.frame = CGRect(
-        //      x: 0, y: height + padding * 2,
-        //      width: view.frame.size.width, height: height
-        //    )
-        //
-        //    simplePieChartView.segments = [
-        //      Segment(color: .red,    value: 57),
-        //      Segment(color: .blue,   value: 30),
-        //      Segment(color: .green,  value: 25),
-        //      Segment(color: .yellow, value: 40)
-        //    ]
-        //    view.addSubview(simplePieChartView)
-        
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToResults" {
@@ -358,6 +351,7 @@ class ChartViewController: UIViewController {
         }
     }
 }
+
 
 extension Float {
     func rounded(toPlaces places: Int) -> Float {

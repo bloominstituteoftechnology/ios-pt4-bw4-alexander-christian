@@ -7,6 +7,7 @@
 //
 
 #import "VMAppleSignIn.h"
+#import "Vortex_Mortgage-Swift.h"
 
 @implementation VMAppleSignIn
 
@@ -14,7 +15,7 @@
                          email:(NSString *)email
                      firstName:(NSString *)firstName
                       lastName:(NSString *)lastName
-                     fulllName:(NSString *)fullName
+                     fullName:(NSString *)fullName
 {
     self = [super init];
     if (self) {
@@ -26,6 +27,11 @@
     }
     
     return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@: %p; %@ - %@>", NSStringFromClass(self.class), self, self.email, self.fullName];
 }
 
 @end

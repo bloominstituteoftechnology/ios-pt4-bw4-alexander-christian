@@ -8,10 +8,3 @@
 
 import Foundation
 
-struct AppleInfoModel {
-    let userid: String
-    let email: String
-    let firstName: String
-    let lastName: String
-    let fullName: String
-}

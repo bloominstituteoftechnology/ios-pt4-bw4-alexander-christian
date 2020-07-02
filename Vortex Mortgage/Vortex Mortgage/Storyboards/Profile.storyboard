@@ -49,7 +49,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="vnm-Lu-ysd">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vnm-Lu-ysd">
                                         <rect key="frame" x="128" y="95" width="119" height="121"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
@@ -63,8 +63,8 @@
                                             <action selector="backButtonPressed" destination="SoR-QK-3Nd" eventType="touchUpInside" id="U3f-te-OEe"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-ON-oFr">
-                                        <rect key="frame" x="217" y="187" width="24" height="22"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EeV-ON-oFr">
+                                        <rect key="frame" x="257" y="181" width="24" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" image="camera" catalog="system"/>
@@ -147,6 +147,15 @@
                                     <action selector="cancelTapped:" destination="SoR-QK-3Nd" eventType="touchUpInside" id="hdj-v7-NiP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEA-3d-nry">
+                                <rect key="frame" x="64" y="618" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mhy-wK-OgU">
+                                <rect key="frame" x="184" y="512" width="119" height="123"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.34509803919999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -161,16 +170,19 @@
                         <outlet property="cancelButton" destination="kW6-zK-Cpa" id="Od8-mx-Vah"/>
                         <outlet property="emailLabel" destination="oX5-ox-yRV" id="uc2-Wr-ZTP"/>
                         <outlet property="firstName" destination="gmV-U4-vU4" id="XkG-Ue-9kB"/>
+                        <outlet property="imageButton" destination="EeV-ON-oFr" id="jVX-Pb-XMy"/>
                         <outlet property="lastName" destination="alq-eb-Yq5" id="iTq-Q2-QGe"/>
                         <outlet property="locationImage" destination="EYS-MW-I4I" id="L1O-sZ-hKS"/>
                         <outlet property="locationLabel" destination="8xx-MG-VzP" id="UjN-NN-LNG"/>
                         <outlet property="locationTextField" destination="hJp-Yr-lnN" id="HXr-E2-Vtd"/>
+                        <outlet property="newImage" destination="mhy-wK-OgU" id="EQJ-XW-Uxz"/>
                         <outlet property="phoneImage" destination="TEo-Ff-LFB" id="WWU-SZ-DGT"/>
                         <outlet property="phoneNumberLabel" destination="XN7-eK-n5a" id="yb8-Iq-I7q"/>
                         <outlet property="phoneNumberTextField" destination="yh9-RY-phi" id="WLY-H5-Fiw"/>
                         <outlet property="profileImage" destination="vnm-Lu-ysd" id="9Xc-lt-gJv"/>
                         <outlet property="profileView" destination="Hxq-K9-524" id="wjq-3i-bvv"/>
                         <outlet property="saveButton" destination="yYT-rf-aqs" id="Cox-nv-WqA"/>
+                        <outlet property="testButton" destination="wEA-3d-nry" id="oma-m9-NLT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uld-lj-UXg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -180,7 +192,6 @@
     </scenes>
     <resources>
         <image name="apps.iphone" width="11" height="18"/>
-        <image name="avatar" width="200" height="200"/>
         <image name="camera" catalog="system" width="128" height="96"/>
         <image name="envelope.fill" catalog="system" width="128" height="93"/>
         <image name="location.fill" catalog="system" width="128" height="115"/>

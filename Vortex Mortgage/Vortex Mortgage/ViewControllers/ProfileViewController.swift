@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController {
     var shouldBeDisplayed: Bool?
     var savedPhoneNumber = UserDefaults.standard.string(forKey: "phoneNumber")
     var savedLocation = UserDefaults.standard.string(forKey: "location")
+    var newPhoto: UIImage?
     
     enum StorageType {
         case userDefaults
@@ -32,15 +33,22 @@ class ProfileViewController: UIViewController {
     @IBOutlet var lastName: UILabel!
     @IBOutlet var emailLabel: UILabel!
     @IBOutlet var profileView: UIView!
-    @IBOutlet var profileImage: UIImageView!
+    @IBOutlet var profileImage: UIImageView! {
+        didSet {
+            profileImage.image = UIImage(named: "avatar")
+        }
+    }
+    @IBOutlet var newImage: UIImageView!
     @IBOutlet var phoneNumberLabel: UILabel!
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var locationTextField: UITextField!
-    @IBOutlet var saveButton: UIButton!
+    @IBOutlet var saveButton: UIButton! 
+    @IBOutlet var testButton: UIButton!
     @IBOutlet var phoneImage: UIImageView!
     @IBOutlet var locationImage: UIImageView!
     @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var imageButton: UIButton!
     
     // MARK: - Core Image Placeholder properties
     var originalImage: UIImage? {
@@ -54,6 +62,7 @@ class ProfileViewController: UIViewController {
     //MARK: View Controller life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        display()
         phoneNumberTextField.text = savedPhoneNumber
         locationTextField.text = savedLocation
         updateLocationLabel()
@@ -61,7 +70,6 @@ class ProfileViewController: UIViewController {
         updateViews()
         addUITweaks()
         originalImage = profileImage.image
-        shouldBeDisplayed = false
         dismissKeyboardFunc()
     }
     
@@ -163,9 +171,22 @@ class ProfileViewController: UIViewController {
     
     private func filePath(forKey key: String) -> URL? {
         let fileManager = FileManager.default
-        guard let documentURL = fileManager.urls(for: .documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask).first else { return nil }
+        guard let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first else { return nil }
         
         return documentURL.appendingPathComponent(key + ".png")
+    }
+    
+    
+    
+    func display() {
+        DispatchQueue.global(qos: .background).async {
+            if let savedImage = self.retrieveImage(forKey: "avatarImage", inStorageType: .fileSystem) {
+                
+                DispatchQueue.main.async {
+                    self.profileImage.image = savedImage
+                }
+            }
+        }
     }
     
     //MARK: - Actions
@@ -177,6 +198,7 @@ class ProfileViewController: UIViewController {
         phoneImage.isHidden = false
         saveButton.isHidden = false
         cancelButton.isHidden = false
+        imageButton.isHidden = false
         if phoneNumberTextField.isHidden == false {
             phoneNumberLabel.isHidden = true
         } else {
@@ -208,6 +230,7 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
+        save()
         phoneNumber = phoneNumberTextField.text
         location = locationTextField.text
         locationLabel.text = location
@@ -218,6 +241,7 @@ class ProfileViewController: UIViewController {
         locationTextField.isHidden = true
         cancelButton.isHidden = true
         saveButton.isHidden = true
+        imageButton.isHidden = true
         phoneNumberLabel.isHidden = false
         locationLabel.isHidden = false
         if phoneNumber == "" {
@@ -229,6 +253,14 @@ class ProfileViewController: UIViewController {
             locationImage.isHidden = true
         } else {
             locationImage.isHidden = false
+        }
+    }
+    
+    func save() {
+        if let newImage = newPhoto {
+            DispatchQueue.main.async {
+                self.store(image: newImage, forKey: "avatarImage", withStorageType: .fileSystem)
+            }
         }
     }
     
@@ -269,25 +301,10 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let picture = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        self.newPhoto = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         
-        profileImage.image = picture
-        if let data = picture.pngData() {
-            let fileManager = FileManager.default
-            let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let url = documents.appendingPathComponent("avatar")
-            
-//            do {
-//                try data.write(to: url)
-//
-//                UserDefaults.standard.set(url, forKey: "picture")
-//            } catch {
-//                print("unable to write data to disk (\(error))")
-//            }
-        }
+        profileImage.image = newPhoto
         
-//        let imagePath = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString).appendingPathComponent("image")
-//        fileManager.createFile(atPath: imagePath as String, contents: data, attributes: nil)
         picker.dismiss(animated: true, completion: nil)
     }
     

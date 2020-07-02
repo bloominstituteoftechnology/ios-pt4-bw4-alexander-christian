@@ -10,7 +10,7 @@
         <!--Item-->
         <scene sceneID="gCX-Ty-aMP">
             <objects>
-                <navigationController id="ejc-9m-R8x" sceneMemberID="viewController">
+                <navigationController modalPresentationStyle="fullScreen" id="ejc-9m-R8x" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="wZb-GR-uco"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="YkD-DO-g0M">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -159,7 +159,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" image="divide.circle.fill" catalog="system" id="HYn-uk-rGc"/>
                     <navigationItem key="navigationItem" title="Price Calculation" id="J8B-P7-xYK">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="ctI-en-2cR"/>
+                        <barButtonItem key="leftBarButtonItem" image="house" catalog="system" id="ctI-en-2cR"/>
                         <barButtonItem key="rightBarButtonItem" title="Payments" id="xCY-i7-t3p">
                             <connections>
                                 <segue destination="n9h-au-hcA" kind="show" identifier="goToResults" id="e1t-PX-anu"/>
@@ -275,5 +275,6 @@
     </scenes>
     <resources>
         <image name="divide.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="house" catalog="system" width="128" height="110"/>
     </resources>
 </document>

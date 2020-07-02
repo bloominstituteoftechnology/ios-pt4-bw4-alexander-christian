@@ -44,6 +44,10 @@ class CalculateViewController: UIViewController {
         mortgageInterestLabel.text = "\(interestRate)%"
     }
     
+    @IBAction func returnHome(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     @IBAction func calculatePaymentPressed(_ sender: UIButton) {
         guard let homeValue = homePriceTextField.text, !homeValue.isEmpty, let homeValueNumber = Float(homeValue) else { return }

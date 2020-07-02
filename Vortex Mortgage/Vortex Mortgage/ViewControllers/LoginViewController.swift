@@ -9,10 +9,12 @@
 import UIKit
 import AuthenticationServices
 
+
 typealias AppleSignInBlock = ((_ userInfo:AppleInfoModel?,_ errorMessge:String?)->())?
 
 
 class LoginViewController: UIViewController {
+    
     
     var appleSignInBlock: AppleSignInBlock!
 
@@ -79,7 +81,7 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
                 KeychainItem.lastName = lastName
                 KeychainItem.email = email
                 
-                let userInfo = AppleInfoModel(userid: userIdentifier, email: email, firstName: firstName, lastName: lastName, fullName: fullName)
+                let userInfo = AppleInfoModel(userId: userIdentifier, email: email, firstName: firstName, lastName: lastName, fullName: fullName)
                 
                 print(userInfo)
                 

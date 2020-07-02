@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 NS_ASSUME_NONNULL_BEGIN
-NS_SWIFT_NAME(AppleSignIn)
+NS_SWIFT_NAME(AppleInfoModel)
 
 @interface VMAppleSignIn : NSObject
 
@@ -23,7 +23,7 @@ NS_SWIFT_NAME(AppleSignIn)
                          email:(NSString *)email
                      firstName:(NSString *)firstName
                       lastName:(NSString *)lastName
-                     fulllName:(NSString *)fullName;
+                     fullName:(NSString *)fullName;
 @end
 
 NS_ASSUME_NONNULL_END

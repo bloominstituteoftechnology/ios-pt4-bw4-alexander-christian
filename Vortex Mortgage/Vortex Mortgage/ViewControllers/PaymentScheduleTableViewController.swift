@@ -17,13 +17,12 @@ class PaymentScheduleTableViewController: UITableViewController {
     var chartViewController = ChartViewController()
     var paymentScheduleHeaderView = PaymentScheduleHeaderView()
     
-//    var myItems: [[String]] = [["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"], ["Ferrari", "Toyota", "Ford"], ["Chevy", "Cheri", "Infinity"]]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        navigationController?.navigationBar.barTintColor = UIColor(named: "LightModeColor")
         
         let headerNib = UINib.init(nibName: "PaymentScheduleHeaderView", bundle: Bundle.main)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "PaymentScheduleHeaderView")
@@ -58,15 +57,15 @@ class PaymentScheduleTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as! PaymentScheduleTableViewCell
 
         // Configure the cell...
-        let myArray = self.myScheduledPayments[indexPath.row]
+        let myArray = self.myScheduledPayments[indexPath.row] 
         cell.InterestInfoLabel.text = "\(myArray[0])"
         cell.principalInfoLabel.text = "\(myArray[1])"
         cell.remainingInfoLabel.text = "\(myArray[2])"
-        
+       
         if myArray[2] <= 0 {
             cell.remainingInfoLabel.text = "0"
         }
-
+   
         
         return cell
     }

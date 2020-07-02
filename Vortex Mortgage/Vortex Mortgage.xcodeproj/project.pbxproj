@@ -131,8 +131,6 @@
 		1FBC772C2499C11100ACCDB9 = {
 			isa = PBXGroup;
 			children = (
-				174457B724AAE33A009A54E4 /* TableViewHeader */,
-				174AACD424A5C766002418B8 /* Chart Files */,
 				1FBC77372499C11100ACCDB9 /* Vortex Mortgage */,
 				1FBC77362499C11100ACCDB9 /* Products */,
 			);
@@ -150,6 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */,
+				174AACD424A5C766002418B8 /* Chart Files */,
+				174457B724AAE33A009A54E4 /* TableViewHeader */,
 				1734DD832499DB0B00183547 /* ViewControllers */,
 				1FBC775B2499C80A00ACCDB9 /* Storyboards */,
 				1F9BF6C8249C7F480083F051 /* Helpers */,

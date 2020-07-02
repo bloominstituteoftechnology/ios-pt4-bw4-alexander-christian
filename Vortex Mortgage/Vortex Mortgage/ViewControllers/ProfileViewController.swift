@@ -38,13 +38,11 @@ class ProfileViewController: UIViewController {
             profileImage.image = UIImage(named: "avatar")
         }
     }
-    @IBOutlet var newImage: UIImageView!
     @IBOutlet var phoneNumberLabel: UILabel!
     @IBOutlet var phoneNumberTextField: UITextField!
     @IBOutlet var locationLabel: UILabel!
     @IBOutlet var locationTextField: UITextField!
-    @IBOutlet var saveButton: UIButton! 
-    @IBOutlet var testButton: UIButton!
+    @IBOutlet var saveButton: UIButton!
     @IBOutlet var phoneImage: UIImageView!
     @IBOutlet var locationImage: UIImageView!
     @IBOutlet var cancelButton: UIButton!

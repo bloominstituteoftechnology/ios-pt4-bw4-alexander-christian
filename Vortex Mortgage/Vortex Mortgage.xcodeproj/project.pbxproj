@@ -32,7 +32,6 @@
 		1FBC77582499C7F900ACCDB9 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77572499C7F900ACCDB9 /* Dashboard.storyboard */; };
 		1FBC775A2499C80100ACCDB9 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FBC77592499C80100ACCDB9 /* Settings.storyboard */; };
 		1FBE82F224A2F4FF00C6752E /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F124A2F4FF00C6752E /* Keychain.swift */; };
-		1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F524A2F53800C6752E /* AppleSignIn.swift */; };
 		1FBE82FA24A30F3B00C6752E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBE82F924A30F3B00C6752E /* LoginViewController.swift */; };
 		1FDF700C24A44D88004E8C8D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FDF700B24A44D88004E8C8D /* HomeViewController.swift */; };
 		1FFD2F4324A458C300BD9817 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FFD2F4224A458C300BD9817 /* SettingsTableViewController.swift */; };
@@ -69,7 +68,6 @@
 		1FBC77572499C7F900ACCDB9 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		1FBC77592499C80100ACCDB9 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		1FBE82F124A2F4FF00C6752E /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
-		1FBE82F524A2F53800C6752E /* AppleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleSignIn.swift; sourceTree = "<group>"; };
 		1FBE82F924A30F3B00C6752E /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		1FDF700B24A44D88004E8C8D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1FFD2F4224A458C300BD9817 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +161,6 @@
 				1FBC77432499C11400ACCDB9 /* LaunchScreen.storyboard */,
 				1FBC77412499C11400ACCDB9 /* Assets.xcassets */,
 				1FBC773A2499C11100ACCDB9 /* SceneDelegate.swift */,
-				1FBE82F524A2F53800C6752E /* AppleSignIn.swift */,
 				1FBC77382499C11100ACCDB9 /* AppDelegate.swift */,
 				1FBC77462499C11400ACCDB9 /* Info.plist */,
 			);
@@ -261,7 +258,6 @@
 			files = (
 				174AACD824A5C854002418B8 /* Compatibilty.swift in Sources */,
 				1F90EB5D24AAE10000A03BDE /* UIImage.swift in Sources */,
-				1FBE82F624A2F53800C6752E /* AppleSignIn.swift in Sources */,
 				1734DD872499E01200183547 /* OnboardingTwoViewController.swift in Sources */,
 				1734DD852499DBE800183547 /* OnboardingOneViewController.swift in Sources */,
 				1FDF700C24A44D88004E8C8D /* HomeViewController.swift in Sources */,

@@ -19,6 +19,7 @@
 		174AACDA24A5C898002418B8 /* PieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174AACD924A5C898002418B8 /* PieChartView.swift */; };
 		174ADAEE249C29C2004E768F /* CalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAED249C29C2004E768F /* CalculateViewController.swift */; };
 		174ADAF0249C29CA004E768F /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174ADAEF249C29CA004E768F /* ResultsViewController.swift */; };
+		1F3BA92C24ADA0DE0090A888 /* VMAppleSignIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3BA92B24ADA0DE0090A888 /* VMAppleSignIn.m */; };
 		1F90EB5D24AAE10000A03BDE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F90EB5C24AAE0FF00A03BDE /* UIImage.swift */; };
 		1F9BF6C3249C66570083F051 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C2249C66570083F051 /* Profile.storyboard */; };
 		1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9BF6C4249C66A40083F051 /* ProfileViewController.swift */; };
@@ -50,6 +51,9 @@
 		174AACD924A5C898002418B8 /* PieChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieChartView.swift; sourceTree = "<group>"; };
 		174ADAED249C29C2004E768F /* CalculateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculateViewController.swift; sourceTree = "<group>"; };
 		174ADAEF249C29CA004E768F /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		1F3BA92924ADA0DE0090A888 /* Vortex Mortgage-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vortex Mortgage-Bridging-Header.h"; sourceTree = "<group>"; };
+		1F3BA92A24ADA0DE0090A888 /* VMAppleSignIn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VMAppleSignIn.h; sourceTree = "<group>"; };
+		1F3BA92B24ADA0DE0090A888 /* VMAppleSignIn.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VMAppleSignIn.m; sourceTree = "<group>"; };
 		1F8BA314249D37A40080022D /* Vortex Mortgage.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Vortex Mortgage.entitlements"; sourceTree = "<group>"; };
 		1F90EB5C24AAE0FF00A03BDE /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		1F9BF6C2249C66570083F051 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
@@ -124,6 +128,9 @@
 			children = (
 				1FBE82F124A2F4FF00C6752E /* Keychain.swift */,
 				1F90EB5C24AAE0FF00A03BDE /* UIImage.swift */,
+				1F3BA92A24ADA0DE0090A888 /* VMAppleSignIn.h */,
+				1F3BA92B24ADA0DE0090A888 /* VMAppleSignIn.m */,
+				1F3BA92924ADA0DE0090A888 /* Vortex Mortgage-Bridging-Header.h */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -207,6 +214,7 @@
 				TargetAttributes = {
 					1FBC77342499C11100ACCDB9 = {
 						CreatedOnToolsVersion = 11.5;
+						LastSwiftMigration = 1150;
 					};
 				};
 			};
@@ -271,6 +279,7 @@
 				174457BD24AB0527009A54E4 /* PaymentScheduleTableViewController.swift in Sources */,
 				1F9BF6C5249C66A40083F051 /* ProfileViewController.swift in Sources */,
 				1FBC773B2499C11100ACCDB9 /* SceneDelegate.swift in Sources */,
+				1F3BA92C24ADA0DE0090A888 /* VMAppleSignIn.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +423,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Vortex Mortgage/Vortex Mortgage.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UK9B9BTNM;
@@ -425,6 +435,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ChristianLorenzo.Vortex-Mortgage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Vortex Mortgage/Helpers/Vortex Mortgage-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -434,6 +446,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Vortex Mortgage/Vortex Mortgage.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6UK9B9BTNM;
@@ -445,6 +458,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ChristianLorenzo.Vortex-Mortgage";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Vortex Mortgage/Helpers/Vortex Mortgage-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

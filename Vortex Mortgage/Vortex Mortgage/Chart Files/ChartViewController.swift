@@ -98,6 +98,7 @@ class ChartViewController: UIViewController {
     }
     
     @IBAction func calculatePaymentTapped(_ sender: UIButton) {
+        guard loanTerm >= 1.0 else { return }
         
         totalMonthlyPayment = getMonthlyPayment(loanAmount: loanAmount, termMonth: loanTerm, interestRate: myNewInterestRate)
         let roundedResult = totalMonthlyPayment.rounded(toPlaces: 2)

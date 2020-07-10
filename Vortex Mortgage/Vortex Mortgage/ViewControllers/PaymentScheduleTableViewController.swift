@@ -57,19 +57,30 @@ class PaymentScheduleTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScheduleCell", for: indexPath) as! PaymentScheduleTableViewCell
 
         // Configure the cell...
-        let myArray = self.myScheduledPayments[indexPath.row] 
-        cell.InterestInfoLabel.text = "\(myArray[0])"
-        cell.principalInfoLabel.text = "\(myArray[1])"
-        cell.remainingInfoLabel.text = "\(myArray[2])"
-       
-        if myArray[2] <= 0 {
-            cell.remainingInfoLabel.text = "0"
+        
+        
+        
+        let myArray = self.myScheduledPayments[indexPath.row]
+        
+        for items in myArray {
+            if items <= 0 {
+                cell.InterestInfoLabel.text = "No Data"
+                cell.principalInfoLabel.text = "No Data"
+                cell.remainingInfoLabel.text = "No Data"
+            } else {
+                cell.InterestInfoLabel.text = "\(myArray[0])"
+                cell.principalInfoLabel.text = "\(myArray[1])"
+                cell.remainingInfoLabel.text = "\(myArray[2])"
+            }
         }
-   
+        
+//        if myArray[2] <= 0 {
+//            cell.remainingInfoLabel.text = "0"
+//        }
         
         return cell
     }
-    
+ 
     
     /*
     // Override to support conditional editing of the table view.

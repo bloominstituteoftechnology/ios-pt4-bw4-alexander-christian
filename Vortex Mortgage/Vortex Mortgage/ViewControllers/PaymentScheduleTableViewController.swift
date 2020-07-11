@@ -26,6 +26,7 @@ class PaymentScheduleTableViewController: UITableViewController {
         
         let headerNib = UINib.init(nibName: "PaymentScheduleHeaderView", bundle: Bundle.main)
         tableView.register(headerNib, forHeaderFooterViewReuseIdentifier: "PaymentScheduleHeaderView")
+
     }
     
     

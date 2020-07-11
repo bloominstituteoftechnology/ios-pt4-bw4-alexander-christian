@@ -36,6 +36,11 @@ class PaymentScheduleTableViewCell: UITableViewCell {
         remainingInfoLabel.layer.borderWidth = 1
         remainingInfoLabel.layer.borderColor = UIColor.black.cgColor
         remainingInfoLabel.clipsToBounds = true
+        
+        //DarkMode for lettering:
+        InterestInfoLabel.textColor = .myDarkModeColor
+        principalInfoLabel.textColor = .myDarkModeColor
+        remainingInfoLabel.textColor = .myDarkModeColor
     }
 
 }

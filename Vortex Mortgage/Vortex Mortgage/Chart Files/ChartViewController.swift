@@ -166,6 +166,19 @@ class ChartViewController: UIViewController {
         pieChartView.frame = imageView1.bounds
         pieChartView.segmentLabelFont = .systemFont(ofSize: 10)
         
+        //DarkMode color for the letters:
+        totalMonthlyLabel.textColor = .myDarkModeColor
+        homePriceSign.textColor = .myDarkModeColor
+        homePriceLabel.textColor = .myDarkModeColor
+        downPaymentSign.textColor = .myDarkModeColor
+        downPaymentPercentageLabel.textColor = .myDarkModeColor
+        dpwnPaymentLabel.textColor = .myDarkModeColor
+        interestPercentageSign.textColor = .myDarkModeColor
+        interestPercentageLabel.textColor = .myDarkModeColor
+        termSignLabel.textColor = .myDarkModeColor
+        termAmountLabel.textColor = .myDarkModeColor
+        calculatePaymentOutlet.titleLabel?.textColor = .myDarkModeColor
+        
         //Code for Label Border:
         homePriceSign.layer.borderColor = UIColor.black.cgColor
         homePriceSign.layer.borderWidth = 1.0
@@ -359,4 +372,9 @@ extension Float {
         let divisor = pow(10.0, Float(places))
         return (self * divisor).rounded() / divisor
     }
+}
+
+
+extension UIColor {
+    static let myDarkModeColor = UIColor(named: "darkModeColor")
 }

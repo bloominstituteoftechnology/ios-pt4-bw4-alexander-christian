@@ -3,7 +3,7 @@
 //  Vortex Mortgage
 //
 //  Created by Alex Thompson on 7/1/20.
-//  Copyright © 2020 Lambda School. All rights reserved.
+//  Copyright © 2020 BloomTech. All rights reserved.
 //
 
 #import "VMAppleSignIn.h"
